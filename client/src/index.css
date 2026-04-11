@@ -3,6 +3,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   HAWLEY CONSTRUCTION CO. — Modern Craftsman Design System
+   Philosophy: Warm contemporary with architectural precision
+   Colors: Off-white base, charcoal text, gold accents, steel blue interactive
+   Typography: Playfair Display (editorial) + DM Sans (modern clarity)
+   ============================================================ */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -40,77 +47,53 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand custom colors */
+  --color-brand-gold: oklch(0.77 0.065 82);        /* #CCBC93 */
+  --color-brand-steel: oklch(0.64 0.055 230);       /* #7F99BD */
+  --color-brand-steel-light: oklch(0.73 0.04 230);  /* #A0B4CD */
+  --color-brand-charcoal: oklch(0.37 0.01 250);     /* #4F5458 */
+  --color-brand-dark: oklch(0.18 0.008 250);        /* deep charcoal */
+  --color-brand-cream: oklch(0.98 0.008 80);        /* warm off-white */
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  --radius: 0.25rem;
+  /* Primary = steel blue */
+  --primary: oklch(0.64 0.055 230);
+  --primary-foreground: oklch(0.98 0 0);
+  /* Secondary = warm gold */
+  --secondary: oklch(0.77 0.065 82);
+  --secondary-foreground: oklch(0.18 0.008 250);
+  /* Backgrounds */
+  --background: oklch(0.98 0.006 80);
+  --foreground: oklch(0.22 0.01 250);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.22 0.01 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.22 0.01 250);
+  --muted: oklch(0.95 0.005 80);
+  --muted-foreground: oklch(0.5 0.01 250);
+  --accent: oklch(0.77 0.065 82);
+  --accent-foreground: oklch(0.18 0.008 250);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --border: oklch(0.9 0.008 80);
+  --input: oklch(0.9 0.008 80);
+  --ring: oklch(0.64 0.055 230);
+  --chart-1: oklch(0.64 0.055 230);
+  --chart-2: oklch(0.77 0.065 82);
+  --chart-3: oklch(0.37 0.01 250);
+  --chart-4: oklch(0.73 0.04 230);
+  --chart-5: oklch(0.18 0.008 250);
+  --sidebar: oklch(0.18 0.008 250);
+  --sidebar-foreground: oklch(0.9 0.005 80);
+  --sidebar-primary: oklch(0.77 0.065 82);
+  --sidebar-primary-foreground: oklch(0.18 0.008 250);
+  --sidebar-accent: oklch(0.25 0.01 250);
+  --sidebar-accent-foreground: oklch(0.9 0.005 80);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --sidebar-ring: oklch(0.64 0.055 230);
 }
 
 @layer base {
@@ -119,6 +102,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +121,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +136,132 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+
+  /* Brand utility classes */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  .text-gold {
+    color: oklch(0.77 0.065 82);
+  }
+  .text-steel {
+    color: oklch(0.64 0.055 230);
+  }
+  .text-charcoal {
+    color: oklch(0.37 0.01 250);
+  }
+  .bg-gold {
+    background-color: oklch(0.77 0.065 82);
+  }
+  .bg-steel {
+    background-color: oklch(0.64 0.055 230);
+  }
+  .bg-charcoal {
+    background-color: oklch(0.37 0.01 250);
+  }
+  .bg-dark {
+    background-color: oklch(0.18 0.008 250);
+  }
+  .bg-cream {
+    background-color: oklch(0.98 0.006 80);
+  }
+  .border-gold {
+    border-color: oklch(0.77 0.065 82);
+  }
+  .border-steel {
+    border-color: oklch(0.64 0.055 230);
+  }
+
+  /* Section divider */
+  .section-divider {
+    width: 3rem;
+    height: 2px;
+    background-color: oklch(0.77 0.065 82);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  /* Hover image zoom */
+  .img-zoom {
+    overflow: hidden;
+  }
+  .img-zoom img {
+    transition: transform 0.6s ease;
+  }
+  .img-zoom:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Gold CTA button */
+  .btn-gold {
+    background-color: oklch(0.77 0.065 82);
+    color: oklch(0.18 0.008 250);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 0.75rem 1.75rem;
+    transition: all 0.2s ease;
+    border: 2px solid oklch(0.77 0.065 82);
+  }
+  .btn-gold:hover {
+    background-color: transparent;
+    color: oklch(0.77 0.065 82);
+  }
+
+  /* Outline button */
+  .btn-outline-light {
+    background-color: transparent;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 0.75rem 1.75rem;
+    border: 2px solid white;
+    transition: all 0.2s ease;
+  }
+  .btn-outline-light:hover {
+    background-color: white;
+    color: oklch(0.18 0.008 250);
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s ease forwards;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
 }

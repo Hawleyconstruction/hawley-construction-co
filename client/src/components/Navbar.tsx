@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-logo-modern-K7nsMoUjXa4vQaiXbz97jj.webp";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-logo-user_f6ccaa65.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -46,26 +46,15 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="flex flex-col leading-none">
-                <span
-                  className="text-xl font-bold tracking-wide"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    color: scrolled || !isHome ? "oklch(0.18 0.008 250)" : "white",
-                  }}
-                >
-                  HAWLEY
-                </span>
-                <span
-                  className="text-[9px] font-semibold tracking-[0.18em] uppercase"
-                  style={{
-                    color: "oklch(0.77 0.065 82)",
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}
-                >
-                  Construction Co.
-                </span>
-              </div>
+              <img
+                src={LOGO_URL}
+                alt="Hawley Construction Co."
+                className="h-12 md:h-14 w-auto object-contain"
+                style={{
+                  filter: scrolled || !isHome ? "none" : "brightness(0) invert(1)",
+                  transition: "filter 0.3s",
+                }}
+              />
             </Link>
 
             {/* Desktop Nav */}

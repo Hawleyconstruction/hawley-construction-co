@@ -5,7 +5,7 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-logo-user_f6ccaa65.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-logo-modern-K7nsMoUjXa4vQaiXbz97jj.webp";
 
 const services = [
   { label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
@@ -33,12 +33,18 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img
-                src={LOGO_URL}
-                alt="Hawley Construction Co."
-                className="h-16 w-auto object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
+              <div
+                className="text-2xl font-bold tracking-wide"
+                style={{ fontFamily: "'Playfair Display', serif", color: "white" }}
+              >
+                HAWLEY
+              </div>
+              <div
+                className="text-xs font-semibold tracking-[0.2em] uppercase"
+                style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                Construction Co.
+              </div>
             </div>
             <p
               className="text-sm leading-relaxed mb-6"

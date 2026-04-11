@@ -11,6 +11,7 @@ const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZ
 const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
+const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 
 const serviceData: Record<string, {
   title: string; tagline: string; img: string; metaDesc: string;
@@ -39,7 +40,7 @@ const serviceData: Record<string, {
   "home-additions": {
     title: "Home Additions in Tampa Bay",
     tagline: "Expand Your Home, Expand Your Life",
-    img: SUNROOM_IMG,
+    img: HOME_ADDITION_IMG,
     metaDesc: "Custom home additions in Tampa, St. Petersburg, Clearwater & surrounding areas. Master suites, in-law suites, room additions. Licensed & insured. Free estimates.",
     intro: "When your family grows or your needs change, a thoughtfully designed home addition is the smartest investment you can make. Hawley Construction Co. builds seamless home additions throughout Tampa Bay that feel like they were always part of your home.",
     body: "Our home addition services cover everything from master suite additions and in-law suites to family room expansions and second-story additions. We handle the entire process — from architectural planning and permit acquisition to framing, roofing, insulation, and interior finishing.\n\nEvery addition we build is designed to match your existing home's architecture, materials, and style. We work with structural engineers when needed and coordinate all inspections to ensure your addition meets Florida building codes.\n\nServing homeowners in Tampa, St. Petersburg, Clearwater, Bradenton, Sarasota, and Tarpon Springs, we bring the same level of craftsmanship and attention to detail to every project, regardless of size.",

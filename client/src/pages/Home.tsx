@@ -12,11 +12,12 @@ const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZ
 const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
+const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 
 const services = [
   { title: "Kitchen Remodeling", desc: "Custom kitchens designed for the way you live — from quartz countertops to custom cabinetry.", slug: "kitchen-remodeling", img: HERO_IMG },
   { title: "Bathroom Remodeling", desc: "Transform your bathroom into a spa-like retreat with premium tile, fixtures, and finishes.", slug: "bathroom-remodeling", img: BATHROOM_IMG },
-  { title: "Home Additions", desc: "Expand your living space with expertly crafted additions that blend seamlessly with your home.", slug: "home-additions", img: SUNROOM_IMG },
+  { title: "Home Additions", desc: "Expand your living space with expertly crafted additions that blend seamlessly with your home.", slug: "home-additions", img: HOME_ADDITION_IMG },
   { title: "Sunrooms", desc: "Bring the Florida sunshine indoors with a beautiful, energy-efficient sunroom addition.", slug: "sunrooms", img: SUNROOM_IMG },
   { title: "Outdoor Living", desc: "Create the ultimate outdoor retreat with custom patios, pergolas, and outdoor kitchens.", slug: "outdoor-living", img: OUTDOOR_IMG },
   { title: "Trex Decks", desc: "Low-maintenance composite decking that looks stunning and lasts for decades.", slug: "trex-decks", img: OUTDOOR_IMG },

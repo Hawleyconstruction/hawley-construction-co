@@ -10,6 +10,7 @@ const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZ
 const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
+const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 
 export const blogPosts = [
   {
@@ -52,7 +53,7 @@ export const blogPosts = [
     slug: "plan-home-addition-tampa-bay",
     title: "How to Plan a Home Addition in Tampa Bay",
     excerpt: "A step-by-step guide to planning a successful home addition in Tampa Bay — from setting your budget and choosing a contractor to navigating permits and managing the build.",
-    img: SUNROOM_IMG,
+    img: HOME_ADDITION_IMG,
     date: "January 8, 2025",
     readTime: "9 min read",
     category: "Home Additions",

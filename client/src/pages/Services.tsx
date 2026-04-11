@@ -11,6 +11,7 @@ const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZ
 const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
+const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 
 const services = [
   {
@@ -32,7 +33,7 @@ const services = [
   {
     title: "Home Additions",
     slug: "home-additions",
-    img: SUNROOM_IMG,
+    img: HOME_ADDITION_IMG,
     tagline: "More Space, More Life",
     desc: "When your family grows or your needs change, a well-designed home addition is the smartest investment you can make. We handle everything from architectural planning and permitting to framing, roofing, and interior finishing — seamlessly matching your existing home.",
     benefits: ["Master suite additions", "In-law suites & guest rooms", "Family room expansions", "Second-story additions", "Garage conversions"],

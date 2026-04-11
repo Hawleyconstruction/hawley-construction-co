@@ -12,6 +12,7 @@ const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/m
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
+const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
 
 const serviceData: Record<string, {
   title: string; tagline: string; img: string; metaDesc: string;
@@ -110,7 +111,7 @@ const serviceData: Record<string, {
   "trex-decks": {
     title: "Trex Deck Installation in Tampa Bay",
     tagline: "The Gold Standard in Composite Decking",
-    img: OUTDOOR_IMG,
+    img: TREX_DECK_IMG,
     metaDesc: "Certified Trex deck installation in Tampa, St. Petersburg, Clearwater & surrounding areas. Low-maintenance composite decking with 25-year warranty. Free estimates.",
     intro: "Trex composite decking is the gold standard for Florida homeowners who want the beauty of a real wood deck without the maintenance. As certified Trex installers, Hawley Construction Co. builds stunning composite decks throughout Tampa Bay that are built to last.",
     body: "Florida's climate is hard on traditional wood decks — the heat, humidity, and UV exposure cause warping, cracking, fading, and rot. Trex composite decking is engineered to resist all of these issues, maintaining its beauty year after year with minimal maintenance.\n\nOur Trex deck installations are designed to maximize your outdoor living space and complement your home's architecture. We handle everything from design and permitting to framing, decking installation, and railing systems. Every deck we build is backed by Trex's industry-leading 25-year warranty.",

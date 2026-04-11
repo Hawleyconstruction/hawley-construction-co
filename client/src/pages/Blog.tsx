@@ -11,6 +11,7 @@ const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/m
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
+const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
 
 export const blogPosts = [
   {
@@ -44,7 +45,7 @@ export const blogPosts = [
     slug: "trex-deck-vs-wood-deck",
     title: "Trex Deck vs. Wood Deck: Which is Better for Florida?",
     excerpt: "An honest comparison of composite Trex decking versus traditional wood decking for Tampa Bay homeowners — covering cost, maintenance, durability, and aesthetics.",
-    img: OUTDOOR_IMG,
+    img: TREX_DECK_IMG,
     date: "January 22, 2025",
     readTime: "7 min read",
     category: "Outdoor Living",

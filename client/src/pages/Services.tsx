@@ -12,6 +12,7 @@ const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/m
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
+const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
 
 const services = [
   {
@@ -89,7 +90,7 @@ const services = [
   {
     title: "Trex Decks",
     slug: "trex-decks",
-    img: OUTDOOR_IMG,
+    img: TREX_DECK_IMG,
     tagline: "Low Maintenance, High Impact",
     desc: "Trex composite decking is the gold standard for Florida homeowners who want the look of real wood without the maintenance. Our certified Trex installers build decks that resist fading, staining, and moisture — backed by a 25-year warranty.",
     benefits: ["Trex certified installation", "25-year fade & stain warranty", "No painting, staining, or sealing", "Slip-resistant surface", "Eco-friendly recycled materials"],

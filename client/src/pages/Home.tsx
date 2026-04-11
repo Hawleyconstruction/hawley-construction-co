@@ -120,6 +120,10 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
 
+  useEffect(() => {
+    document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
+  }, []);
+
   const servicesSection = useInView();
   const statsSection = useInView();
   const gallerySection = useInView();

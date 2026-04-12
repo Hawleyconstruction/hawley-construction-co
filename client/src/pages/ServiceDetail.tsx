@@ -1,9 +1,10 @@
 /**
  * ServiceDetail Page — Individual service deep-dive
- * SEO-optimized with keyword-rich content per service
+ * SEO-optimized with keyword-rich content per service + FAQ schema for AI search
  */
+import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
-import { CheckCircle2, Phone, ArrowLeft } from "lucide-react";
+import { CheckCircle2, Phone, ArrowLeft, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -13,6 +14,70 @@ const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mq
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
+
+// FAQ data for AI search optimization (FAQ schema injected per page)
+const faqData: Record<string, { q: string; a: string }[]> = {
+  "kitchen-remodeling": [
+    { q: "How much does a kitchen remodel cost in Tampa Bay?", a: "Kitchen remodel costs in Tampa Bay typically range from $25,000 to $100,000+ depending on the scope, materials, and size of the kitchen. A mid-range kitchen remodel averages $40,000–$65,000, while a full luxury remodel with custom cabinetry and high-end appliances can exceed $100,000. Hawley Construction Co. provides free, detailed estimates tailored to your specific project." },
+    { q: "How long does a kitchen remodel take in Tampa?", a: "A typical kitchen remodel in Tampa Bay takes 4–8 weeks from demolition to completion, depending on the scope of work. Projects involving structural changes, custom cabinetry, or special-order materials may take longer. We provide a detailed project timeline before work begins." },
+    { q: "Do I need a permit for a kitchen remodel in Florida?", a: "In Florida, permits are required for kitchen remodels that involve electrical, plumbing, or structural changes. Hawley Construction Co. handles all permit applications and inspections as part of our service, so you don't have to worry about compliance." },
+    { q: "What is the best countertop material for a Tampa Bay kitchen?", a: "Quartz is the most popular countertop choice for Tampa Bay kitchens because it resists heat, stains, and humidity better than natural stone. Granite is also an excellent choice for its durability and natural beauty. We help homeowners select the best material for their lifestyle and budget during our design consultation." },
+  ],
+  "bathroom-remodeling": [
+    { q: "How much does a bathroom remodel cost in Tampa Bay?", a: "Bathroom remodel costs in Tampa Bay range from $10,000 for a basic guest bath update to $50,000+ for a full master bathroom renovation with luxury finishes. The average master bath remodel runs $20,000–$35,000. We provide free estimates with transparent, itemized pricing." },
+    { q: "How long does a bathroom renovation take?", a: "A standard bathroom remodel typically takes 2–4 weeks. A full master bathroom renovation with custom tile, new plumbing fixtures, and custom vanity can take 4–6 weeks. We keep you informed of the timeline throughout the project." },
+    { q: "Can you convert a tub to a walk-in shower in Tampa?", a: "Yes — tub-to-shower conversions are one of our most popular bathroom remodeling services in Tampa Bay. We handle all plumbing modifications, waterproofing, tile installation, and glass enclosure installation. This is a great way to modernize your bathroom and add value to your home." },
+    { q: "What tile is best for a Florida bathroom?", a: "Large-format porcelain tile is the top choice for Florida bathrooms because it resists humidity, is easy to clean, and creates a seamless, spa-like look. Marble-look porcelain is extremely popular in Tampa Bay for its luxury appearance without the maintenance of real stone." },
+  ],
+  "home-additions": [
+    { q: "How much does a home addition cost in Tampa Bay?", a: "Home addition costs in Tampa Bay typically range from $150 to $300+ per square foot, depending on the complexity of the addition, materials, and finishes. A 400 sq ft master suite addition might cost $80,000–$120,000. Hawley Construction Co. provides free, detailed estimates for all home addition projects." },
+    { q: "Do I need a permit for a home addition in Florida?", a: "Yes — all home additions in Florida require building permits. Hawley Construction Co. handles the entire permit process, including architectural plans, permit applications, and all required inspections, so you can focus on enjoying your new space." },
+    { q: "How long does a home addition take to build?", a: "A typical home addition takes 3–6 months from permit approval to completion, depending on size and complexity. Second-story additions and larger projects may take longer. We provide a detailed project schedule before construction begins." },
+    { q: "Will a home addition match the rest of my house?", a: "Absolutely. Matching your existing home's architecture, roofline, exterior materials, and interior finishes is a top priority for every addition we build. We carefully select materials and details that make the addition look like it was always part of the original home." },
+  ],
+  "full-home-remodels": [
+    { q: "How much does a full home remodel cost in Tampa Bay?", a: "Full home remodel costs in Tampa Bay vary widely based on the size of the home and scope of work. Most whole-home renovations range from $100,000 to $400,000+. We provide a detailed, room-by-room estimate after an initial consultation and walkthrough." },
+    { q: "How long does a full home remodel take?", a: "A full home remodel typically takes 4–12 months depending on the scope of work. We develop a detailed project schedule and keep you informed of progress throughout the renovation." },
+    { q: "Can I live in my home during a full remodel?", a: "This depends on the scope of the project. For phased remodels, we often structure the work so you can remain in the home. For extensive renovations involving the kitchen, multiple bathrooms, or structural work, temporary relocation may be more comfortable. We discuss this during the planning phase." },
+    { q: "Do you handle open-concept conversions in Tampa Bay homes?", a: "Yes — open-concept conversions are one of our most requested full-home remodel services. We handle structural assessments, load-bearing wall removal, beam installation, and all finishing work to create a seamless open floor plan." },
+  ],
+  "sunrooms": [
+    { q: "How much does a sunroom cost in Tampa Bay?", a: "Sunroom additions in Tampa Bay typically cost between $30,000 and $80,000 depending on size, glass system, and finishes. A basic three-season room starts around $25,000, while a fully climate-controlled four-season sunroom with premium glass can exceed $80,000. We provide free estimates." },
+    { q: "Do sunrooms add value to a home in Florida?", a: "Yes — sunrooms are one of the best home additions for Florida properties. They add usable square footage, enhance indoor-outdoor living, and typically return 50–70% of their cost in added home value. In Tampa Bay's competitive real estate market, a well-built sunroom is a strong selling point." },
+    { q: "Do I need a permit for a sunroom in Florida?", a: "Yes — sunroom additions require building permits in Florida. Hawley Construction Co. manages the entire permit process, including structural engineering if required, permit applications, and all inspections." },
+    { q: "What is the difference between a sunroom and a Florida room?", a: "A Florida room (also called a screen room or lanai) is typically screened rather than fully enclosed with glass. A sunroom uses glass walls and roof panels to create a fully enclosed, climate-controlled space. Hawley Construction Co. builds both, and we help you choose the right option for your lifestyle and budget." },
+  ],
+  "outdoor-living": [
+    { q: "How much does an outdoor living space cost in Tampa Bay?", a: "Outdoor living space projects in Tampa Bay range from $15,000 for a basic covered patio to $80,000+ for a full outdoor kitchen, pergola, fire pit, and entertainment area. The average outdoor living project runs $25,000–$50,000. We provide free, detailed estimates." },
+    { q: "What is the best material for an outdoor kitchen in Florida?", a: "Stainless steel appliances and concrete block or stone construction are the best choices for outdoor kitchens in Florida due to their resistance to heat, humidity, and salt air. We design outdoor kitchens that are built to withstand Florida's climate while looking beautiful year-round." },
+    { q: "Do I need a permit for a pergola or outdoor kitchen in Florida?", a: "Permits are typically required for permanent structures like pergolas, covered patios, and outdoor kitchens in Florida. Hawley Construction Co. handles all permitting as part of our outdoor living projects." },
+    { q: "How do I maintain an outdoor living space in Tampa Bay?", a: "Florida's heat and humidity require some specific maintenance. We recommend annual sealing of natural stone and pavers, regular cleaning of outdoor kitchen appliances, and periodic inspection of electrical connections. We provide maintenance guidance for every project we complete." },
+  ],
+  "patios": [
+    { q: "How much does a patio cost in Tampa Bay?", a: "Patio installation costs in Tampa Bay range from $8,000 to $40,000+ depending on size, materials, and complexity. A basic paver patio averages $12,000–$20,000, while a multi-level patio with built-in features can cost significantly more. We provide free estimates." },
+    { q: "What is the best patio material for Florida?", a: "Concrete pavers and porcelain tile are the most popular patio materials in Tampa Bay because they handle heat, humidity, and rain well. Travertine is also popular for its natural beauty and cool surface temperature underfoot. We help you select the best material for your project." },
+    { q: "How long does patio installation take?", a: "A standard patio installation takes 1–2 weeks depending on size and complexity. Projects involving excavation, drainage work, or large-format tile may take longer. We provide a detailed timeline before work begins." },
+    { q: "Do I need a permit for a patio in Florida?", a: "Permits are required for some patio projects in Florida, particularly those involving covered structures or significant grading. Hawley Construction Co. determines permit requirements and handles all applications as part of our service." },
+  ],
+  "windows-doors": [
+    { q: "How much do impact windows cost in Tampa Bay?", a: "Impact window replacement in Tampa Bay typically costs $800–$1,500 per window installed, depending on size and style. A full home window replacement averages $15,000–$40,000. The investment pays off through lower insurance premiums, improved energy efficiency, and hurricane protection." },
+    { q: "Are impact windows required in Tampa Bay?", a: "Florida building codes require impact-rated or protected windows in new construction and major renovations in wind-borne debris regions, which includes most of Tampa Bay. Even if not required, impact windows are strongly recommended for hurricane protection and can significantly reduce homeowner's insurance premiums." },
+    { q: "How long does window replacement take?", a: "Most window replacement projects take 1–3 days for a standard home. Larger homes or projects involving custom-sized windows may take longer. We work efficiently to minimize disruption to your daily routine." },
+    { q: "Do impact windows reduce energy bills in Florida?", a: "Yes — impact windows with Low-E glass coatings significantly reduce heat gain, which is the primary driver of cooling costs in Florida. Most Tampa Bay homeowners see a noticeable reduction in their electric bills after impact window installation." },
+  ],
+  "custom-cabinetry": [
+    { q: "How much does custom cabinetry cost in Tampa Bay?", a: "Custom cabinetry in Tampa Bay typically costs $500–$1,500+ per linear foot installed, depending on materials, finishes, and complexity. A full custom kitchen cabinet installation averages $25,000–$60,000. We provide detailed estimates based on your specific design." },
+    { q: "What is the difference between custom and semi-custom cabinets?", a: "Custom cabinets are built to your exact specifications — any size, any configuration, any finish. Semi-custom cabinets are factory-built in standard sizes with limited customization options. Custom cabinetry maximizes your space, lasts longer, and delivers a truly unique result." },
+    { q: "How long does custom cabinetry take to build and install?", a: "Custom cabinetry typically takes 6–10 weeks from design approval to installation. This includes fabrication time and finishing. We coordinate the installation with the rest of your remodel timeline to keep the project on schedule." },
+    { q: "What wood species are best for kitchen cabinets in Florida?", a: "Maple and cherry are popular choices for Tampa Bay kitchens because they are stable in Florida's humidity. Painted MDF cabinets are also excellent for humid environments as they resist warping better than solid wood. We recommend the best materials based on your kitchen's conditions." },
+  ],
+  "trex-decks": [
+    { q: "How much does a Trex deck cost in Tampa Bay?", a: "Trex composite deck installation in Tampa Bay typically costs $35–$60 per square foot installed, including framing, decking, and railing. A 400 sq ft deck averages $14,000–$24,000. While the upfront cost is higher than pressure-treated wood, Trex requires virtually no maintenance and carries a 25-year warranty." },
+    { q: "Why choose Trex over wood decking in Florida?", a: "Florida's climate is hard on traditional wood decks — the heat, humidity, UV exposure, and termites cause warping, cracking, fading, and rot. Trex composite decking resists all of these issues — it won't warp, crack, splinter, rot, or fade. It never needs painting, staining, or sealing, making it the ideal low-maintenance choice for Tampa Bay homeowners." },
+    { q: "How long does Trex deck installation take?", a: "A standard Trex deck installation takes 1–2 weeks depending on size and complexity. Projects requiring permits, complex framing, or custom features may take longer. We handle all permitting and provide a detailed project timeline." },
+    { q: "Does Trex decking get hot in Florida sun?", a: "Trex decking does absorb heat in direct sunlight, as does any dark-colored surface. However, Trex's newer product lines are engineered with heat-dispersing technology that keeps surface temperatures more comfortable than older composite products. Choosing lighter colors and adding shade structures can also significantly reduce surface temperature." },
+  ],
+};
 
 const serviceData: Record<string, {
   title: string; tagline: string; img: string; metaDesc: string;
@@ -120,10 +185,94 @@ const serviceData: Record<string, {
   },
 };
 
+// FAQ Accordion component
+function FaqAccordion({ faqs }: { faqs: { q: string; a: string }[] }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  return (
+    <div className="mt-12">
+      <span className="section-divider" />
+      <h2
+        className="text-2xl font-bold mb-6"
+        style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.01 250)" }}
+      >
+        Frequently Asked Questions
+      </h2>
+      <div className="flex flex-col gap-2">
+        {faqs.map((faq, i) => (
+          <div
+            key={i}
+            className="border bg-white overflow-hidden"
+            style={{ borderColor: "oklch(0.88 0.005 250)", borderRadius: "2px" }}
+          >
+            <button
+              className="w-full flex items-center justify-between px-5 py-4 text-left gap-4"
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              aria-expanded={openIndex === i}
+            >
+              <span
+                className="font-semibold text-sm leading-snug"
+                style={{ color: "oklch(0.22 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {faq.q}
+              </span>
+              <ChevronDown
+                size={16}
+                className="flex-shrink-0 transition-transform duration-200"
+                style={{
+                  color: "oklch(0.55 0.065 82)",
+                  transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)",
+                }}
+              />
+            </button>
+            {openIndex === i && (
+              <div
+                className="px-5 pb-4 text-sm leading-relaxed"
+                style={{ color: "oklch(0.5 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {faq.a}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ServiceDetail() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug || "";
   const service = serviceData[slug];
+  const faqs = faqData[slug] || [];
+
+  // Inject FAQ schema for AI search engines + set page title
+  useEffect(() => {
+    if (service) {
+      document.title = `${service.title} | Hawley Construction Co.`;
+    }
+    if (faqs.length > 0) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      };
+      const existing = document.getElementById("faq-schema");
+      if (existing) existing.remove();
+      const script = document.createElement("script");
+      script.id = "faq-schema";
+      script.type = "application/ld+json";
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+    return () => {
+      const existing = document.getElementById("faq-schema");
+      if (existing) existing.remove();
+    };
+  }, [slug]);
 
   if (!service) {
     return (
@@ -199,6 +348,7 @@ export default function ServiceDetail() {
                   {para}
                 </p>
               ))}
+              {faqs.length > 0 && <FaqAccordion faqs={faqs} />}
             </div>
 
             {/* Sidebar */}

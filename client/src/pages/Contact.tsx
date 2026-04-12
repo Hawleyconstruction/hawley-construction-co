@@ -50,14 +50,36 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    setTimeout(() => {
+    setError("");
+    try {
+      const res = await fetch("https://formspree.io/f/mrerzpzj", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          county: formData.county,
+          projectType: formData.projectType,
+          message: formData.message,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json();
+        setError(data?.errors?.[0]?.message || "Something went wrong. Please try again or call us directly.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 1200);
+    }
   };
 
   const inputStyle = {
@@ -397,6 +419,14 @@ export default function Contact() {
                     {loading ? "Sending..." : "Request Free Estimate"}
                   </button>
 
+                  {error && (
+                    <p
+                      className="text-sm text-center mt-3 font-medium"
+                      style={{ color: "oklch(0.55 0.18 27)", fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {error}
+                    </p>
+                  )}
                   <p
                     className="text-xs text-center mt-4"
                     style={{ color: "oklch(0.65 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}

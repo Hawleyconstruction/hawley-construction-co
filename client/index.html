@@ -10,7 +10,17 @@
     <meta property="og:title" content="Hawley Construction Co. | Premium Home Remodeling Tampa Bay" />
     <meta property="og:description" content="Transforming homes across Tampa Bay with high-quality kitchens, bathrooms, additions & outdoor living spaces." />
     <meta property="og:type" content="website" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <!-- AI Crawler Permissions -->
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="ChatGPT-User" content="index, follow" />
+    <meta name="GPTBot" content="index, follow" />
+    <meta name="PerplexityBot" content="index, follow" />
+    <meta name="ClaudeBot" content="index, follow" />
+    <meta name="anthropic-ai" content="index, follow" />
+    <meta name="Applebot" content="index, follow" />
+    <meta name="facebookexternalhit" content="index, follow" />
 
     <!-- Apple / Safari Optimization -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,26 +68,60 @@
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": "https://hawleyconstruction.co/#business",
     "name": "Hawley Construction Co.",
+    "alternateName": "Hawley Construction",
     "url": "https://hawleyconstruction.co",
     "telephone": "+17046191480",
     "email": "hawleyconstructioncompany@gmail.com",
-    "description": "Tampa Bay's premier remodeling contractor specializing in kitchens, bathrooms, home additions, sunrooms, outdoor living spaces, and Trex decks.",
+    "description": "Tampa Bay's premier home remodeling contractor specializing in kitchens, bathrooms, home additions, sunrooms, outdoor living spaces, and Trex composite decks. Serving Tampa, St. Petersburg, Clearwater, Brandon, Wesley Chapel, and all of Tampa Bay, Florida.",
+    "slogan": "Transforming Homes Across Tampa Bay",
+    "foundingLocation": "Saint Petersburg, Florida",
     "areaServed": [
-      "Tampa", "St. Petersburg", "Clearwater", "Bradenton", "Sarasota", "Tarpon Springs", "St. Pete Beach"
+      {"@type": "City", "name": "Tampa", "sameAs": "https://en.wikipedia.org/wiki/Tampa,_Florida"},
+      {"@type": "City", "name": "St. Petersburg", "sameAs": "https://en.wikipedia.org/wiki/St._Petersburg,_Florida"},
+      {"@type": "City", "name": "Clearwater", "sameAs": "https://en.wikipedia.org/wiki/Clearwater,_Florida"},
+      {"@type": "City", "name": "Brandon"},
+      {"@type": "City", "name": "Wesley Chapel"},
+      {"@type": "City", "name": "Bradenton"},
+      {"@type": "City", "name": "Sarasota"},
+      {"@type": "City", "name": "Tarpon Springs"},
+      {"@type": "City", "name": "Land O Lakes"},
+      {"@type": "City", "name": "Riverview"}
     ],
-    "serviceType": [
-      "Kitchen Remodeling", "Bathroom Remodeling", "Home Additions", "Full Home Remodel",
-      "Sunrooms", "Outdoor Living Spaces", "Patio Construction", "Windows and Doors",
-      "Custom Cabinetry", "Trex Deck Installation"
-    ],
-    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Remodeling Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Remodeling", "url": "https://hawleyconstruction.co/services/kitchen-remodeling", "description": "Complete kitchen transformations including custom cabinetry, countertops, tile, islands, and lighting."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Remodeling", "url": "https://hawleyconstruction.co/services/bathroom-remodeling", "description": "Luxury bathroom renovations with walk-in showers, soaking tubs, double vanities, and custom tile."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Home Additions", "url": "https://hawleyconstruction.co/services/home-additions", "description": "Room additions, master suite expansions, second-story additions, and garage conversions."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Home Remodels", "url": "https://hawleyconstruction.co/services/full-home-remodels", "description": "Whole-home renovations combining multiple trades under one contract."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sunrooms & Florida Rooms", "url": "https://hawleyconstruction.co/services/sunrooms", "description": "Custom screened porches, glass sunrooms, and Florida rooms built for Tampa Bay's climate."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Outdoor Living Spaces", "url": "https://hawleyconstruction.co/services/outdoor-living", "description": "Custom outdoor kitchens, pergolas, fire pits, and resort-style backyard living spaces."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Patio Installation", "url": "https://hawleyconstruction.co/services/patios", "description": "Concrete, paver, and travertine patio installations with optional pergola covers."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Impact Windows & Doors", "url": "https://hawleyconstruction.co/services/windows-doors", "description": "Hurricane-rated impact windows and doors for Tampa Bay homes."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Cabinetry", "url": "https://hawleyconstruction.co/services/custom-cabinetry", "description": "Semi-custom and fully custom cabinetry for kitchens, bathrooms, and built-ins."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Trex Composite Deck Installation", "url": "https://hawleyconstruction.co/services/trex-decks", "description": "Certified Trex installer offering composite deck construction with 25-year warranty."}}
+      ]
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "Landon Hawley",
+      "jobTitle": "Owner & General Contractor",
+      "worksFor": {"@id": "https://hawleyconstruction.co/#business"},
+      "knowsAbout": ["Kitchen Remodeling", "Bathroom Remodeling", "Home Additions", "Outdoor Living", "Trex Decking", "Residential Construction", "Florida Building Code"]
+    },
+    "priceRange": "$$–$$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Check, Credit Card, Financing",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Saint Petersburg",
       "addressRegion": "FL",
+      "postalCode": "33704",
       "addressCountry": "US"
     },
-    "sameAs": [],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 27.7676,
@@ -90,6 +134,83 @@
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "08:00",
         "closes": "18:00"
+      }
+    ],
+    "sameAs": ["https://hawleyconstruction.co"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://hawleyconstruction.co/#website",
+    "name": "Hawley Construction Co.",
+    "url": "https://hawleyconstruction.co",
+    "description": "Tampa Bay's premier home remodeling contractor — kitchens, bathrooms, additions, sunrooms, outdoor living, and Trex decks.",
+    "publisher": {"@id": "https://hawleyconstruction.co/#business"},
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://hawleyconstruction.co/services?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", ".speakable"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What home remodeling services does Hawley Construction offer in Tampa Bay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hawley Construction Co. offers kitchen remodeling, bathroom remodeling, home additions, full home remodels, sunrooms, outdoor living spaces, patio installation, impact windows and doors, custom cabinetry, and Trex composite deck installation throughout Tampa Bay, Florida."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a kitchen remodel cost in Tampa Bay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kitchen remodels in Tampa Bay typically range from $25,000 to $80,000 depending on size, materials, and scope. A mid-range kitchen remodel averages $40,000–$55,000. Hawley Construction offers free in-home estimates at (704) 619-1480."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Hawley Construction licensed and insured in Florida?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Hawley Construction Co. is a fully licensed and insured general contractor in the state of Florida, compliant with all Florida Building Code requirements for residential remodeling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas of Tampa Bay does Hawley Construction serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hawley Construction serves all of Tampa Bay including Tampa, St. Petersburg, Clearwater, Brandon, Wesley Chapel, Bradenton, Sarasota, Tarpon Springs, Land O' Lakes, Riverview, Dunedin, Palm Harbor, and surrounding communities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Hawley Construction offer free estimates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Hawley Construction Co. offers free, no-obligation in-home estimates for all remodeling projects. Call (704) 619-1480 or request online at hawleyconstruction.co/contact."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is the owner of Hawley Construction Co.?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hawley Construction Co. is owned and operated by Landon Hawley, a licensed general contractor who personally oversees every remodeling project in Tampa Bay."
+        }
       }
     ]
   }

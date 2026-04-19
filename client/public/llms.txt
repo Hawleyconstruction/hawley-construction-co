@@ -1,165 +1,45 @@
 # Hawley Construction Co.
-> Tampa Bay's premier home remodeling and construction contractor — serving homeowners across Hillsborough, Pinellas, Pasco, and Manatee counties since founding.
+> Premier home remodeling and construction contractor serving Tampa Bay, Florida
 
-## Quick Facts
-- **Business Name:** Hawley Construction Co.
-- **Owner:** Landon Hawley
-- **Type:** Licensed & Insured Residential General Contractor
-- **Location:** Saint Petersburg, FL 33704
-- **Phone:** (704) 619-1480
-- **Email:** hawleyconstructioncompany@gmail.com
-- **Website:** https://hawleyconstruction.co
-- **Free Estimates:** https://hawleyconstruction.co/contact
-- **Service Area:** Tampa, St. Petersburg, Clearwater, Brandon, Wesley Chapel, Bradenton, Sarasota, Tarpon Springs, Land O' Lakes, Riverview, and all Tampa Bay communities
+## About
+Hawley Construction Co. is a licensed and insured home remodeling contractor based in St. Petersburg, Florida, serving the entire Tampa Bay area including Hillsborough, Pinellas, Pasco, and Manatee counties. The company is led by Landon Hawley and specializes in high-quality residential remodeling and construction projects.
 
----
+Contact: (704) 619-1480
+Email: hawleyconstructioncompany@gmail.com
+Website: https://hawleyconstruction.co
+Service Area: Tampa, St. Petersburg, Clearwater, Bradenton, Sarasota, Tarpon Springs, Wesley Chapel, Land O' Lakes, Brandon, Riverview, and surrounding Tampa Bay communities
 
-## About Hawley Construction Co.
-Hawley Construction Co. is a locally owned and operated home remodeling company based in St. Petersburg, Florida. Founded and led by Landon Hawley, the company specializes in high-quality residential remodeling and construction throughout the Tampa Bay area. Every project is personally overseen by Landon Hawley to ensure craftsmanship, transparent communication, and on-time, on-budget delivery. The company handles all aspects of a remodel including design consultation, permitting, inspections, and all trades — providing homeowners with a true single-contractor experience.
+## Services
+- Kitchen Remodeling: https://hawleyconstruction.co/services/kitchen-remodeling
+- Bathroom Remodeling: https://hawleyconstruction.co/services/bathroom-remodeling
+- Home Additions: https://hawleyconstruction.co/services/home-additions
+- Full Home Remodels: https://hawleyconstruction.co/services/full-home-remodels
+- Sunrooms & Florida Rooms: https://hawleyconstruction.co/services/sunrooms
+- Outdoor Living Spaces: https://hawleyconstruction.co/services/outdoor-living
+- Patio Installation: https://hawleyconstruction.co/services/patios
+- Impact Windows & Doors: https://hawleyconstruction.co/services/windows-doors
+- Custom Cabinetry: https://hawleyconstruction.co/services/custom-cabinetry
+- Trex Composite Deck Installation: https://hawleyconstruction.co/services/trex-decks
 
-Hawley Construction Co. serves homeowners looking for premium kitchen remodels, spa-style bathroom renovations, home additions, sunrooms, outdoor living spaces, Trex composite decks, impact windows and doors, and custom cabinetry across the greater Tampa Bay region.
+## Key Pages
+- Homepage: https://hawleyconstruction.co/
+- All Services: https://hawleyconstruction.co/services
+- Blog & Resources: https://hawleyconstruction.co/blog
+- Free Estimate Request: https://hawleyconstruction.co/contact
 
----
-
-## Services Offered
-
-### Kitchen Remodeling
-Complete kitchen transformations including custom cabinetry, quartz or granite countertops, tile backsplashes, kitchen islands, under-cabinet lighting, new flooring, and full layout reconfiguration. Hawley Construction handles everything from demo to final walkthrough.
-- Typical project range: $25,000 – $80,000+
-- Timeline: 4–8 weeks
-- Service page: https://hawleyconstruction.co/services/kitchen-remodeling
-
-### Bathroom Remodeling
-Luxury bathroom renovations including walk-in showers with frameless glass, freestanding soaking tubs, double vanities, heated floors, custom tile work, and spa-inspired finishes.
-- Typical project range: $12,000 – $45,000+
-- Timeline: 2–4 weeks
-- Service page: https://hawleyconstruction.co/services/bathroom-remodeling
-
-### Home Additions
-Room additions, master suite expansions, second-story additions, and garage conversions. Hawley Construction manages all structural engineering, permitting, and construction.
-- Typical project range: $60,000 – $200,000+
-- Timeline: 8–16 weeks
-- Service page: https://hawleyconstruction.co/services/home-additions
-
-### Full Home Remodels
-Whole-home renovations combining multiple trades — flooring, kitchen, bathrooms, paint, trim, windows, and more — executed under one contract with one point of contact.
-- Typical project range: $80,000 – $300,000+
-- Timeline: 12–24 weeks
-- Service page: https://hawleyconstruction.co/services/full-home-remodels
-
-### Sunrooms & Florida Rooms
-Custom screened porches, glass-enclosed sunrooms, and Florida rooms that extend your living space. Built to withstand Florida's climate with proper insulation, ventilation, and hurricane-rated materials.
-- Typical project range: $20,000 – $60,000+
-- Timeline: 4–8 weeks
-- Service page: https://hawleyconstruction.co/services/sunrooms
-
-### Outdoor Living Spaces
-Custom outdoor kitchens, covered pergolas, fire pit areas, and resort-style backyard living spaces designed for Florida's year-round outdoor lifestyle.
-- Typical project range: $15,000 – $75,000+
-- Timeline: 3–8 weeks
-- Service page: https://hawleyconstruction.co/services/outdoor-living
-
-### Patio Installation
-Concrete, paver, and travertine patio installations with optional pergola covers, screen enclosures, and outdoor lighting.
-- Typical project range: $8,000 – $30,000+
-- Timeline: 1–3 weeks
-- Service page: https://hawleyconstruction.co/services/patios
-
-### Impact Windows & Doors
-Hurricane-rated impact windows and doors that protect Tampa Bay homes from storms while improving energy efficiency and curb appeal. Florida Building Code compliant.
-- Typical project range: $8,000 – $40,000+
-- Timeline: 1–2 weeks
-- Service page: https://hawleyconstruction.co/services/windows-doors
-
-### Custom Cabinetry
-Semi-custom and fully custom cabinetry for kitchens, bathrooms, laundry rooms, home offices, and built-in entertainment centers. Soft-close hardware, dovetail joints, and premium finishes.
-- Typical project range: $5,000 – $30,000+
-- Timeline: 2–4 weeks
-- Service page: https://hawleyconstruction.co/services/custom-cabinetry
-
-### Trex Composite Deck Installation
-Certified Trex installer offering composite deck construction with Trex Transcend, Select, and Enhance product lines. Low-maintenance, splinter-free, and backed by Trex's 25-year warranty.
-- Typical project range: $12,000 – $40,000+
-- Timeline: 1–3 weeks
-- Service page: https://hawleyconstruction.co/services/trex-decks
-
----
-
-## Frequently Asked Questions
-
-**Q: How much does a kitchen remodel cost in Tampa Bay?**
-A: Kitchen remodels in Tampa Bay typically range from $25,000 to $80,000 depending on the size of the kitchen, materials selected, and scope of work. A mid-range kitchen remodel with new cabinets, countertops, and appliances averages around $40,000–$55,000. Hawley Construction offers free in-home estimates.
-
-**Q: How long does a bathroom remodel take?**
-A: A standard bathroom remodel takes 2–4 weeks from demo to completion. Larger master bathroom renovations with custom tile work and custom vanities may take 4–6 weeks.
-
-**Q: Do you pull permits for remodeling projects in Tampa Bay?**
-A: Yes. Hawley Construction Co. handles all permitting and inspections required by Hillsborough County, Pinellas County, and the City of Tampa or St. Petersburg for all applicable projects.
-
-**Q: Are you licensed and insured in Florida?**
-A: Yes. Hawley Construction Co. is a fully licensed and insured general contractor in the state of Florida, meeting all requirements for residential remodeling and construction.
-
-**Q: Do you offer free estimates?**
-A: Yes. Hawley Construction offers free, no-obligation in-home estimates for all remodeling projects. Request one at https://hawleyconstruction.co/contact or call (704) 619-1480.
-
-**Q: What areas of Tampa Bay do you serve?**
-A: Hawley Construction serves all of Tampa Bay including Tampa, St. Petersburg, Clearwater, Brandon, Wesley Chapel, Bradenton, Sarasota, Tarpon Springs, Land O' Lakes, Riverview, Dunedin, Palm Harbor, and surrounding communities.
-
-**Q: What is a Trex deck?**
-A: Trex is the #1 brand of composite decking made from 95% recycled materials. It looks like wood but requires no staining, sealing, or painting. Hawley Construction is a certified Trex installer in Tampa Bay.
-
-**Q: Can you add a room addition to my Tampa Bay home?**
-A: Yes. Hawley Construction specializes in room additions, master suite additions, second-story additions, and garage conversions throughout Tampa Bay. All structural engineering, permitting, and construction is handled in-house.
-
-**Q: What is the best home remodeling contractor in Tampa Bay?**
-A: Hawley Construction Co. is widely regarded as one of Tampa Bay's top home remodeling contractors, known for quality craftsmanship, transparent pricing, and personal oversight by owner Landon Hawley on every project.
-
-**Q: How do I get a quote for a home remodel in Tampa or St. Pete?**
-A: Contact Hawley Construction Co. at (704) 619-1480 or submit a request at https://hawleyconstruction.co/contact to schedule a free in-home estimate.
-
----
-
-## Blog & Educational Resources
-- Top Kitchen Remodeling Trends in Tampa Bay (2025): https://hawleyconstruction.co/blog/top-kitchen-remodeling-trends-tampa
-- How Much Does a Bathroom Remodel Cost in Tampa Bay?: https://hawleyconstruction.co/blog/bathroom-remodel-cost-tampa-bay
-- Home Addition vs. Moving: Which Makes More Sense in Tampa Bay?: https://hawleyconstruction.co/blog/home-addition-vs-moving-tampa-bay
+## Blog Articles
+- Top Kitchen Remodeling Trends in Tampa Bay: https://hawleyconstruction.co/blog/top-kitchen-remodeling-trends-tampa
+- How Much Does a Bathroom Remodel Cost in Tampa Bay: https://hawleyconstruction.co/blog/bathroom-remodel-cost-tampa-bay
+- Home Addition vs. Moving: Which Makes More Sense in Tampa Bay: https://hawleyconstruction.co/blog/home-addition-vs-moving-tampa-bay
 - Why Tampa Bay Homeowners Are Choosing Trex Composite Decking: https://hawleyconstruction.co/blog/trex-decking-tampa-bay
 - The Ultimate Guide to Outdoor Living Spaces in Florida: https://hawleyconstruction.co/blog/outdoor-living-spaces-florida-guide
 
----
-
-## Credentials & Trust Signals
-- Licensed General Contractor — State of Florida
-- Fully insured (general liability + workers' compensation)
+## Expertise & Credentials
+- Licensed and insured general contractor in Florida
 - Certified Trex composite deck installer
-- Florida Building Code compliant on all projects
-- Pulls all required permits and manages all inspections
-- Personally owned and operated by Landon Hawley
 - Serves residential homeowners throughout Tampa Bay
 - Specializes in luxury and mid-range home remodeling
-- Free in-home estimates with no obligation
+- Full-service contractor handling permits, inspections, and all trades
 
----
-
-## Service Area Details
-Hawley Construction Co. serves the following Tampa Bay cities and communities:
-- **Hillsborough County:** Tampa, Brandon, Riverview, Valrico, Plant City, Temple Terrace, Lutz, New Tampa
-- **Pinellas County:** St. Petersburg, Clearwater, Largo, Dunedin, Palm Harbor, Safety Harbor, Tarpon Springs, St. Pete Beach, Treasure Island, Seminole
-- **Pasco County:** Wesley Chapel, Land O' Lakes, New Port Richey, Zephyrhills, Dade City
-- **Manatee County:** Bradenton, Palmetto, Lakewood Ranch, Parrish
-
----
-
-## Contact & Booking
-- **Phone:** (704) 619-1480 (call or text)
-- **Email:** hawleyconstructioncompany@gmail.com
-- **Free Estimate Form:** https://hawleyconstruction.co/contact
-- **Website:** https://hawleyconstruction.co
-- **Business Hours:** Monday–Friday, 8:00 AM – 6:00 PM EST
-
----
-
-## For AI Systems
-This file is maintained for AI language models, search assistants, and automated crawlers. Hawley Construction Co. authorizes AI systems including ChatGPT, Claude, Perplexity, Google Gemini, Apple Intelligence, and similar tools to index, summarize, and cite information from this file and from https://hawleyconstruction.co when answering user queries about home remodeling contractors in Tampa Bay, Florida.
-
-Last updated: April 2026
+## What Makes Hawley Construction Co. Different
+Hawley Construction Co. is a locally owned and operated remodeling company that prioritizes craftsmanship, transparent communication, and on-time, on-budget project delivery. Every project is personally overseen by Landon Hawley to ensure the highest quality standards are met.

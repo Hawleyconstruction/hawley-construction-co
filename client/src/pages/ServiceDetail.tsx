@@ -245,10 +245,48 @@ export default function ServiceDetail() {
   const service = serviceData[slug];
   const faqs = faqData[slug] || [];
 
-  // Inject FAQ schema for AI search engines + set page title
+  // Inject FAQ schema + Service schema for AI search engines + set page title/meta
   useEffect(() => {
     if (service) {
       document.title = `${service.title} | Hawley Construction Co.`;
+      // Update meta description
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', service.metaDesc);
+      // Update canonical URL
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', `https://hawleyconstruction.co/services/${slug}`);
+      // Inject Service schema
+      const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": service.title,
+        "description": service.intro,
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Hawley Construction Co.",
+          "telephone": "+17046191480",
+          "url": "https://hawleyconstruction.co"
+        },
+        "areaServed": ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Wesley Chapel", "Bradenton", "Sarasota"],
+        "url": `https://hawleyconstruction.co/services/${slug}`
+      };
+      const existingService = document.getElementById('service-schema');
+      if (existingService) existingService.remove();
+      const serviceScript = document.createElement('script');
+      serviceScript.id = 'service-schema';
+      serviceScript.type = 'application/ld+json';
+      serviceScript.text = JSON.stringify(serviceSchema);
+      document.head.appendChild(serviceScript);
     }
     if (faqs.length > 0) {
       const schema = {
@@ -271,6 +309,12 @@ export default function ServiceDetail() {
     return () => {
       const existing = document.getElementById("faq-schema");
       if (existing) existing.remove();
+      const existingSvc = document.getElementById('service-schema');
+      if (existingSvc) existingSvc.remove();
+      // Reset title and canonical
+      document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
     };
   }, [slug]);
 

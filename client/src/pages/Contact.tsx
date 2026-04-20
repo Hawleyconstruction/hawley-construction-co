@@ -2,7 +2,7 @@
  * Contact Page — Lead capture form with all required fields
  * Phone, email, county, project type, message
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -33,6 +33,28 @@ const counties = [
 ];
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = 'Contact Hawley Construction Co. | Free Estimate Tampa Bay FL';
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', 'Contact Hawley Construction Co. for a free home remodeling estimate in Tampa Bay. Call (704) 619-1480 or fill out our form. Serving Tampa, St. Petersburg, Clearwater, Brandon & Wesley Chapel.');
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://hawleyconstruction.co/contact');
+    return () => {
+      document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
+      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
+    };
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",

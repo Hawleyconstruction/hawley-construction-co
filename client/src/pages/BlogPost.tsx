@@ -1,6 +1,7 @@
 /**
  * BlogPost Page — Individual article with full SEO-optimized content
  */
+import { useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { ArrowLeft, Calendar, Clock, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -96,6 +97,61 @@ export default function BlogPost() {
   }
 
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+
+  // SEO: Set page title, meta description, and inject Article schema
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Hawley Construction Co. Blog`;
+      // Update meta description
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', post.excerpt);
+      // Update canonical URL
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', `https://hawleyconstruction.co/blog/${slug}`);
+      // Inject Article schema
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.img,
+        "datePublished": post.date,
+        "author": { "@type": "Person", "name": "Landon Hawley" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hawley Construction Co.",
+          "url": "https://hawleyconstruction.co"
+        },
+        "mainEntityOfPage": `https://hawleyconstruction.co/blog/${slug}`
+      };
+      const existing = document.getElementById('article-schema');
+      if (existing) existing.remove();
+      const script = document.createElement('script');
+      script.id = 'article-schema';
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+    return () => {
+      const existing = document.getElementById('article-schema');
+      if (existing) existing.remove();
+      // Reset title
+      document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
+      // Reset canonical
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
+    };
+  }, [slug, post]);
 
   return (
     <div className="min-h-screen bg-cream">

@@ -1,6 +1,7 @@
 /**
  * Blog Page — SEO-optimized articles for Tampa Bay construction topics
  */
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -63,6 +64,28 @@ export const blogPosts = [
 
 export default function Blog() {
   const [featured, ...rest] = blogPosts;
+
+  useEffect(() => {
+    document.title = 'Home Remodeling Blog Tampa Bay | Tips & Trends | Hawley Construction';
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', 'Expert home remodeling tips, cost guides, and design trends for Tampa Bay homeowners. Kitchen remodeling, bathroom renovation, Trex decks, sunrooms & more from Hawley Construction Co.');
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://hawleyconstruction.co/blog');
+    return () => {
+      document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
+      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-cream">

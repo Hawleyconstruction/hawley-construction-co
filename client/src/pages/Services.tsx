@@ -2,6 +2,7 @@
  * Services Page — Modern Craftsman Design
  * Full grid of all 10 services with descriptions and CTAs
  */
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -98,6 +99,28 @@ const services = [
 ];
 
 export default function Services() {
+  useEffect(() => {
+    document.title = 'Home Remodeling Services Tampa Bay | Hawley Construction Co.';
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', 'Explore all home remodeling services by Hawley Construction Co. in Tampa Bay: kitchen remodeling, bathroom renovation, home additions, sunrooms, Trex decks, outdoor living, custom cabinetry, windows & doors. Free estimates.');
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://hawleyconstruction.co/services');
+    return () => {
+      document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
+      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-cream">
       <Navbar />

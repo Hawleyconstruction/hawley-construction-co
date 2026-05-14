@@ -21,8 +21,13 @@ const services = [
 ];
 
 const serviceAreas = [
-  "Tampa", "St. Pete Beach", "St. Petersburg",
-  "Clearwater", "Bradenton", "Tarpon Springs", "Sarasota",
+  { label: "Tampa", href: "/areas/tampa" },
+  { label: "St. Petersburg", href: "/areas/st-petersburg" },
+  { label: "Clearwater", href: "/areas/clearwater" },
+  { label: "Bradenton", href: "" },
+  { label: "Tarpon Springs", href: "" },
+  { label: "Sarasota", href: "" },
+  { label: "Wesley Chapel", href: "" },
 ];
 
 export default function Footer() {
@@ -112,12 +117,23 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-2">
               {serviceAreas.map((area) => (
-                <li
-                  key={area}
-                  className="text-sm"
-                  style={{ color: "oklch(0.7 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  {area}
+                <li key={area.label}>
+                  {area.href ? (
+                    <Link
+                      href={area.href}
+                      className="text-sm transition-colors hover:text-gold"
+                      style={{ color: "oklch(0.7 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {area.label}
+                    </Link>
+                  ) : (
+                    <span
+                      className="text-sm"
+                      style={{ color: "oklch(0.7 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {area.label}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -135,6 +151,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Services", href: "/services" },
+                { label: "FAQ", href: "/faq" },
                 { label: "Blog", href: "/blog" },
                 { label: "Contact Us", href: "/contact" },
               ].map((link) => (

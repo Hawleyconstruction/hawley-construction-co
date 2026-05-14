@@ -32,7 +32,17 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
 Sitemap: https://hawleyconstruction.co/sitemap.xml
 
 # AI-readable business information
 # https://hawleyconstruction.co/llms.txt
+# https://hawleyconstruction.co/llms-full.txt

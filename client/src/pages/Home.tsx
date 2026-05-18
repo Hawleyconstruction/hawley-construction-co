@@ -346,7 +346,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Asymmetric gallery grid */}
+          {/* Asymmetric gallery grid with new after photos */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
             <div
               className={`md:col-span-7 img-zoom overflow-hidden transition-all duration-700 ${
@@ -355,8 +355,8 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src={HERO_IMG}
-                alt="Luxury kitchen remodel Tampa"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp"
+                alt="Kitchen remodel after - Tampa Bay"
                 className="w-full h-72 md:h-96 object-cover"
               />
             </div>
@@ -367,35 +367,58 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src={BATHROOM_IMG}
-                alt="Luxury bathroom remodel Tampa"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp"
+                alt="Bathroom remodel after - Tampa Bay"
                 className="w-full h-72 md:h-96 object-cover"
               />
             </div>
             <div
-              className={`md:col-span-5 img-zoom overflow-hidden transition-all duration-700 delay-200 ${
+              className={`md:col-span-4 img-zoom overflow-hidden transition-all duration-700 delay-200 ${
                 gallerySection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ borderRadius: "2px" }}
             >
               <img
-                src={SUNROOM_IMG}
-                alt="Sunroom addition Tampa"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp"
+                alt="Sunroom addition after - Tampa Bay"
                 className="w-full h-64 md:h-72 object-cover"
               />
             </div>
             <div
-              className={`md:col-span-7 img-zoom overflow-hidden transition-all duration-700 delay-300 ${
+              className={`md:col-span-4 img-zoom overflow-hidden transition-all duration-700 delay-300 ${
                 gallerySection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ borderRadius: "2px" }}
             >
               <img
-                src={OUTDOOR_IMG}
-                alt="Outdoor living space Tampa"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-RFc2rKVehVEWPV5GpcVQEW.webp"
+                alt="Outdoor living space after - Tampa Bay"
                 className="w-full h-64 md:h-72 object-cover"
               />
             </div>
+            <div
+              className={`md:col-span-4 img-zoom overflow-hidden transition-all duration-700 delay-[400ms] ${
+                gallerySection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ borderRadius: "2px" }}
+            >
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-after-fHq2VWgfu4bzQ7nx4A2z86.webp"
+                alt="Trex deck installation after - Tampa Bay"
+                className="w-full h-64 md:h-72 object-cover"
+              />
+            </div>
+          </div>
+
+          {/* View All link */}
+          <div className="mt-10 text-center">
+            <Link
+              href="/our-work"
+              className="btn-gold inline-block"
+              style={{ borderRadius: "2px" }}
+            >
+              View All Before &amp; After Photos
+            </Link>
           </div>
         </div>
       </section>

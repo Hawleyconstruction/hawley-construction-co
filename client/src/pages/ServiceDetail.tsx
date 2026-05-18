@@ -15,6 +15,40 @@ const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mq
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
 
+// Before/After gallery data per service
+const galleryData: Record<string, { before: string; after: string; caption: string }[]> = {
+  "kitchen-remodeling": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-before-gnpMvGCrqpA7wDknZQaauG.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp", caption: "Full kitchen remodel — St. Petersburg, FL" },
+  ],
+  "bathroom-remodeling": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-before-dZMyaaPMs3Qj2DwkGzszKr.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp", caption: "Master bathroom renovation — Tampa, FL" },
+  ],
+  "home-additions": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-before-YQsLXFf8Tjvsq3mHHYdcNE.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp", caption: "Master suite addition — Clearwater, FL" },
+  ],
+  "full-home-remodels": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-before-LZT6cJbDV5Gbr9iEzvyULB.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp", caption: "Open-concept conversion — Bradenton, FL" },
+  ],
+  "sunrooms": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-before-DQF6ERgpuLb4xYYCEANWAu.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp", caption: "Four-season sunroom — Sarasota, FL" },
+  ],
+  "outdoor-living": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-before-Eh4Hc6m3UPYnyNDaDXQ9ot.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-RFc2rKVehVEWPV5GpcVQEW.webp", caption: "Outdoor living space — Wesley Chapel, FL" },
+  ],
+  "patios": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-before-e4kVYp9T3SGjUR9o3dUSjW.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-after-h7cpoG8DbswTBZpi7g8JDx.webp", caption: "Paver patio installation — Tarpon Springs, FL" },
+  ],
+  "windows-doors": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/windows-before-2k6UndGC9ZVFnmopH6Mn6o.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/windows-after-HxmvFRS7Fp89og6X5bEH94.webp", caption: "Impact window & door replacement — St. Petersburg, FL" },
+  ],
+  "custom-cabinetry": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-before-iuT49PM63oDBRbeWBRtgXo.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp", caption: "Custom cabinetry — Tampa, FL" },
+  ],
+  "trex-decks": [
+    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-before-fYQaEnjbn7XaRr2zAGXYsZ.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-after-fHq2VWgfu4bzQ7nx4A2z86.webp", caption: "Trex composite deck — Clearwater, FL" },
+  ],
+};
+
 // FAQ data for AI search optimization (FAQ schema injected per page)
 const faqData: Record<string, { q: string; a: string }[]> = {
   "kitchen-remodeling": [
@@ -185,6 +219,79 @@ const serviceData: Record<string, {
   },
 };
 
+// Before/After Slider component for service pages
+function BeforeAfterSlider({ item }: { item: { before: string; after: string; caption: string } }) {
+  const [sliderPos, setSliderPos] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+    setSliderPos(x);
+  };
+
+  return (
+    <div>
+      <div
+        className="relative overflow-hidden cursor-col-resize select-none"
+        style={{ borderRadius: "2px", aspectRatio: "4/3" }}
+        onMouseDown={() => setIsDragging(true)}
+        onMouseUp={() => setIsDragging(false)}
+        onMouseLeave={() => setIsDragging(false)}
+        onMouseMove={handleMove}
+        onTouchStart={() => setIsDragging(true)}
+        onTouchEnd={() => setIsDragging(false)}
+        onTouchMove={handleMove}
+      >
+        <img
+          src={item.after}
+          alt={`After - ${item.caption}`}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
+          <img
+            src={item.before}
+            alt={`Before - ${item.caption}`}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ minWidth: "100%", width: `${10000 / sliderPos}%`, maxWidth: "none" }}
+          />
+        </div>
+        <div
+          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10"
+          style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
+        >
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+              <path d="M7 4L3 10L7 16" stroke="oklch(0.22 0.01 250)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M13 4L17 10L13 16" stroke="oklch(0.22 0.01 250)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="absolute top-3 left-3 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white z-10"
+          style={{ backgroundColor: "oklch(0.35 0.01 250 / 0.8)", borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+        >
+          Before
+        </div>
+        <div
+          className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white z-10"
+          style={{ backgroundColor: "oklch(0.55 0.065 82 / 0.9)", borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+        >
+          After
+        </div>
+      </div>
+      <p
+        className="mt-2 text-sm font-medium"
+        style={{ color: "oklch(0.4 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
+      >
+        {item.caption}
+      </p>
+    </div>
+  );
+}
+
 // FAQ Accordion component
 function FaqAccordion({ faqs }: { faqs: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -244,6 +351,7 @@ export default function ServiceDetail() {
   const slug = params.slug || "";
   const service = serviceData[slug];
   const faqs = faqData[slug] || [];
+  const gallery = galleryData[slug] || [];
 
   // Inject FAQ schema + Service schema for AI search engines + set page title/meta
   useEffect(() => {
@@ -455,6 +563,41 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Before & After Gallery */}
+      {gallery.length > 0 && (
+        <section className="py-20 md:py-28" style={{ backgroundColor: "oklch(0.95 0.005 80)" }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span className="section-divider" />
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-3"
+              style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.01 250)" }}
+            >
+              Before &amp; After
+            </h2>
+            <p
+              className="text-base mb-10 max-w-xl"
+              style={{ color: "oklch(0.5 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
+            >
+              See the transformation. Drag the slider to compare.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {gallery.map((item, idx) => (
+                <BeforeAfterSlider key={idx} item={item} />
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Link
+                href="/our-work"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide"
+                style={{ color: "oklch(0.55 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
+              >
+                View All Projects <ArrowLeft size={13} className="rotate-180" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>

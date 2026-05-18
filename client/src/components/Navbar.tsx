@@ -12,6 +12,7 @@ const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZ
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Our Work", href: "/our-work" },
   { label: "Areas", href: "/areas/tampa" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },

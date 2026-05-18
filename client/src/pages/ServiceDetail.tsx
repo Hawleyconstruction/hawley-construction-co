@@ -564,40 +564,6 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Before & After Gallery */}
-      {gallery.length > 0 && (
-        <section className="py-20 md:py-28" style={{ backgroundColor: "oklch(0.95 0.005 80)" }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="section-divider" />
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-3"
-              style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.01 250)" }}
-            >
-              Before &amp; After
-            </h2>
-            <p
-              className="text-base mb-10 max-w-xl"
-              style={{ color: "oklch(0.5 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}
-            >
-              See the transformation. Drag the slider to compare.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {gallery.map((item, idx) => (
-                <BeforeAfterSlider key={idx} item={item} />
-              ))}
-            </div>
-            <div className="mt-10 text-center">
-              <Link
-                href="/our-work"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide"
-                style={{ color: "oklch(0.55 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
-              >
-                View All Projects <ArrowLeft size={13} className="rotate-180" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
 
       <Footer />
     </div>

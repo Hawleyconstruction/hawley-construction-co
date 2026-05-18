@@ -1,5 +1,16 @@
 User-agent: *
 Allow: /
+Disallow: /404
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
 
 # AI Crawlers - Explicitly Allowed
 User-agent: GPTBot
@@ -8,31 +19,22 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
+User-agent: Google-Extended
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Google-Extended
+User-agent: Amazonbot
 Allow: /
 
 User-agent: cohere-ai
@@ -42,7 +44,3 @@ User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://hawleyconstruction.co/sitemap.xml
-
-# AI-readable business information
-# https://hawleyconstruction.co/llms.txt
-# https://hawleyconstruction.co/llms-full.txt

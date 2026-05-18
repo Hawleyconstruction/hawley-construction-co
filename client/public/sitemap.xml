@@ -1,152 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://hawleyconstruction.co/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://hawleyconstruction.co/about</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
+  <!-- Services Index -->
   <url>
     <loc>https://hawleyconstruction.co/services</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Service pages (slugs match ServiceDetail.tsx serviceData keys) -->
+
+  <!-- Individual Service Pages -->
   <url>
     <loc>https://hawleyconstruction.co/services/kitchen-remodeling</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/bathroom-remodeling</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/home-additions</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/full-home-remodels</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/sunrooms</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/outdoor-living</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/patios</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/windows-doors</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/custom-cabinetry</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/services/trex-decks</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Blog pages (slugs match Blog.tsx blogPosts array) -->
+
+  <!-- Our Work / Portfolio -->
   <url>
-    <loc>https://hawleyconstruction.co/blog</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://hawleyconstruction.co/our-work</loc>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- City/Area Landing Pages -->
+  <url>
+    <loc>https://hawleyconstruction.co/areas/tampa</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://hawleyconstruction.co/areas/st-petersburg</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hawleyconstruction.co/areas/clearwater</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://hawleyconstruction.co/faq</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://hawleyconstruction.co/blog</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
     <loc>https://hawleyconstruction.co/blog/top-kitchen-remodeling-trends-tampa</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/blog/bathroom-remodel-cost-tampa</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/blog/benefits-sunroom-florida</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/blog/trex-deck-vs-wood-deck</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hawleyconstruction.co/blog/plan-home-addition-tampa-bay</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- FAQ -->
-  <url>
-    <loc>https://hawleyconstruction.co/faq</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- City Landing Pages -->
-  <url>
-    <loc>https://hawleyconstruction.co/areas/tampa</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hawleyconstruction.co/areas/st-petersburg</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hawleyconstruction.co/areas/clearwater</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
   <!-- Contact -->
   <url>
     <loc>https://hawleyconstruction.co/contact</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -11,6 +11,7 @@ const services = [
   { label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
   { label: "Kitchen Remodeling St. Pete", href: "/kitchen-remodeling-st-petersburg/" },
   { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
+  { label: "Bathroom Remodeling St. Pete", href: "/bathroom-remodeling-st-petersburg/" },
   { label: "Home Additions", href: "/services/home-additions" },
   { label: "Full Home Remodels", href: "/services/full-home-remodels" },
   { label: "Sunrooms", href: "/services/sunrooms" },

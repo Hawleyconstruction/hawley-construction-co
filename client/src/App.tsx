@@ -14,6 +14,7 @@ import CityLanding from "./pages/CityLanding";
 import FAQ from "./pages/FAQ";
 import Portfolio from "./pages/Portfolio";
 import KitchenRemodelingStPete from "./pages/KitchenRemodelingStPete";
+import BathroomRemodelingStPete from "./pages/BathroomRemodelingStPete";
 
 function Router() {
   return (
@@ -29,6 +30,8 @@ function Router() {
       <Route path="/areas/:city" component={CityLanding} />
       <Route path="/kitchen-remodeling-st-petersburg" component={KitchenRemodelingStPete} />
       <Route path="/kitchen-remodeling-st-petersburg/" component={KitchenRemodelingStPete} />
+      <Route path="/bathroom-remodeling-st-petersburg" component={BathroomRemodelingStPete} />
+      <Route path="/bathroom-remodeling-st-petersburg/" component={BathroomRemodelingStPete} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

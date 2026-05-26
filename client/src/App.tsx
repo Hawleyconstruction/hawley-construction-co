@@ -15,6 +15,7 @@ import FAQ from "./pages/FAQ";
 import Portfolio from "./pages/Portfolio";
 import KitchenRemodelingStPete from "./pages/KitchenRemodelingStPete";
 import BathroomRemodelingStPete from "./pages/BathroomRemodelingStPete";
+import TrexDeckBuilderTampaBay from "./pages/TrexDeckBuilderTampaBay";
 
 function Router() {
   return (
@@ -32,6 +33,8 @@ function Router() {
       <Route path="/kitchen-remodeling-st-petersburg/" component={KitchenRemodelingStPete} />
       <Route path="/bathroom-remodeling-st-petersburg" component={BathroomRemodelingStPete} />
       <Route path="/bathroom-remodeling-st-petersburg/" component={BathroomRemodelingStPete} />
+      <Route path="/trex-deck-builder-tampa-bay" component={TrexDeckBuilderTampaBay} />
+      <Route path="/trex-deck-builder-tampa-bay/" component={TrexDeckBuilderTampaBay} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

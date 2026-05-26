@@ -12,6 +12,7 @@ const services = [
   { label: "Kitchen Remodeling St. Pete", href: "/kitchen-remodeling-st-petersburg/" },
   { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
   { label: "Bathroom Remodeling St. Pete", href: "/bathroom-remodeling-st-petersburg/" },
+  { label: "Trex Deck Builder Tampa Bay", href: "/trex-deck-builder-tampa-bay/" },
   { label: "Home Additions", href: "/services/home-additions" },
   { label: "Full Home Remodels", href: "/services/full-home-remodels" },
   { label: "Sunrooms", href: "/services/sunrooms" },

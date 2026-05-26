@@ -118,8 +118,15 @@ const faqs = [
 ];
 
 const serviceAreas = [
-  "St. Petersburg", "Tampa", "Clearwater", "Brandon",
-  "Wesley Chapel", "Largo", "Pinellas Park", "Seminole", "St. Pete Beach",
+  { name: "St. Petersburg", href: "/areas/st-petersburg" },
+  { name: "Tampa", href: "/areas/tampa" },
+  { name: "Clearwater", href: "/areas/clearwater" },
+  { name: "Brandon", href: null },
+  { name: "Wesley Chapel", href: null },
+  { name: "Largo", href: null },
+  { name: "Pinellas Park", href: null },
+  { name: "Seminole", href: null },
+  { name: "St. Pete Beach", href: null },
 ];
 
 export default function AduInLawSuiteBuilder() {
@@ -169,7 +176,7 @@ export default function AduInLawSuiteBuilder() {
           "addressCountry": "US"
         }
       },
-      "areaServed": serviceAreas.map(city => ({ "@type": "City", "name": city })),
+      "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
       "url": "https://hawleyconstruction.co/adu-in-law-suite-builder/",
       "serviceType": "ADU and In-Law Suite Construction",
       "offers": {
@@ -204,12 +211,43 @@ export default function AduInLawSuiteBuilder() {
     faqScript.text = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
+    // LocalBusiness schema
+    const lbSchema = {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "@id": "https://hawleyconstruction.co",
+      "name": "Hawley Construction Co.",
+      "url": "https://hawleyconstruction.co",
+      "telephone": "+17046191480",
+      "priceRange": "$$$",
+      "image": "https://hawleyconstruction.co/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "316 11th Ave NE",
+        "addressLocality": "St. Petersburg",
+        "addressRegion": "FL",
+        "postalCode": "33701",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 27.7676, "longitude": -82.6403 },
+      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
+      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyconstruction.co"]
+    };
+    const existingLb = document.getElementById("adu-lb-schema");
+    if (existingLb) existingLb.remove();
+    const lbScript = document.createElement("script");
+    lbScript.id = "adu-lb-schema";
+    lbScript.type = "application/ld+json";
+    lbScript.text = JSON.stringify(lbSchema);
+    document.head.appendChild(lbScript);
+
     return () => {
       document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
       const c = document.querySelector('link[rel="canonical"]');
       if (c) c.setAttribute("href", "https://hawleyconstruction.co");
       document.getElementById("adu-service-schema")?.remove();
       document.getElementById("adu-faq-schema")?.remove();
+      document.getElementById("adu-lb-schema")?.remove();
     };
   }, []);
 
@@ -303,6 +341,13 @@ export default function AduInLawSuiteBuilder() {
                 </p>
                 <p>
                   St. Petersburg's zoning allows ADUs in most residential zones — but the rules around size, setbacks, and rental use vary by neighborhood. We do a free zoning compliance check during your consultation before you commit to anything.
+                </p>
+                <p>
+                  Many clients also take the opportunity to add a{" "}
+                  <Link href="/sunroom-florida-room-contractor/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>screened sunroom</Link>{" "}
+                  or upgrade their{" "}
+                  <Link href="/bathroom-remodeling-st-petersburg/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>primary suite bathroom</Link>{" "}
+                  as part of the same project.
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-4">
@@ -558,13 +603,24 @@ export default function AduInLawSuiteBuilder() {
             </div>
             <div className="flex flex-wrap gap-2">
               {serviceAreas.map((area) => (
-                <span
-                  key={area}
-                  className="px-3 py-1 text-xs font-medium"
-                  style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-                >
-                  {area}
-                </span>
+                area.href ? (
+                  <Link
+                    key={area.name}
+                    href={area.href}
+                    className="px-3 py-1 text-xs font-medium hover:opacity-80 transition-opacity"
+                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px", textDecoration: "none" }}
+                  >
+                    {area.name}
+                  </Link>
+                ) : (
+                  <span
+                    key={area.name}
+                    className="px-3 py-1 text-xs font-medium"
+                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                  >
+                    {area.name}
+                  </span>
+                )
               ))}
             </div>
           </div>
@@ -597,6 +653,13 @@ export default function AduInLawSuiteBuilder() {
                 <p className="text-sm text-white/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   Mon–Fri 8am–6pm · St. Petersburg, FL 33701
                 </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-sm font-medium mt-2 hover:opacity-80 transition-opacity"
+                  style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  View full contact page →
+                </Link>
               </div>
               <div className="overflow-hidden shadow-lg" style={{ borderRadius: "2px", height: "220px" }}>
                 <iframe

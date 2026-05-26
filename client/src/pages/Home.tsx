@@ -319,6 +319,109 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── FEATURED LANDING PAGES ─── */}
+      <section className="py-20 md:py-28" style={{ backgroundColor: "oklch(0.12 0.008 250)" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-14">
+            <span className="section-divider" style={{ backgroundColor: "oklch(0.77 0.065 82)" }} />
+            <h2
+              className="text-4xl md:text-5xl font-bold mb-4 text-white"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Specialty Services in St. Petersburg
+            </h2>
+            <p
+              className="text-lg max-w-xl text-white/70"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Dedicated pages with full details, pricing, and project galleries for our most-requested services in the Tampa Bay area.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                href: "/kitchen-remodeling-st-petersburg/",
+                title: "Kitchen Remodeling St. Petersburg",
+                desc: "Custom cabinetry, quartz countertops, open-concept conversions, and outdoor kitchens. Fixed-price quotes, fully permitted.",
+                img: HERO_IMG,
+                badge: "Most Popular",
+              },
+              {
+                href: "/bathroom-remodeling-st-petersburg/",
+                title: "Bathroom Remodeling St. Petersburg",
+                desc: "Walk-in showers, soaking tubs, aging-in-place upgrades, and full primary suite renovations.",
+                img: BATHROOM_IMG,
+                badge: null,
+              },
+              {
+                href: "/trex-deck-builder-tampa-bay/",
+                title: "Trex Deck Builder — Tampa Bay",
+                desc: "TrexPro composite decking with hurricane-rated framing. 25-year warranty, zero maintenance, Florida code compliant.",
+                img: TREX_DECK_IMG,
+                badge: "TrexPro Certified",
+              },
+              {
+                href: "/sunroom-florida-room-contractor/",
+                title: "Sunroom & Florida Room Contractor",
+                desc: "Three-season rooms, glass sunrooms, screened lanais, and insulated Florida rooms. Hurricane-rated construction.",
+                img: SUNROOM_IMG,
+                badge: null,
+              },
+              {
+                href: "/adu-in-law-suite-builder/",
+                title: "ADU & In-Law Suite Builder",
+                desc: "Detached cottages, garage conversions, above-garage suites, and attached in-law additions. Full design-build with permits.",
+                img: HOME_ADDITION_IMG,
+                badge: "Design-Build",
+              },
+            ].map((item, i) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group block overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 relative"
+                style={{ borderRadius: "2px", backgroundColor: "oklch(0.18 0.008 250)" }}
+              >
+                {item.badge && (
+                  <span
+                    className="absolute top-3 left-3 z-10 px-2 py-1 text-xs font-bold uppercase tracking-wide"
+                    style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.12 0.008 250)", borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    {item.badge}
+                  </span>
+                )}
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3
+                    className="text-lg font-semibold mb-2 text-white"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed mb-4 text-white/65"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    {item.desc}
+                  </p>
+                  <span
+                    className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide transition-all group-hover:gap-2"
+                    style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    View Full Page <ArrowRight size={13} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── GALLERY / BEFORE & AFTER ─── */}
       <section
         ref={gallerySection.ref}

@@ -112,8 +112,15 @@ const faqs = [
 ];
 
 const serviceAreas = [
-  "St. Petersburg", "Tampa", "Clearwater", "Brandon",
-  "Wesley Chapel", "Largo", "Pinellas Park", "Seminole", "St. Pete Beach",
+  { name: "St. Petersburg", href: "/areas/st-petersburg" },
+  { name: "Tampa", href: "/areas/tampa" },
+  { name: "Clearwater", href: "/areas/clearwater" },
+  { name: "Brandon", href: null },
+  { name: "Wesley Chapel", href: null },
+  { name: "Largo", href: null },
+  { name: "Pinellas Park", href: null },
+  { name: "Seminole", href: null },
+  { name: "St. Pete Beach", href: null },
 ];
 
 export default function SunroomFloridaRoom() {
@@ -163,7 +170,7 @@ export default function SunroomFloridaRoom() {
           "addressCountry": "US"
         }
       },
-      "areaServed": serviceAreas.map(city => ({ "@type": "City", "name": city })),
+      "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
       "url": "https://hawleyconstruction.co/sunroom-florida-room-contractor/",
       "serviceType": "Sunroom and Florida Room Construction",
       "offers": {
@@ -198,12 +205,43 @@ export default function SunroomFloridaRoom() {
     faqScript.text = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
+    // LocalBusiness schema
+    const lbSchema = {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "@id": "https://hawleyconstruction.co",
+      "name": "Hawley Construction Co.",
+      "url": "https://hawleyconstruction.co",
+      "telephone": "+17046191480",
+      "priceRange": "$$$",
+      "image": "https://hawleyconstruction.co/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "316 11th Ave NE",
+        "addressLocality": "St. Petersburg",
+        "addressRegion": "FL",
+        "postalCode": "33701",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 27.7676, "longitude": -82.6403 },
+      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
+      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyconstruction.co"]
+    };
+    const existingLb = document.getElementById("sunroom-lb-schema");
+    if (existingLb) existingLb.remove();
+    const lbScript = document.createElement("script");
+    lbScript.id = "sunroom-lb-schema";
+    lbScript.type = "application/ld+json";
+    lbScript.text = JSON.stringify(lbSchema);
+    document.head.appendChild(lbScript);
+
     return () => {
       document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
       const c = document.querySelector('link[rel="canonical"]');
       if (c) c.setAttribute("href", "https://hawleyconstruction.co");
       document.getElementById("sunroom-service-schema")?.remove();
       document.getElementById("sunroom-faq-schema")?.remove();
+      document.getElementById("sunroom-lb-schema")?.remove();
     };
   }, []);
 
@@ -298,6 +336,13 @@ export default function SunroomFloridaRoom() {
                 </p>
                 <p>
                   The result looks like it was always part of your house — because it was designed that way from the start. We hold Florida General Contractor license <strong>CBC #1369038</strong> and pull all permits ourselves.
+                </p>
+                <p>
+                  Many clients combine a sunroom with a new{" "}
+                  <Link href="/trex-deck-builder-tampa-bay/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>Trex deck</Link>{" "}
+                  or an{" "}
+                  <Link href="/adu-in-law-suite-builder/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>ADU addition</Link>{" "}
+                  — we can manage both under one contract.
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-4">
@@ -559,13 +604,24 @@ export default function SunroomFloridaRoom() {
             </div>
             <div className="flex flex-wrap gap-2">
               {serviceAreas.map((area) => (
-                <span
-                  key={area}
-                  className="px-3 py-1 text-xs font-medium"
-                  style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-                >
-                  {area}
-                </span>
+                area.href ? (
+                  <Link
+                    key={area.name}
+                    href={area.href}
+                    className="px-3 py-1 text-xs font-medium hover:opacity-80 transition-opacity"
+                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px", textDecoration: "none" }}
+                  >
+                    {area.name}
+                  </Link>
+                ) : (
+                  <span
+                    key={area.name}
+                    className="px-3 py-1 text-xs font-medium"
+                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                  >
+                    {area.name}
+                  </span>
+                )
               ))}
             </div>
           </div>
@@ -598,6 +654,13 @@ export default function SunroomFloridaRoom() {
                 <p className="text-sm text-white/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   Mon–Fri 8am–6pm · St. Petersburg, FL 33701
                 </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-sm font-medium mt-2 hover:opacity-80 transition-opacity"
+                  style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  View full contact page →
+                </Link>
               </div>
               <div className="overflow-hidden shadow-lg" style={{ borderRadius: "2px", height: "220px" }}>
                 <iframe

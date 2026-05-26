@@ -13,6 +13,7 @@ const services = [
   { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
   { label: "Bathroom Remodeling St. Pete", href: "/bathroom-remodeling-st-petersburg/" },
   { label: "Trex Deck Builder Tampa Bay", href: "/trex-deck-builder-tampa-bay/" },
+  { label: "ADU & In-Law Suite Builder", href: "/adu-in-law-suite-builder/" },
   { label: "Home Additions", href: "/services/home-additions" },
   { label: "Full Home Remodels", href: "/services/full-home-remodels" },
   { label: "Sunroom & Florida Room Contractor", href: "/sunroom-florida-room-contractor/" },

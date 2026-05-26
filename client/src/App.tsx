@@ -17,6 +17,7 @@ import KitchenRemodelingStPete from "./pages/KitchenRemodelingStPete";
 import BathroomRemodelingStPete from "./pages/BathroomRemodelingStPete";
 import TrexDeckBuilderTampaBay from "./pages/TrexDeckBuilderTampaBay";
 import SunroomFloridaRoom from "./pages/SunroomFloridaRoom";
+import AduInLawSuiteBuilder from "./pages/AduInLawSuiteBuilder";
 
 function Router() {
   return (
@@ -38,6 +39,8 @@ function Router() {
       <Route path="/trex-deck-builder-tampa-bay/" component={TrexDeckBuilderTampaBay} />
       <Route path="/sunroom-florida-room-contractor" component={SunroomFloridaRoom} />
       <Route path="/sunroom-florida-room-contractor/" component={SunroomFloridaRoom} />
+      <Route path="/adu-in-law-suite-builder" component={AduInLawSuiteBuilder} />
+      <Route path="/adu-in-law-suite-builder/" component={AduInLawSuiteBuilder} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

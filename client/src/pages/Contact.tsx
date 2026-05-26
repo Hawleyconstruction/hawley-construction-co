@@ -93,6 +93,18 @@ export default function Contact() {
       });
       if (res.ok) {
         setSubmitted(true);
+        // Google Ads + GA4 conversion tracking
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-18172396876/cPy9CKLmgrQcEMyKo91D',
+            value: 50.0,
+            currency: 'USD',
+          });
+          (window as any).gtag('event', 'generate_lead', {
+            currency: 'USD',
+            value: 50,
+          });
+        }
       } else {
         const data = await res.json();
         setError(data?.errors?.[0]?.message || "Something went wrong. Please try again or call us directly.");

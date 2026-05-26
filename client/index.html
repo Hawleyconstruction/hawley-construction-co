@@ -3,6 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- Google tag (gtag.js) - Google Ads AW-18172396876 + GA4 G-1L7LLQBK32 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18172396876"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18172396876');
+      gtag('config', 'G-1L7LLQBK32');
+    </script>
+
+    <!-- Phone-click conversion tracker (site-wide) -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+          link.addEventListener('click', function() {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18172396876/cPy9CKLmgrQcEMyKo91D',
+              'value': 50.0,
+              'currency': 'USD'
+            });
+            gtag('event', 'phone_call_click', {
+              'phone_number': link.getAttribute('href').replace('tel:', '')
+            });
+          });
+        });
+      });
+    </script>
+
     <title>Hawley Construction Co. | Kitchen & Bathroom Remodeling Tampa Bay FL | Trex Decks, Additions & Sunrooms</title>
     <meta name="description" content="Tampa Bay's trusted remodeling contractor. Custom kitchens, bathrooms, home additions, sunrooms & Trex decks. Serving Tampa, St. Pete & Clearwater." />
     <meta name="keywords" content="home remodeling Tampa Bay, kitchen remodeling Tampa, bathroom remodeling St Petersburg, Trex deck builder Florida, general contractor Tampa" />

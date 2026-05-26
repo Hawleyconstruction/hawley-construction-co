@@ -9,6 +9,7 @@ const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZ
 
 const services = [
   { label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
+  { label: "Kitchen Remodeling St. Pete", href: "/kitchen-remodeling-st-petersburg/" },
   { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
   { label: "Home Additions", href: "/services/home-additions" },
   { label: "Full Home Remodels", href: "/services/full-home-remodels" },

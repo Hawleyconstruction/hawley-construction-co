@@ -15,6 +15,7 @@ const services = [
   { label: "Trex Deck Builder Tampa Bay", href: "/trex-deck-builder-tampa-bay/" },
   { label: "Home Additions", href: "/services/home-additions" },
   { label: "Full Home Remodels", href: "/services/full-home-remodels" },
+  { label: "Sunroom & Florida Room Contractor", href: "/sunroom-florida-room-contractor/" },
   { label: "Sunrooms", href: "/services/sunrooms" },
   { label: "Outdoor Living Spaces", href: "/services/outdoor-living" },
   { label: "Patios", href: "/services/patios" },

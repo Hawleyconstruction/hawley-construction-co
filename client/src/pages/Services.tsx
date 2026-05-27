@@ -19,7 +19,6 @@ const services = [
   {
     title: "Kitchen Remodeling",
     slug: "kitchen-remodeling",
-    href: "/kitchen-remodeling-st-petersburg/",
     img: HERO_IMG,
     tagline: "The Heart of Your Home, Reimagined",
     desc: "Your kitchen is where life happens — from morning coffee to family dinners. Our kitchen remodeling services in Tampa Bay deliver custom cabinetry, premium countertops, professional-grade appliances, and thoughtful layouts that blend beauty with function. We work with you from design to final installation.",
@@ -28,7 +27,6 @@ const services = [
   {
     title: "Bathroom Remodeling",
     slug: "bathroom-remodeling",
-    href: "/bathroom-remodeling-st-petersburg/",
     img: BATHROOM_IMG,
     tagline: "Your Personal Spa Retreat",
     desc: "Transform your bathroom into a luxurious escape. From spa-inspired master bathrooms to efficient guest bath updates, Hawley Construction delivers flawless tile work, custom vanities, walk-in showers, and premium fixtures that elevate your daily routine.",
@@ -51,9 +49,8 @@ const services = [
     benefits: ["Complete project management", "Open-concept floor plan conversions", "Whole-home flooring & paint", "Electrical & plumbing upgrades", "Structural modifications"],
   },
   {
-    title: "Sunroom & Florida Room",
+    title: "Sunrooms",
     slug: "sunrooms",
-    href: "/sunroom-florida-room-contractor/",
     img: SUNROOM_IMG,
     tagline: "Bring the Florida Sunshine In",
     desc: "Florida's climate is one of its greatest assets — and a sunroom lets you enjoy it year-round. Our custom sunrooms are designed to maximize natural light while keeping you comfortable in every season. Perfect for a reading room, home office, or family gathering space.",
@@ -92,9 +89,8 @@ const services = [
     benefits: ["Full custom sizing & configuration", "Soft-close hinges & drawer systems", "Wide range of finishes & styles", "Built-in organization solutions", "Matching furniture-grade quality"],
   },
   {
-    title: "Trex Deck Builder",
+    title: "Trex Decks",
     slug: "trex-decks",
-    href: "/trex-deck-builder-tampa-bay/",
     img: TREX_DECK_IMG,
     tagline: "Low Maintenance, High Impact",
     desc: "Trex composite decking is the gold standard for Florida homeowners who want the look of real wood without the maintenance. Our certified Trex installers build decks that resist fading, staining, and moisture — backed by a 25-year warranty.",
@@ -220,7 +216,7 @@ export default function Services() {
                       Get Free Estimate
                     </Link>
                     <Link
-                      href={(service as any).href ?? `/services/${service.slug}`}
+                      href={`/services/${service.slug}`}
                       className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide"
                       style={{ color: "oklch(0.64 0.055 230)", fontFamily: "'DM Sans', sans-serif" }}
                     >

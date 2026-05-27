@@ -8,17 +8,21 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-logo-modern-K7nsMoUjXa4vQaiXbz97jj.webp";
 
 const services = [
-  { label: "Kitchen Remodeling", href: "/kitchen-remodeling-st-petersburg/" },
-  { label: "Bathroom Remodeling", href: "/bathroom-remodeling-st-petersburg/" },
+  { label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
+  { label: "Kitchen Remodeling St. Pete", href: "/kitchen-remodeling-st-petersburg/" },
+  { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
+  { label: "Bathroom Remodeling St. Pete", href: "/bathroom-remodeling-st-petersburg/" },
   { label: "Trex Deck Builder Tampa Bay", href: "/trex-deck-builder-tampa-bay/" },
-  { label: "Sunroom & Florida Room Contractor", href: "/sunroom-florida-room-contractor/" },
   { label: "ADU & In-Law Suite Builder", href: "/adu-in-law-suite-builder/" },
   { label: "Home Additions", href: "/services/home-additions" },
   { label: "Full Home Remodels", href: "/services/full-home-remodels" },
+  { label: "Sunroom & Florida Room Contractor", href: "/sunroom-florida-room-contractor/" },
+  { label: "Sunrooms", href: "/services/sunrooms" },
   { label: "Outdoor Living Spaces", href: "/services/outdoor-living" },
   { label: "Patios", href: "/services/patios" },
   { label: "Windows & Doors", href: "/services/windows-doors" },
   { label: "Custom Cabinetry", href: "/services/custom-cabinetry" },
+  { label: "Trex Decks", href: "/services/trex-decks" },
 ];
 
 const serviceAreas = [

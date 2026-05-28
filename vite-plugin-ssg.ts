@@ -168,6 +168,11 @@ const ROUTES: Record<string, RouteSEO> = {
     description: "Expert bathroom remodeling in St. Petersburg, FL. Walk-in showers, vanities, full renovations. Licensed & insured. Get a free estimate from Hawley Construction.",
     canonical: "https://hawleyconstruction.co/bathroom-remodeling-st-petersburg/",
   },
+  "/general-contractor-st-petersburg": {
+    title: "General Contractor St. Petersburg, FL | Hawley Construction Co.",
+    description: "Licensed general contractor in St. Petersburg, FL. Kitchens, bathrooms, additions, decks & full home remodels. Hawley Construction Co. — free estimates available.",
+    canonical: "https://hawleyconstruction.co/general-contractor-st-petersburg/",
+  },
 };
 
 function escapeHtml(str: string): string {
@@ -216,9 +221,25 @@ function injectSEO(html: string, seo: RouteSEO): string {
 
   // Replace og:url
   html = html.replace(
-    /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/,
+    /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/, 
     `<meta property="og:url" content="${escapeHtml(seo.canonical)}" />`
   );
+
+  // Replace twitter:title
+  if (/<meta\s+name="twitter:title"/.test(html)) {
+    html = html.replace(
+      /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/, 
+      `<meta name="twitter:title" content="${escapeHtml(seo.title)}" />`
+    );
+  }
+
+  // Replace twitter:description
+  if (/<meta\s+name="twitter:description"/.test(html)) {
+    html = html.replace(
+      /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/, 
+      `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`
+    );
+  }
 
   return html;
 }

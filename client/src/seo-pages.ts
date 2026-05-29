@@ -2,9 +2,9 @@
 // This file is consumed both by the Vite SSG plugin (build-time HTML injection)
 // and by the React SEO component (client-side updates for SPA navigation).
 //
-// BASE_URL is driven by the VITE_BASE_URL env var at build time.
-// Default: https://hawleyconstruction.co
-// To deploy to a new domain, set VITE_BASE_URL=https://yournewdomain.com at build time.
+// BASE_URL is driven by the VITE_SITE_URL env var at build time.
+// Default: https://hawleyremodeling.com
+// To deploy to a new domain, set VITE_SITE_URL=https://yournewdomain.com at build time.
 
 export interface PageSEO {
   title: string;
@@ -13,9 +13,9 @@ export interface PageSEO {
 }
 
 const BASE: string =
-  (import.meta.env && import.meta.env.VITE_BASE_URL
-    ? (import.meta.env.VITE_BASE_URL as string)
-    : "") || "https://hawleyconstruction.co";
+  (import.meta.env && import.meta.env.VITE_SITE_URL
+    ? (import.meta.env.VITE_SITE_URL as string)
+    : "") || "https://hawleyremodeling.com";
 
 export const PAGE_SEO: Record<string, PageSEO> = {
   "/": {

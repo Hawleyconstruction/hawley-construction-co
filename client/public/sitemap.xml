@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Homepage -->
   <url>
-    <loc>https://hawleyconstruction.co/</loc>
+    <loc>https://hawleyremodeling.com/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Services Index -->
   <url>
-    <loc>https://hawleyconstruction.co/services</loc>
+    <loc>https://hawleyremodeling.com/services</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,61 +19,61 @@
 
   <!-- Individual Service Pages -->
   <url>
-    <loc>https://hawleyconstruction.co/services/kitchen-remodeling</loc>
+    <loc>https://hawleyremodeling.com/services/kitchen-remodeling</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/bathroom-remodeling</loc>
+    <loc>https://hawleyremodeling.com/services/bathroom-remodeling</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/home-additions</loc>
+    <loc>https://hawleyremodeling.com/services/home-additions</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/full-home-remodels</loc>
+    <loc>https://hawleyremodeling.com/services/full-home-remodels</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/sunrooms</loc>
+    <loc>https://hawleyremodeling.com/services/sunrooms</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/outdoor-living</loc>
+    <loc>https://hawleyremodeling.com/services/outdoor-living</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/patios</loc>
+    <loc>https://hawleyremodeling.com/services/patios</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/windows-doors</loc>
+    <loc>https://hawleyremodeling.com/services/windows-doors</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/custom-cabinetry</loc>
+    <loc>https://hawleyremodeling.com/services/custom-cabinetry</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/services/trex-decks</loc>
+    <loc>https://hawleyremodeling.com/services/trex-decks</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -81,7 +81,7 @@
 
   <!-- Our Work / Portfolio -->
   <url>
-    <loc>https://hawleyconstruction.co/our-work</loc>
+    <loc>https://hawleyremodeling.com/our-work</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -89,19 +89,19 @@
 
   <!-- City/Area Landing Pages -->
   <url>
-    <loc>https://hawleyconstruction.co/areas/tampa</loc>
+    <loc>https://hawleyremodeling.com/areas/tampa</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/areas/st-petersburg</loc>
+    <loc>https://hawleyremodeling.com/areas/st-petersburg</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/areas/clearwater</loc>
+    <loc>https://hawleyremodeling.com/areas/clearwater</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -109,7 +109,7 @@
 
   <!-- FAQ -->
   <url>
-    <loc>https://hawleyconstruction.co/faq</loc>
+    <loc>https://hawleyremodeling.com/faq</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -117,7 +117,7 @@
 
   <!-- Blog Index -->
   <url>
-    <loc>https://hawleyconstruction.co/blog</loc>
+    <loc>https://hawleyremodeling.com/blog</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -125,31 +125,31 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://hawleyconstruction.co/blog/top-kitchen-remodeling-trends-tampa</loc>
+    <loc>https://hawleyremodeling.com/blog/top-kitchen-remodeling-trends-tampa</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/blog/bathroom-remodel-cost-tampa</loc>
+    <loc>https://hawleyremodeling.com/blog/bathroom-remodel-cost-tampa</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/blog/benefits-sunroom-florida</loc>
+    <loc>https://hawleyremodeling.com/blog/benefits-sunroom-florida</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/blog/trex-deck-vs-wood-deck</loc>
+    <loc>https://hawleyremodeling.com/blog/trex-deck-vs-wood-deck</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/blog/plan-home-addition-tampa-bay</loc>
+    <loc>https://hawleyremodeling.com/blog/plan-home-addition-tampa-bay</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -157,7 +157,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://hawleyconstruction.co/contact</loc>
+    <loc>https://hawleyremodeling.com/contact</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -165,37 +165,37 @@
 
   <!-- Service Landing Pages (Local SEO) -->
   <url>
-    <loc>https://hawleyconstruction.co/kitchen-remodeling-st-petersburg/</loc>
+    <loc>https://hawleyremodeling.com/kitchen-remodeling-st-petersburg/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/trex-deck-builder-tampa-bay/</loc>
+    <loc>https://hawleyremodeling.com/trex-deck-builder-tampa-bay/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/sunroom-florida-room-contractor/</loc>
+    <loc>https://hawleyremodeling.com/sunroom-florida-room-contractor/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/adu-in-law-suite-builder/</loc>
+    <loc>https://hawleyremodeling.com/adu-in-law-suite-builder/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/bathroom-remodeling-st-petersburg/</loc>
+    <loc>https://hawleyremodeling.com/bathroom-remodeling-st-petersburg/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyconstruction.co/general-contractor-st-petersburg/</loc>
+    <loc>https://hawleyremodeling.com/general-contractor-st-petersburg/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

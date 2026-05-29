@@ -117,7 +117,7 @@ export default function CityLanding() {
         "@type": "HomeAndConstructionBusiness",
         name: "Hawley Construction Co.",
         description: data.description,
-        url: `https://hawleyconstruction.co/areas/${data.slug}`,
+        url: `https://hawleyremodeling.com/areas/${data.slug}`,
         telephone: "+1-704-619-1480",
         areaServed: {
           "@type": "City",

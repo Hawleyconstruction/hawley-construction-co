@@ -13,8 +13,8 @@
  *   - FAQPage JSON-LD schema (FAQ page)
  *   - Pre-rendered <h1> text (hidden, for crawlers)
  *
- * BASE_URL env var controls the domain used in canonicals, og:url, and sitemap.
- * Default: https://hawleyconstruction.co
+ * VITE_SITE_URL env var controls the domain used in canonicals, og:url, and sitemap.
+ * Default: https://hawleyremodeling.com
  */
 
 import type { Plugin } from "vite";
@@ -22,12 +22,11 @@ import fs from "fs";
 import path from "path";
 
 // ---------------------------------------------------------------------------
-// Base URL — override via VITE_BASE_URL or BASE_URL env var at build time
+// Base URL — override via VITE_SITE_URL env var at build time
 // ---------------------------------------------------------------------------
 const BASE =
-  process.env.VITE_BASE_URL ||
-  process.env.BASE_URL ||
-  "https://hawleyconstruction.co";
+  process.env.VITE_SITE_URL ||
+  "https://hawleyremodeling.com";
 
 // ---------------------------------------------------------------------------
 // Business constants (used in schema)
@@ -35,7 +34,7 @@ const BASE =
 const BUSINESS = {
   name: "Hawley Construction Co.",
   telephone: "+17046191480",
-  email: "landon@hawleyconstruction.co",
+  email: "landon@hawleyremodeling.com",
   streetAddress: "316 11th Ave NE",
   addressLocality: "St. Petersburg",
   addressRegion: "FL",
@@ -721,7 +720,7 @@ export function viteSsgPlugin(): Plugin {
       generated++;
 
       console.log(`\n✅ vite-plugin-ssg: generated ${generated} pre-rendered HTML files (including 404.html)\n`);
-      console.log(`   BASE_URL used: ${BASE}\n`);
+      console.log(`   VITE_SITE_URL used: ${BASE}\n`);
     },
   };
 }

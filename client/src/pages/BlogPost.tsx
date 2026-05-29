@@ -117,7 +117,7 @@ export default function BlogPost() {
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', `https://hawleyconstruction.co/blog/${slug}`);
+      canonical.setAttribute('href', `https://hawleyremodeling.com/blog/${slug}`);
       // Inject Article schema
       const schema = {
         "@context": "https://schema.org",
@@ -130,9 +130,9 @@ export default function BlogPost() {
         "publisher": {
           "@type": "Organization",
           "name": "Hawley Construction Co.",
-          "url": "https://hawleyconstruction.co"
+          "url": "https://hawleyremodeling.com"
         },
-        "mainEntityOfPage": `https://hawleyconstruction.co/blog/${slug}`
+        "mainEntityOfPage": `https://hawleyremodeling.com/blog/${slug}`
       };
       const existing = document.getElementById('article-schema');
       if (existing) existing.remove();
@@ -149,7 +149,7 @@ export default function BlogPost() {
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       // Reset canonical
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
+      if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');
     };
   }, [slug, post]);
 

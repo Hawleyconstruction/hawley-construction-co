@@ -167,7 +167,7 @@ export default function BathroomRemodelingStPete() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyconstruction.co/bathroom-remodeling-st-petersburg/");
+    canonical.setAttribute("href", "https://hawleyremodeling.com/bathroom-remodeling-st-petersburg/");
 
     // Service schema
     const serviceSchema = {
@@ -177,10 +177,10 @@ export default function BathroomRemodelingStPete() {
       "description": "Full bathroom remodeling services in St. Petersburg, FL. Walk-in showers, tub-to-shower conversions, aging-in-place upgrades, primary suite remodels. Licensed, insured, fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
-        "@id": "https://hawleyconstruction.co",
+        "@id": "https://hawleyremodeling.com",
         "name": "Hawley Construction Co.",
         "telephone": "+17046191480",
-        "url": "https://hawleyconstruction.co",
+        "url": "https://hawleyremodeling.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "316 11th Ave NE",
@@ -191,7 +191,7 @@ export default function BathroomRemodelingStPete() {
         }
       },
       "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
-      "url": "https://hawleyconstruction.co/bathroom-remodeling-st-petersburg/",
+      "url": "https://hawleyremodeling.com/bathroom-remodeling-st-petersburg/",
       "serviceType": "Bathroom Remodeling",
       "offers": {
         "@type": "Offer",
@@ -229,12 +229,12 @@ export default function BathroomRemodelingStPete() {
     const lbSchema = {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
-      "@id": "https://hawleyconstruction.co",
+      "@id": "https://hawleyremodeling.com",
       "name": "Hawley Construction Co.",
-      "url": "https://hawleyconstruction.co",
+      "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
       "priceRange": "$$$",
-      "image": "https://hawleyconstruction.co/og-image.png",
+      "image": "https://hawleyremodeling.com/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "316 11th Ave NE",
@@ -245,7 +245,7 @@ export default function BathroomRemodelingStPete() {
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 27.7676, "longitude": -82.6403 },
       "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
-      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyconstruction.co"]
+      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyremodeling.com"]
     };
     const existingLb = document.getElementById("bathroom-lb-schema");
     if (existingLb) existingLb.remove();
@@ -258,7 +258,7 @@ export default function BathroomRemodelingStPete() {
     return () => {
       document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
       const c = document.querySelector('link[rel="canonical"]');
-      if (c) c.setAttribute("href", "https://hawleyconstruction.co");
+      if (c) c.setAttribute("href", "https://hawleyremodeling.com");
       document.getElementById("bathroom-service-schema")?.remove();
       document.getElementById("bathroom-faq-schema")?.remove();
       document.getElementById("bathroom-lb-schema")?.remove();

@@ -372,7 +372,7 @@ export default function ServiceDetail() {
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', `https://hawleyconstruction.co/services/${slug}`);
+      canonical.setAttribute('href', `https://hawleyremodeling.com/services/${slug}`);
       // Inject Service schema
       const serviceSchema = {
         "@context": "https://schema.org",
@@ -383,10 +383,10 @@ export default function ServiceDetail() {
           "@type": "HomeAndConstructionBusiness",
           "name": "Hawley Construction Co.",
           "telephone": "+17046191480",
-          "url": "https://hawleyconstruction.co"
+          "url": "https://hawleyremodeling.com"
         },
         "areaServed": ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Wesley Chapel", "Bradenton", "Sarasota"],
-        "url": `https://hawleyconstruction.co/services/${slug}`
+        "url": `https://hawleyremodeling.com/services/${slug}`
       };
       const existingService = document.getElementById('service-schema');
       if (existingService) existingService.remove();
@@ -422,7 +422,7 @@ export default function ServiceDetail() {
       // Reset title and canonical
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', 'https://hawleyconstruction.co');
+      if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');
     };
   }, [slug]);
 

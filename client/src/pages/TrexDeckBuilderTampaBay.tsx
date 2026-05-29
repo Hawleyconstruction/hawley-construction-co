@@ -172,7 +172,7 @@ export default function TrexDeckBuilderTampaBay() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyconstruction.co/trex-deck-builder-tampa-bay/");
+    canonical.setAttribute("href", "https://hawleyremodeling.com/trex-deck-builder-tampa-bay/");
 
     // Service schema
     const serviceSchema = {
@@ -182,10 +182,10 @@ export default function TrexDeckBuilderTampaBay() {
       "description": "TrexPro composite deck installation in Tampa Bay, FL. New deck construction, deck replacement, pool decks, pergolas, and Trex railings. Hurricane-rated framing, licensed and insured, fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
-        "@id": "https://hawleyconstruction.co",
+        "@id": "https://hawleyremodeling.com",
         "name": "Hawley Construction Co.",
         "telephone": "+17046191480",
-        "url": "https://hawleyconstruction.co",
+        "url": "https://hawleyremodeling.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "316 11th Ave NE",
@@ -196,7 +196,7 @@ export default function TrexDeckBuilderTampaBay() {
         }
       },
       "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
-      "url": "https://hawleyconstruction.co/trex-deck-builder-tampa-bay/",
+      "url": "https://hawleyremodeling.com/trex-deck-builder-tampa-bay/",
       "serviceType": "Composite Deck Installation",
       "offers": {
         "@type": "Offer",
@@ -234,12 +234,12 @@ export default function TrexDeckBuilderTampaBay() {
     const lbSchema = {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
-      "@id": "https://hawleyconstruction.co",
+      "@id": "https://hawleyremodeling.com",
       "name": "Hawley Construction Co.",
-      "url": "https://hawleyconstruction.co",
+      "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
       "priceRange": "$$$",
-      "image": "https://hawleyconstruction.co/og-image.png",
+      "image": "https://hawleyremodeling.com/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "316 11th Ave NE",
@@ -250,7 +250,7 @@ export default function TrexDeckBuilderTampaBay() {
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 27.7676, "longitude": -82.6403 },
       "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
-      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyconstruction.co"]
+      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyremodeling.com"]
     };
     const existingLb = document.getElementById("trex-lb-schema");
     if (existingLb) existingLb.remove();
@@ -263,7 +263,7 @@ export default function TrexDeckBuilderTampaBay() {
     return () => {
       document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
       const c = document.querySelector('link[rel="canonical"]');
-      if (c) c.setAttribute("href", "https://hawleyconstruction.co");
+      if (c) c.setAttribute("href", "https://hawleyremodeling.com");
       document.getElementById("trex-service-schema")?.remove();
       document.getElementById("trex-faq-schema")?.remove();
       document.getElementById("trex-lb-schema")?.remove();

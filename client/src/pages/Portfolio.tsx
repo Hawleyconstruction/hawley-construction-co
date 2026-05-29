@@ -98,19 +98,19 @@ export default function Portfolio() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyconstruction.co/our-work");
+    canonical.setAttribute("href", "https://hawleyremodeling.com/our-work");
     // Inject ImageGallery schema
     const schema = {
       "@context": "https://schema.org",
       "@type": "ImageGallery",
       "name": "Hawley Construction Co. Project Gallery",
       "description": "Completed home remodeling projects by Hawley Construction Co. in Tampa Bay, Florida.",
-      "url": "https://hawleyconstruction.co/our-work",
+      "url": "https://hawleyremodeling.com/our-work",
       "creator": {
         "@type": "HomeAndConstructionBusiness",
         "name": "Hawley Construction Co.",
         "telephone": "+17046191480",
-        "url": "https://hawleyconstruction.co"
+        "url": "https://hawleyremodeling.com"
       }
     };
     const existing = document.getElementById("gallery-schema");

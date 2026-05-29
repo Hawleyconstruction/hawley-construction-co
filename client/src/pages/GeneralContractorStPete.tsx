@@ -154,7 +154,7 @@ export default function GeneralContractorStPete() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyconstruction.co/general-contractor-st-petersburg/");
+    canonical.setAttribute("href", "https://hawleyremodeling.com/general-contractor-st-petersburg/");
 
     // Service schema
     const serviceSchema = {
@@ -164,10 +164,10 @@ export default function GeneralContractorStPete() {
       "description": "Full-service general contracting in St. Petersburg, FL. Kitchen and bathroom remodeling, home additions, sunrooms, Trex decks, ADUs, and full home renovations. Licensed, insured, fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
-        "@id": "https://hawleyconstruction.co",
+        "@id": "https://hawleyremodeling.com",
         "name": "Hawley Construction Co.",
         "telephone": "+17046191480",
-        "url": "https://hawleyconstruction.co",
+        "url": "https://hawleyremodeling.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "316 11th Ave NE",
@@ -178,7 +178,7 @@ export default function GeneralContractorStPete() {
         }
       },
       "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
-      "url": "https://hawleyconstruction.co/general-contractor-st-petersburg/",
+      "url": "https://hawleyremodeling.com/general-contractor-st-petersburg/",
       "serviceType": "General Contracting",
       "offers": {
         "@type": "Offer",
@@ -216,9 +216,9 @@ export default function GeneralContractorStPete() {
     const lbSchema = {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
-      "@id": "https://hawleyconstruction.co",
+      "@id": "https://hawleyremodeling.com",
       "name": "Hawley Construction Co.",
-      "url": "https://hawleyconstruction.co",
+      "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
       "priceRange": "$$",
       "image": HERO_IMG,
@@ -251,9 +251,9 @@ export default function GeneralContractorStPete() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawleyconstruction.co/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hawleyconstruction.co/services" },
-        { "@type": "ListItem", "position": 3, "name": "General Contractor St. Petersburg", "item": "https://hawleyconstruction.co/general-contractor-st-petersburg/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawleyremodeling.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hawleyremodeling.com/services" },
+        { "@type": "ListItem", "position": 3, "name": "General Contractor St. Petersburg", "item": "https://hawleyremodeling.com/general-contractor-st-petersburg/" },
       ],
     };
     const existingBc = document.getElementById("gc-breadcrumb-schema");

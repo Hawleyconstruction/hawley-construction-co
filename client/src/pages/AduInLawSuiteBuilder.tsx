@@ -153,7 +153,7 @@ export default function AduInLawSuiteBuilder() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyconstruction.co/adu-in-law-suite-builder/");
+    canonical.setAttribute("href", "https://hawleyremodeling.com/adu-in-law-suite-builder/");
 
     // Service schema
     const serviceSchema = {
@@ -163,10 +163,10 @@ export default function AduInLawSuiteBuilder() {
       "description": "Custom ADUs, in-law suites, garage conversions, and backyard cottages in St. Petersburg & Tampa Bay. Full design-build with permits handled.",
       "provider": {
         "@type": "GeneralContractor",
-        "@id": "https://hawleyconstruction.co",
+        "@id": "https://hawleyremodeling.com",
         "name": "Hawley Construction Co.",
         "telephone": "+17046191480",
-        "url": "https://hawleyconstruction.co",
+        "url": "https://hawleyremodeling.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "316 11th Ave NE",
@@ -177,7 +177,7 @@ export default function AduInLawSuiteBuilder() {
         }
       },
       "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
-      "url": "https://hawleyconstruction.co/adu-in-law-suite-builder/",
+      "url": "https://hawleyremodeling.com/adu-in-law-suite-builder/",
       "serviceType": "ADU and In-Law Suite Construction",
       "offers": {
         "@type": "Offer",
@@ -215,12 +215,12 @@ export default function AduInLawSuiteBuilder() {
     const lbSchema = {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
-      "@id": "https://hawleyconstruction.co",
+      "@id": "https://hawleyremodeling.com",
       "name": "Hawley Construction Co.",
-      "url": "https://hawleyconstruction.co",
+      "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
       "priceRange": "$$$",
-      "image": "https://hawleyconstruction.co/og-image.png",
+      "image": "https://hawleyremodeling.com/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "316 11th Ave NE",
@@ -231,7 +231,7 @@ export default function AduInLawSuiteBuilder() {
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 27.7676, "longitude": -82.6403 },
       "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
-      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyconstruction.co"]
+      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyremodeling.com"]
     };
     const existingLb = document.getElementById("adu-lb-schema");
     if (existingLb) existingLb.remove();
@@ -244,7 +244,7 @@ export default function AduInLawSuiteBuilder() {
     return () => {
       document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
       const c = document.querySelector('link[rel="canonical"]');
-      if (c) c.setAttribute("href", "https://hawleyconstruction.co");
+      if (c) c.setAttribute("href", "https://hawleyremodeling.com");
       document.getElementById("adu-service-schema")?.remove();
       document.getElementById("adu-faq-schema")?.remove();
       document.getElementById("adu-lb-schema")?.remove();

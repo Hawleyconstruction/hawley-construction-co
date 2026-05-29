@@ -1,6 +1,10 @@
 // Per-page SEO data — title, canonical, and meta description for every route.
 // This file is consumed both by the Vite SSG plugin (build-time HTML injection)
 // and by the React SEO component (client-side updates for SPA navigation).
+//
+// BASE_URL is driven by the VITE_BASE_URL env var at build time.
+// Default: https://hawleyconstruction.co
+// To deploy to a new domain, set VITE_BASE_URL=https://yournewdomain.com at build time.
 
 export interface PageSEO {
   title: string;
@@ -8,7 +12,10 @@ export interface PageSEO {
   canonical: string;
 }
 
-const BASE = "https://hawleyconstruction.co";
+const BASE: string =
+  (import.meta.env && import.meta.env.VITE_BASE_URL
+    ? (import.meta.env.VITE_BASE_URL as string)
+    : "") || "https://hawleyconstruction.co";
 
 export const PAGE_SEO: Record<string, PageSEO> = {
   "/": {
@@ -180,6 +187,16 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     title: "Bathroom Remodeling St. Petersburg, FL | Hawley Construction Co.",
     description: "Expert bathroom remodeling in St. Petersburg, FL. Walk-in showers, vanities, full renovations. Licensed & insured. Get a free estimate from Hawley Construction.",
     canonical: `${BASE}/bathroom-remodeling-st-petersburg/`,
+  },
+  "/general-contractor-st-petersburg": {
+    title: "General Contractor St. Petersburg, FL | Hawley Construction Co.",
+    description: "Licensed general contractor in St. Petersburg, FL. Kitchens, bathrooms, additions, decks & full home remodels. Hawley Construction Co. — free estimates available.",
+    canonical: `${BASE}/general-contractor-st-petersburg/`,
+  },
+  "/general-contractor-st-petersburg/": {
+    title: "General Contractor St. Petersburg, FL | Hawley Construction Co.",
+    description: "Licensed general contractor in St. Petersburg, FL. Kitchens, bathrooms, additions, decks & full home remodels. Hawley Construction Co. — free estimates available.",
+    canonical: `${BASE}/general-contractor-st-petersburg/`,
   },
 };
 

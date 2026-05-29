@@ -147,6 +147,8 @@ export default function Home() {
             src={HERO_IMG}
             alt="Luxury kitchen remodel Tampa Bay"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
             onLoad={() => setHeroLoaded(true)}
           />
           <div
@@ -461,6 +463,7 @@ export default function Home() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp"
                 alt="Kitchen remodel after - Tampa Bay"
                 className="w-full h-72 md:h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div
@@ -473,6 +476,7 @@ export default function Home() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp"
                 alt="Bathroom remodel after - Tampa Bay"
                 className="w-full h-72 md:h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div
@@ -485,6 +489,7 @@ export default function Home() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp"
                 alt="Sunroom addition after - Tampa Bay"
                 className="w-full h-64 md:h-72 object-cover"
+                loading="lazy"
               />
             </div>
             <div
@@ -497,6 +502,7 @@ export default function Home() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-RFc2rKVehVEWPV5GpcVQEW.webp"
                 alt="Outdoor living space after - Tampa Bay"
                 className="w-full h-64 md:h-72 object-cover"
+                loading="lazy"
               />
             </div>
             <div
@@ -509,6 +515,7 @@ export default function Home() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-after-fHq2VWgfu4bzQ7nx4A2z86.webp"
                 alt="Trex deck installation after - Tampa Bay"
                 className="w-full h-64 md:h-72 object-cover"
+                loading="lazy"
               />
             </div>
           </div>

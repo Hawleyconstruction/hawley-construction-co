@@ -48,9 +48,16 @@ const portfolioData = [
   {
     slug: "home-additions",
     title: "Home Additions",
-    location: "Clearwater, FL",
-    description: "Master suite addition seamlessly blended with existing home structure, featuring new impact windows, extended roofline, covered patio, and upgraded landscaping.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp",
+    location: "Tampa Bay, FL",
+    description: "Home addition with craftsman gable, composite deck, screened porch with skylights, and separate entrance — seamlessly blended with existing structure.",
+    image: "/images/projects/additions/addition-02.jpg",
+  },
+  {
+    slug: "home-additions",
+    title: "In-Law Suite Addition",
+    location: "St. Petersburg, FL",
+    description: "In-law suite addition with private entrance, craftsman gable, composite deck, and screened porch — fully permitted and designed to match the existing home.",
+    image: "/images/projects/additions/addition-01.jpg",
   },
   {
     slug: "full-home-remodels",

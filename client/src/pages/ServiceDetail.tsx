@@ -12,7 +12,7 @@ const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + 
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
-const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
 const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
 
 // Before/After gallery data per service
@@ -24,10 +24,10 @@ const galleryData: Record<string, { before: string; after: string; caption: stri
     { before: "/images/projects/bathroom/bathroom-01.jpg", after: "/images/projects/bathroom/bathroom-03.jpg", caption: "Master bathroom renovation with marble shower & soaking tub — Tampa Bay, FL" },
   ],
   "home-additions": [
-    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-before-YQsLXFf8Tjvsq3mHHYdcNE.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp", caption: "Master suite addition — Clearwater, FL" },
+    { before: "/images/projects/additions/addition-01.jpg", after: "/images/projects/additions/addition-02.jpg", caption: "Home addition with screened porch & deck — Tampa Bay, FL" },
   ],
   "full-home-remodels": [
-    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-before-LZT6cJbDV5Gbr9iEzvyULB.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp", caption: "Open-concept conversion — Bradenton, FL" },
+    { before: "/images/projects/additions/addition-01.jpg", after: "/images/projects/additions/addition-02.jpg", caption: "Full home remodel with addition — Tampa Bay, FL" },
   ],
   "sunrooms": [
     { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-before-DQF6ERgpuLb4xYYCEANWAu.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp", caption: "Four-season sunroom — Sarasota, FL" },
@@ -491,11 +491,11 @@ export default function ServiceDetail() {
               <div className="img-zoom overflow-hidden mb-10" style={{ borderRadius: "2px" }}>
                 <img
                   src={service.img}
-                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : service.title}
+                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : slug === "home-additions" ? "Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof by Hawley Construction" : slug === "full-home-remodels" ? "Full home remodel in Tampa Bay, FL with new addition, screened porch, and composite deck by Hawley Construction" : service.title}
                   className="w-full h-80 object-cover"
                   width="1600"
                   height="1066"
-                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" ? "eager" : "lazy"}
+                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" || slug === "home-additions" || slug === "full-home-remodels" ? "eager" : "lazy"}
                 />
               </div>
               <p

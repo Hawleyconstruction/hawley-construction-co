@@ -10,16 +10,16 @@ import { CheckCircle2, Phone, ChevronDown, Shield, Award, Home, MapPin, Zap, Bui
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const IMG1 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp";
-const IMG2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
+const IMG1 = "/images/projects/additions/addition-01.jpg"; // craftsman-style addition with separate entrance, deck, and screened porch
+const IMG2 = "/images/projects/additions/addition-02.jpg"; // aerial view of completed home addition with screened porch and deck
 const IMG3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp";
 const IMG4 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
 const IMG5 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
 const IMG6 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
 
 const galleryImages = [
-  { src: IMG1, alt: "Detached backyard ADU cottage in Shore Acres St. Petersburg FL" },
-  { src: IMG2, alt: "In-law suite addition with private entrance in South Tampa FL" },
+  { src: IMG1, alt: "In-law suite addition in St. Petersburg FL with separate entrance, craftsman gable, composite deck, and screened porch by Hawley Construction", width: 1279, height: 1600 },
+  { src: IMG2, alt: "Home addition in Tampa Bay FL with screened porch, composite deck, and gable roof — aerial view by Hawley Construction", width: 1600, height: 1066 },
   { src: IMG3, alt: "Garage conversion to ADU dwelling unit in Clearwater FL" },
   { src: IMG4, alt: "Above-garage ADU unit in Old Northeast St. Petersburg FL" },
   { src: IMG5, alt: "In-law suite kitchenette and living space in Seminole FL" },
@@ -220,7 +220,7 @@ export default function AduInLawSuiteBuilder() {
       "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
       "priceRange": "$$$",
-      "image": "https://hawleyremodeling.com/og-image.png",
+      "image": "https://hawleyremodeling.com/images/projects/additions/addition-01.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "316 11th Ave NE",
@@ -274,8 +274,12 @@ export default function AduInLawSuiteBuilder() {
         <div className="absolute inset-0">
           <img
             src={IMG1}
-            alt="Custom ADU and in-law suite builder St. Petersburg FL by Hawley Construction"
+            alt="In-law suite addition in St. Petersburg, FL with separate entrance, craftsman gable, composite deck, and screened porch by Hawley Construction"
             className="w-full h-full object-cover"
+            width="1279"
+            height="1600"
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.90) 0%, rgba(20,18,14,0.60) 60%, rgba(20,18,14,0.25) 100%)" }} />
         </div>
@@ -369,9 +373,12 @@ export default function AduInLawSuiteBuilder() {
             <div className="relative">
               <img
                 src={IMG2}
-                alt="In-law suite addition with private entrance in St. Petersburg FL"
+                alt="Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof — aerial view by Hawley Construction"
                 className="w-full object-cover shadow-xl"
                 style={{ borderRadius: "2px", aspectRatio: "4/3" }}
+                width="1600"
+                height="1066"
+                loading="lazy"
               />
               <div
                 className="absolute -bottom-5 -left-5 px-6 py-4 shadow-lg"
@@ -535,6 +542,9 @@ export default function AduInLawSuiteBuilder() {
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={(img as any).width || 1600}
+                  height={(img as any).height || 1066}
+                  loading="lazy"
                 />
               </div>
             ))}

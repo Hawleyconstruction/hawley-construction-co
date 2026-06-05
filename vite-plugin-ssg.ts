@@ -658,6 +658,7 @@ function injectSEO(html: string, route: string, seo: RouteSEO): string {
     const kitchenRoutes = ["/services/kitchen-remodeling", "/kitchen-remodeling-st-petersburg", "/kitchen-remodeling-st-petersburg/"];
     const additionRoutes = ["/services/home-additions", "/services/full-home-remodels", "/adu-in-law-suite-builder", "/adu-in-law-suite-builder/"];
     const deckRoutes = ["/services/trex-decks", "/trex-deck-builder-tampa-bay", "/trex-deck-builder-tampa-bay/"];
+    const outdoorRoutes = ["/services/outdoor-living"];
     const serviceImage = bathroomRoutes.includes(route)
       ? `${BASE}/images/projects/bathroom/bathroom-01.jpg`
       : kitchenRoutes.includes(route)
@@ -666,6 +667,8 @@ function injectSEO(html: string, route: string, seo: RouteSEO): string {
       ? `${BASE}/images/projects/additions/addition-02.jpg`
       : deckRoutes.includes(route)
       ? `${BASE}/images/projects/decks/trex-deck-01.jpg`
+      : outdoorRoutes.includes(route)
+      ? `${BASE}/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg`
       : undefined;
     html = html.replace(
       "</head>",

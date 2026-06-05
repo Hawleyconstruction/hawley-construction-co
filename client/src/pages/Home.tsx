@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.jpg"; // wood linen cabinet + hex tile + glass shower
-const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-living-01.jpg"; // Mediterranean-style covered loggia with arched columns, wood beam ceiling, and pool
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
 const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
@@ -606,7 +606,9 @@ export default function Home() {
               <div className="img-zoom overflow-hidden" style={{ borderRadius: "2px" }}>
                 <img
                   src={OUTDOOR_IMG}
-                  alt="Quality construction Tampa Bay"
+                  alt="Mediterranean-style covered outdoor living space with arched columns, wood beam ceiling, and pool in Tampa Bay, FL by Hawley Construction"
+                  width="1200"
+                  height="800"
                   className="w-full h-[500px] object-cover"
                 />
               </div>

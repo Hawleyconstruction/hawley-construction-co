@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
-const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room with gas fireplace, ceiling fan, TV, and teak lounge furniture
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
 const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
@@ -33,7 +33,7 @@ const galleryData: Record<string, { before: string; after: string; caption: stri
     { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-before-DQF6ERgpuLb4xYYCEANWAu.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp", caption: "Four-season sunroom — Sarasota, FL" },
   ],
   "outdoor-living": [
-    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-before-Eh4Hc6m3UPYnyNDaDXQ9ot.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-RFc2rKVehVEWPV5GpcVQEW.webp", caption: "Outdoor living space — Wesley Chapel, FL" },
+    { before: "/images/projects/outdoor-living/outdoor-living-pool-01.jpg", after: "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg", caption: "Outdoor living transformation — Tampa Bay, FL" },
   ],
   "patios": [
     { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-before-e4kVYp9T3SGjUR9o3dUSjW.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-after-h7cpoG8DbswTBZpi7g8JDx.webp", caption: "Paver patio installation — Tarpon Springs, FL" },
@@ -491,11 +491,11 @@ export default function ServiceDetail() {
               <div className="img-zoom overflow-hidden mb-10" style={{ borderRadius: "2px" }}>
                 <img
                   src={service.img}
-                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : slug === "home-additions" ? "Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof by Hawley Construction" : slug === "full-home-remodels" ? "Full home remodel in Tampa Bay, FL with new addition, screened porch, and composite deck by Hawley Construction" : slug === "trex-decks" ? "Trex composite deck installation in Tampa Bay, FL with multi-level design, aluminum railing, and outdoor living space by Hawley Construction" : service.title}
+                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : slug === "home-additions" ? "Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof by Hawley Construction" : slug === "full-home-remodels" ? "Full home remodel in Tampa Bay, FL with new addition, screened porch, and composite deck by Hawley Construction" : slug === "trex-decks" ? "Trex composite deck installation in Tampa Bay, FL with multi-level design, aluminum railing, and outdoor living space by Hawley Construction" : slug === "outdoor-living" ? "Covered outdoor living room with gas fireplace, ceiling fan, outdoor TV, and teak lounge furniture in Tampa Bay, FL by Hawley Construction" : service.title}
                   className="w-full h-80 object-cover"
                   width="1600"
                   height="1066"
-                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" || slug === "home-additions" || slug === "full-home-remodels" || slug === "trex-decks" ? "eager" : "lazy"}
+                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" || slug === "home-additions" || slug === "full-home-remodels" || slug === "trex-decks" || slug === "outdoor-living" ? "eager" : "lazy"}
                 />
               </div>
               <p

@@ -2,7 +2,7 @@
  * ServiceDetail Page — Individual service deep-dive
  * SEO-optimized with keyword-rich content per service + FAQ schema for AI search
  */
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; // useState used by FaqAccordion
 import { useParams, Link } from "wouter";
 import { CheckCircle2, Phone, ArrowLeft, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -219,74 +219,19 @@ const serviceData: Record<string, {
   },
 };
 
-// Before/After Slider component for service pages
-function BeforeAfterSlider({ item }: { item: { before: string; after: string; caption: string } }) {
-  const [sliderPos, setSliderPos] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-    const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-    setSliderPos(x);
-  };
-
+// Project photo card — shows finished project image only
+function ProjectPhotoCard({ item }: { item: { before: string; after: string; caption: string } }) {
   return (
     <div>
-      <div
-        className="relative overflow-hidden cursor-col-resize select-none"
-        style={{ borderRadius: "2px", aspectRatio: "4/3" }}
-        onMouseDown={() => setIsDragging(true)}
-        onMouseUp={() => setIsDragging(false)}
-        onMouseLeave={() => setIsDragging(false)}
-        onMouseMove={handleMove}
-        onTouchStart={() => setIsDragging(true)}
-        onTouchEnd={() => setIsDragging(false)}
-        onTouchMove={handleMove}
-      >
+      <div className="img-zoom overflow-hidden" style={{ borderRadius: "2px", aspectRatio: "4/3" }}>
         <img
           src={item.after}
-          alt={`After - ${item.caption}`}
-          className="absolute inset-0 w-full h-full object-cover"
+          alt={item.caption}
+          className="w-full h-full object-cover"
           width="1600"
-          height="1066"
+          height="1200"
           loading="lazy"
         />
-        <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
-          <img
-            src={item.before}
-            alt={`Before - ${item.caption}`}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ minWidth: "100%", width: `${10000 / sliderPos}%`, maxWidth: "none" }}
-            width="1600"
-            height="1066"
-            loading="lazy"
-          />
-        </div>
-        <div
-          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10"
-          style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
-        >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-              <path d="M7 4L3 10L7 16" stroke="oklch(0.22 0.01 250)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M13 4L17 10L13 16" stroke="oklch(0.22 0.01 250)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-        <div
-          className="absolute top-3 left-3 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white z-10"
-          style={{ backgroundColor: "oklch(0.35 0.01 250 / 0.8)", borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-        >
-          Before
-        </div>
-        <div
-          className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white z-10"
-          style={{ backgroundColor: "oklch(0.55 0.065 82 / 0.9)", borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-        >
-          After
-        </div>
       </div>
       <p
         className="mt-2 text-sm font-medium"
@@ -591,7 +536,7 @@ export default function ServiceDetail() {
             </h2>
             <div className={`grid gap-8 ${gallery.length === 1 ? "max-w-2xl" : "grid-cols-1 md:grid-cols-2"}`}>
               {gallery.map((item, i) => (
-                <BeforeAfterSlider key={i} item={item} />
+                <ProjectPhotoCard key={i} item={item} />
               ))}
             </div>
           </div>

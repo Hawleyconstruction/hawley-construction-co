@@ -11,18 +11,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Use existing CDN images from the project
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-outdoor-KW8hCkNSxN2cYTrJakvzLS.webp";
-const DECK_IMG_1 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp";
-const DECK_IMG_2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
-const DECK_IMG_3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp";
+const HERO_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
+const DECK_IMG_1 = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex deck at sunset
+const DECK_IMG_2 = "/images/projects/decks/trex-deck-02.jpg"; // grey Trex composite deck with white railing and Adirondack chairs
+const DECK_IMG_3 = "/images/projects/decks/trex-deck-03.jpg"; // waterfront multi-level composite deck with pool surround
 const DECK_IMG_4 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
 const DECK_IMG_5 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
 const DECK_IMG_6 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
 
 const galleryImages = [
-  { src: DECK_IMG_1, alt: "Trex Transcend composite deck build in Snell Isle St. Petersburg FL" },
-  { src: DECK_IMG_2, alt: "Multi-level Trex deck with cable railing in South Tampa FL" },
-  { src: DECK_IMG_3, alt: "Trex pool deck surround in Clearwater FL — Enhance line" },
+  { src: DECK_IMG_1, alt: "Trex composite deck installation in Tampa Bay with multi-level design and aluminum railing by Hawley Construction", width: 1300, height: 729 },
+  { src: DECK_IMG_2, alt: "Grey Trex Enhance composite deck with white railing system and Adirondack chairs in St. Petersburg, FL", width: 1600, height: 900 },
+  { src: DECK_IMG_3, alt: "Waterfront multi-level composite deck with pool surround and fire pit in Tampa Bay, FL", width: 990, height: 620 },
   { src: DECK_IMG_4, alt: "Trex pergola and shade structure in Shore Acres St. Petersburg FL" },
   { src: DECK_IMG_5, alt: "Trex Transcend Lineage deck with LED post-cap lighting in Wesley Chapel FL" },
   { src: DECK_IMG_6, alt: "Trex deck replacement over existing framing in Old Northeast St. Petersburg FL" },

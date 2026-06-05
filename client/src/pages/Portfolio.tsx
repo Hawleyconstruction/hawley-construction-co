@@ -104,9 +104,20 @@ const portfolioData = [
   {
     slug: "trex-decks",
     title: "Trex Deck Installation",
-    location: "Clearwater, FL",
-    description: "Trex composite deck replacement with multi-level design, cable railing system, built-in bench seating, and integrated LED step lighting.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-after-fHq2VWgfu4bzQ7nx4A2z86.webp",
+    location: "Tampa Bay, FL",
+    description: "Multi-level Trex composite deck with aluminum railing system, elevated design, and outdoor living space — built to Florida wind-load requirements.",
+    image: "/images/projects/decks/trex-deck-01.jpg",
+    imgWidth: 1300,
+    imgHeight: 729,
+  },
+  {
+    slug: "trex-decks",
+    title: "Waterfront Composite Deck",
+    location: "Tampa Bay, FL",
+    description: "Waterfront multi-level composite deck with pool surround, fire pit area, and outdoor living space — Trex Enhance line with coastal-rated hardware.",
+    image: "/images/projects/decks/trex-deck-03.jpg",
+    imgWidth: 990,
+    imgHeight: 620,
   },
 ];
 
@@ -197,8 +208,8 @@ export default function Portfolio() {
                     src={project.image}
                     alt={`${project.title} - ${project.location} | Hawley Construction Co.`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    width="1600"
-                    height="1067"
+                    width={(project as any).imgWidth ?? 1600}
+                    height={(project as any).imgHeight ?? 1067}
                     loading="lazy"
                   />
                 </div>

@@ -13,7 +13,7 @@ const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.jpg"; // wood linen 
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
-const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 const services = [
   { title: "Kitchen Remodeling", desc: "Custom kitchens designed for the way you live — from quartz countertops to custom cabinetry.", slug: "kitchen-remodeling", img: HERO_IMG },
@@ -519,8 +519,10 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-after-fHq2VWgfu4bzQ7nx4A2z86.webp"
-                alt="Trex deck installation after - Tampa Bay"
+                src="/images/projects/decks/trex-deck-03.jpg"
+                alt="Waterfront multi-level Trex composite deck with pool surround in Tampa Bay, FL by Hawley Construction"
+                width="990"
+                height="620"
                 className="w-full h-64 md:h-72 object-cover"
                 loading="lazy"
               />

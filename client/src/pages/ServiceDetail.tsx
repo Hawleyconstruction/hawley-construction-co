@@ -13,7 +13,7 @@ const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
-const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 // Before/After gallery data per service
 const galleryData: Record<string, { before: string; after: string; caption: string }[]> = {
@@ -45,7 +45,7 @@ const galleryData: Record<string, { before: string; after: string; caption: stri
     { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-before-iuT49PM63oDBRbeWBRtgXo.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp", caption: "Custom cabinetry — Tampa, FL" },
   ],
   "trex-decks": [
-    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-before-fYQaEnjbn7XaRr2zAGXYsZ.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/deck-after-fHq2VWgfu4bzQ7nx4A2z86.webp", caption: "Trex composite deck — Clearwater, FL" },
+    { before: "/images/projects/decks/trex-deck-02.jpg", after: "/images/projects/decks/trex-deck-01.jpg", caption: "Trex composite deck installation — Tampa Bay, FL" },
   ],
 };
 
@@ -491,11 +491,11 @@ export default function ServiceDetail() {
               <div className="img-zoom overflow-hidden mb-10" style={{ borderRadius: "2px" }}>
                 <img
                   src={service.img}
-                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : slug === "home-additions" ? "Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof by Hawley Construction" : slug === "full-home-remodels" ? "Full home remodel in Tampa Bay, FL with new addition, screened porch, and composite deck by Hawley Construction" : service.title}
+                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : slug === "home-additions" ? "Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof by Hawley Construction" : slug === "full-home-remodels" ? "Full home remodel in Tampa Bay, FL with new addition, screened porch, and composite deck by Hawley Construction" : slug === "trex-decks" ? "Trex composite deck installation in Tampa Bay, FL with multi-level design, aluminum railing, and outdoor living space by Hawley Construction" : service.title}
                   className="w-full h-80 object-cover"
                   width="1600"
                   height="1066"
-                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" || slug === "home-additions" || slug === "full-home-remodels" ? "eager" : "lazy"}
+                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" || slug === "home-additions" || slug === "full-home-remodels" || slug === "trex-decks" ? "eager" : "lazy"}
                 />
               </div>
               <p

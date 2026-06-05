@@ -9,9 +9,9 @@ import { Phone, CheckCircle2, ArrowRight, MapPin, Star, Clock, Shield } from "lu
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
-const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
-const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island, wood base — St. Petersburg
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower, light-blue double vanity — St. Petersburg
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor room with gas fireplace, ceiling fan, outdoor TV
 
 interface CityData {
   name: string;
@@ -181,7 +181,7 @@ export default function CityLanding() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt={`Home remodeling in ${data.name}, Florida`} className="w-full h-full object-cover" />
+          <img src={HERO_IMG} alt={`Custom kitchen remodel in ${data.name}, Florida by Hawley Construction`} className="w-full h-full object-cover" width="1600" height="1066" loading="eager" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, oklch(0.12 0.008 250 / 0.9) 0%, oklch(0.12 0.008 250 / 0.6) 55%, transparent 100%)" }} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,9 +256,9 @@ export default function CityLanding() {
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={BATHROOM_IMG} alt={`Bathroom remodel in ${data.name} FL`} className="w-full h-48 object-cover" style={{ borderRadius: "2px" }} />
-              <img src={OUTDOOR_IMG} alt={`Outdoor living space in ${data.name} FL`} className="w-full h-48 object-cover" style={{ borderRadius: "2px" }} />
-              <img src={HERO_IMG} alt={`Kitchen remodeling in ${data.name} FL`} className="w-full h-48 object-cover col-span-2" style={{ borderRadius: "2px" }} />
+              <img src={BATHROOM_IMG} alt={`Luxury bathroom remodel in ${data.name}, FL with blue marble walk-in shower and custom vanity`} className="w-full h-48 object-cover" style={{ borderRadius: "2px" }} width="1600" height="1066" loading="lazy" />
+              <img src={OUTDOOR_IMG} alt={`Covered outdoor living room with gas fireplace and lounge furniture in ${data.name}, FL`} className="w-full h-48 object-cover" style={{ borderRadius: "2px" }} width="1600" height="1067" loading="lazy" />
+              <img src={HERO_IMG} alt={`Custom kitchen remodel in ${data.name}, FL with white shaker cabinets and marble quartz island`} className="w-full h-48 object-cover col-span-2" style={{ borderRadius: "2px" }} width="1600" height="1066" loading="lazy" />
             </div>
           </div>
         </div>

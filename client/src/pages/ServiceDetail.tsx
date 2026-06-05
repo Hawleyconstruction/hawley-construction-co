@@ -578,6 +578,26 @@ export default function ServiceDetail() {
       </section>
 
 
+      {/* Before / After Gallery — shown when gallery data exists for this service */}
+      {gallery.length > 0 && (
+        <section className="py-16 md:py-24" style={{ backgroundColor: "oklch(0.96 0.004 250)" }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span className="section-divider" />
+            <h2
+              className="text-2xl md:text-3xl font-bold mb-10"
+              style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.01 250)" }}
+            >
+              Project Gallery
+            </h2>
+            <div className={`grid gap-8 ${gallery.length === 1 ? "max-w-2xl" : "grid-cols-1 md:grid-cols-2"}`}>
+              {gallery.map((item, i) => (
+                <BeforeAfterSlider key={i} item={item} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <Footer />
     </div>
   );

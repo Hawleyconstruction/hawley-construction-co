@@ -12,10 +12,10 @@ import Footer from "@/components/Footer";
 
 const IMG1 = "/images/projects/additions/addition-01.jpg"; // craftsman-style addition with separate entrance, deck, and screened porch
 const IMG2 = "/images/projects/additions/addition-02.jpg"; // aerial view of completed home addition with screened porch and deck
-const IMG3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp";
-const IMG4 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
-const IMG5 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
-const IMG6 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
+const IMG3 = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room with gas fireplace
+const IMG4 = "/images/fallbacks/sunroom-after-01.jpg"; // four-season sunroom addition
+const IMG5 = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen remodel after
+const IMG6 = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
 
 const galleryImages = [
   { src: IMG1, alt: "In-law suite addition in St. Petersburg FL with separate entrance, craftsman gable, composite deck, and screened porch by Hawley Construction", width: 1279, height: 1600 },

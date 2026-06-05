@@ -13,12 +13,12 @@ import Footer from "@/components/Footer";
 const HERO_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble shower + light-blue double vanity
 const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.jpg"; // white marble shower + freestanding tub
 const BATHROOM_BEFORE = "/images/projects/bathroom/bathroom-01.jpg"; // reuse hero as before-state placeholder
-const KITCHEN_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
-const CABINETRY_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
-const REMODEL_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
-const WINDOWS_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/windows-after-HxmvFRS7Fp89og6X5bEH94.webp";
-const ADDITION_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp";
-const SUNROOM_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
+const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen remodel after
+const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
+const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
+const WINDOWS_AFTER = "/images/fallbacks/windows-after-01.jpg"; // impact windows after
+const ADDITION_AFTER = "/images/projects/additions/addition-02.jpg"; // home addition after
+const SUNROOM_AFTER = "/images/fallbacks/sunroom-after-01.jpg"; // sunroom after
 
 const galleryImages = [
   { src: "/images/projects/bathroom/bathroom-05.jpg", alt: "Airy primary bathroom remodel in St. Petersburg FL with double vanity, gold fixtures, and marble countertop by Hawley Construction", width: 1600, height: 1064 },

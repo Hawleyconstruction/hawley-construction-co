@@ -20,9 +20,16 @@ const portfolioData = [
   {
     slug: "bathroom-remodeling",
     title: "Bathroom Remodeling",
-    location: "Tampa, FL",
-    description: "Master bathroom renovation with frameless glass walk-in shower, freestanding soaking tub, floating double vanity with quartz top, and large format marble-look porcelain tile.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp",
+    location: "St. Petersburg, FL",
+    description: "Master bathroom renovation with frameless glass walk-in shower, freestanding soaking tub, dark wood double vanity with quartz top, and floor-to-ceiling marble-look porcelain tile.",
+    image: "/images/projects/bathroom/bathroom-02.jpg",
+  },
+  {
+    slug: "bathroom-remodeling",
+    title: "Bathroom Remodeling",
+    location: "Tampa Bay, FL",
+    description: "Modern bathroom remodel featuring custom white subway tile walk-in shower with patterned niche, matte black fixtures, frameless glass door, and patterned floor tile.",
+    image: "/images/projects/bathroom/bathroom-04.jpg",
   },
   {
     slug: "home-additions",
@@ -169,6 +176,9 @@ export default function Portfolio() {
                     src={project.image}
                     alt={`${project.title} - ${project.location} | Hawley Construction Co.`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
                   />
                 </div>
                 {/* Project info */}

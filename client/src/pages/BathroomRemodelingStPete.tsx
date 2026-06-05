@@ -10,9 +10,9 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Awar
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
-const BATHROOM_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp";
-const BATHROOM_BEFORE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-before-dZMyaaPMs3Qj2DwkGzszKr.webp";
+const HERO_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble shower + light-blue double vanity
+const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.jpg"; // white marble shower + freestanding tub
+const BATHROOM_BEFORE = "/images/projects/bathroom/bathroom-01.jpg"; // reuse hero as before-state placeholder
 const KITCHEN_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
 const CABINETRY_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
 const REMODEL_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
@@ -21,12 +21,10 @@ const ADDITION_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873
 const SUNROOM_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
 
 const galleryImages = [
-  { src: BATHROOM_AFTER, alt: "Custom walk-in shower remodel in Old Northeast St. Petersburg FL" },
-  { src: BATHROOM_BEFORE, alt: "Before bathroom renovation in Snell Isle St. Petersburg FL" },
-  { src: CABINETRY_AFTER, alt: "Custom vanity and cabinetry in primary bathroom St. Petersburg" },
-  { src: REMODEL_AFTER, alt: "Primary suite bathroom remodel in Historic Kenwood St. Petersburg FL" },
-  { src: WINDOWS_AFTER, alt: "Bathroom window and natural light upgrade in Shore Acres St. Petersburg" },
-  { src: ADDITION_AFTER, alt: "Primary suite addition with luxury bathroom in Crescent Lake St. Petersburg" },
+  { src: "/images/projects/bathroom/bathroom-05.jpg", alt: "Airy primary bathroom remodel in St. Petersburg FL with double vanity, gold fixtures, and marble countertop by Hawley Construction", width: 1600, height: 1064 },
+  { src: "/images/projects/bathroom/bathroom-02.jpg", alt: "Luxury bathroom remodel in Tampa Bay FL with dark tile, floating double vanity, Calacatta quartz countertop, and gold pendant lights by Hawley Construction", width: 1600, height: 1067 },
+  { src: "/images/projects/bathroom/bathroom-04.jpg", alt: "Modern walk-in shower remodel in St. Petersburg FL with white subway tile, patterned niche, matte black fixtures, and frameless glass door by Hawley Construction", width: 1600, height: 2000 },
+  { src: "/images/projects/bathroom/bathroom-06.jpg", alt: "Bathroom remodel in Tampa Bay FL with custom wood linen cabinet, hex tile floor, and glass walk-in shower with blue accent tile by Hawley Construction", width: 1600, height: 2000 },
 ];
 
 const services = [
@@ -286,7 +284,15 @@ export default function BathroomRemodelingStPete() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Bathroom remodeling St. Petersburg FL by Hawley Construction" className="w-full h-full object-cover" />
+          <img
+            src={HERO_IMG}
+            alt="Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction"
+            className="w-full h-full object-cover"
+            width="1600"
+            height="1066"
+            fetchPriority="high"
+            loading="eager"
+          />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.82) 0%, rgba(20,18,14,0.45) 60%, rgba(20,18,14,0.15) 100%)" }} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
@@ -379,9 +385,12 @@ export default function BathroomRemodelingStPete() {
             <div className="relative">
               <img
                 src={BATHROOM_AFTER}
-                alt="Completed bathroom remodel by Hawley Construction in St. Petersburg FL"
+                alt="Completed bathroom remodel in St. Petersburg FL with white marble shower, freestanding soaking tub, and dark wood double vanity by Hawley Construction"
                 className="w-full object-cover shadow-xl"
                 style={{ borderRadius: "2px", aspectRatio: "4/3" }}
+                width="1600"
+                height="1066"
+                loading="lazy"
               />
               <div
                 className="absolute -bottom-5 -left-5 px-6 py-4 shadow-lg"
@@ -480,6 +489,9 @@ export default function BathroomRemodelingStPete() {
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
                 />
               </div>
             ))}

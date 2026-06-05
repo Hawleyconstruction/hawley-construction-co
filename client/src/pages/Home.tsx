@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
-const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.jpg"; // wood linen cabinet + hex tile + glass shower
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
@@ -394,8 +394,11 @@ export default function Home() {
                 <div className="h-48 overflow-hidden">
                   <img
                     src={item.img}
-                    alt={item.title}
+                    alt={item.title === "Bathroom Remodeling St. Petersburg" ? "Bathroom remodel in St. Petersburg FL with custom wood linen cabinet, hex tile floor, and glass walk-in shower by Hawley Construction" : item.title}
                     className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                    width="1600"
+                    height="2000"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">

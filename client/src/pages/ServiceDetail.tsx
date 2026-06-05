@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
-const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
 const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
@@ -21,7 +21,7 @@ const galleryData: Record<string, { before: string; after: string; caption: stri
     { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-before-gnpMvGCrqpA7wDknZQaauG.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp", caption: "Full kitchen remodel — St. Petersburg, FL" },
   ],
   "bathroom-remodeling": [
-    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-before-dZMyaaPMs3Qj2DwkGzszKr.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp", caption: "Master bathroom renovation — Tampa, FL" },
+    { before: "/images/projects/bathroom/bathroom-01.jpg", after: "/images/projects/bathroom/bathroom-03.jpg", caption: "Master bathroom renovation with marble shower & soaking tub — Tampa Bay, FL" },
   ],
   "home-additions": [
     { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-before-YQsLXFf8Tjvsq3mHHYdcNE.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp", caption: "Master suite addition — Clearwater, FL" },
@@ -249,6 +249,9 @@ function BeforeAfterSlider({ item }: { item: { before: string; after: string; ca
           src={item.after}
           alt={`After - ${item.caption}`}
           className="absolute inset-0 w-full h-full object-cover"
+          width="1600"
+          height="1066"
+          loading="lazy"
         />
         <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
           <img
@@ -256,6 +259,9 @@ function BeforeAfterSlider({ item }: { item: { before: string; after: string; ca
             alt={`Before - ${item.caption}`}
             className="absolute inset-0 w-full h-full object-cover"
             style={{ minWidth: "100%", width: `${10000 / sliderPos}%`, maxWidth: "none" }}
+            width="1600"
+            height="1066"
+            loading="lazy"
           />
         </div>
         <div
@@ -483,7 +489,14 @@ export default function ServiceDetail() {
             {/* Main content */}
             <div className="lg:col-span-2">
               <div className="img-zoom overflow-hidden mb-10" style={{ borderRadius: "2px" }}>
-                <img src={service.img} alt={service.title} className="w-full h-80 object-cover" />
+                <img
+                  src={service.img}
+                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : service.title}
+                  className="w-full h-80 object-cover"
+                  width="1600"
+                  height="1066"
+                  loading={slug === "bathroom-remodeling" ? "eager" : "lazy"}
+                />
               </div>
               <p
                 className="text-xl leading-relaxed mb-6 font-medium"

@@ -503,11 +503,12 @@ function buildBreadcrumbSchema(breadcrumbs: { name: string; item: string }[]): s
 // ---------------------------------------------------------------------------
 // Service schema
 // ---------------------------------------------------------------------------
-function buildServiceSchema(serviceType: string): string {
-  const schema = {
+function buildServiceSchema(serviceType: string, imageUrl?: string): string {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType,
+    ...(imageUrl ? { image: imageUrl } : {}),
     provider: {
       "@type": "GeneralContractor",
       "@id": `${BASE}/#business`,
@@ -652,9 +653,14 @@ function injectSEO(html: string, route: string, seo: RouteSEO): string {
 
   // ---- Inject Service schema (service pages) ----
   if (seo.serviceType) {
+    // Attach real project photo as image for bathroom pages
+    const bathroomRoutes = ["/services/bathroom-remodeling", "/bathroom-remodeling-st-petersburg", "/bathroom-remodeling-st-petersburg/"];
+    const serviceImage = bathroomRoutes.includes(route)
+      ? `${BASE}/images/projects/bathroom/bathroom-01.jpg`
+      : undefined;
     html = html.replace(
       "</head>",
-      `  <script type="application/ld+json">${buildServiceSchema(seo.serviceType)}</script>\n</head>`
+      `  <script type="application/ld+json">${buildServiceSchema(seo.serviceType, serviceImage)}</script>\n</head>`
     );
   }
 

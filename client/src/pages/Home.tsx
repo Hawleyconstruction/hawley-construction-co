@@ -11,8 +11,8 @@ import Footer from "@/components/Footer";
 const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.jpg"; // wood linen cabinet + hex tile + glass shower
 const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-living-01.jpg"; // Mediterranean-style covered loggia with arched columns, wood beam ceiling, and pool
-const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
-const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
+const SUNROOM_IMG = "/images/fallbacks/sunroom-01.jpg"; // local fallback — replace when real sunroom photo is available
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
 const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 const services = [
@@ -480,8 +480,9 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/bathroom-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp"
-                alt="Bathroom remodel after - Tampa Bay"
+                src="/images/projects/bathroom/bathroom-03.jpg"
+                alt="Bathroom remodel in Tampa Bay, FL — white marble walk-in shower and freestanding tub by Hawley Construction"
+                width="1600" height="1067"
                 className="w-full h-72 md:h-96 object-cover"
                 loading="lazy"
               />
@@ -493,8 +494,9 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp"
-                alt="Sunroom addition after - Tampa Bay"
+                src="/images/fallbacks/sunroom-after-01.jpg"
+                alt="Four-season sunroom addition in Tampa Bay, FL by Hawley Construction"
+                width="1400" height="1050"
                 className="w-full h-64 md:h-72 object-cover"
                 loading="lazy"
               />
@@ -506,8 +508,9 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-RFc2rKVehVEWPV5GpcVQEW.webp"
-                alt="Outdoor living space after - Tampa Bay"
+                src="/images/projects/outdoor-living/outdoor-kitchen-01.jpg"
+                alt="Custom outdoor kitchen with stone surround and built-in grills in Tampa Bay, FL by Hawley Construction"
+                width="1400" height="1050"
                 className="w-full h-64 md:h-72 object-cover"
                 loading="lazy"
               />

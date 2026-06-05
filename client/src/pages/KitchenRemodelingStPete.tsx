@@ -13,10 +13,10 @@ import Footer from "@/components/Footer";
 const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
 const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.jpg"; // white + navy X-island + brick arch
 const KITCHEN_BEFORE = "/images/projects/kitchen/kitchen-02.jpg"; // reuse hero as before-state placeholder
-const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
-const CABINETRY_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
-const REMODEL_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
-const PATIO_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-after-h7cpoG8DbswTBZpi7g8JDx.webp";
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room with gas fireplace
+const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
+const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
+const PATIO_AFTER = "/images/fallbacks/patio-after-01.jpg"; // paver patio after
 
 const galleryImages = [
   { src: KITCHEN_AFTER, alt: "Kitchen remodel in St. Petersburg FL with white shaker cabinets, navy X-panel island, quartz countertop, and brick arch by Hawley Construction", width: 1600, height: 1066 },

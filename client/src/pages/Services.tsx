@@ -8,12 +8,12 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
-const BATHROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-bathroom-KW8hCkNSxN2cYTrJakvzLS.webp";
-const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
-const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
-const HOME_ADDITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-home-addition-new-7k7PkNkc4ssP8WLmYJpDD9.webp";
-const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-trex-deck-2uwLnSueruCa29BoSx4nDJ.webp";
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island, wood base
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower, light-blue double vanity
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor room with gas fireplace, ceiling fan, TV
+const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp"; // sunroom — no real photo yet
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 const services = [
   {
@@ -67,7 +67,7 @@ const services = [
   {
     title: "Patios",
     slug: "patios",
-    img: OUTDOOR_IMG,
+    img: "/images/projects/outdoor-living/outdoor-living-pool-01.jpg",
     tagline: "The Foundation of Outdoor Living",
     desc: "A beautifully designed patio is the cornerstone of any outdoor space. We install pavers, stamped concrete, natural stone, and tile patios that are built to withstand Florida's climate while looking stunning for years to come.",
     benefits: ["Paver & natural stone installation", "Stamped & decorative concrete", "Drainage & grading solutions", "Covered patio structures", "Seamless indoor-outdoor flow"],
@@ -169,8 +169,20 @@ export default function Services() {
                 <div className="img-zoom h-56 overflow-hidden">
                   <img
                     src={service.img}
-                    alt={service.title}
+                    alt={
+                      service.slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" :
+                      service.slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" :
+                      service.slug === "home-additions" ? "Home addition in Tampa Bay, FL with screened porch, composite deck, and gable roof by Hawley Construction" :
+                      service.slug === "full-home-remodels" ? "Full home remodel in Tampa Bay, FL — open-concept kitchen with white shaker cabinets and marble island by Hawley Construction" :
+                      service.slug === "outdoor-living" ? "Covered outdoor living room with gas fireplace, ceiling fan, outdoor TV, and teak lounge furniture in Tampa Bay, FL by Hawley Construction" :
+                      service.slug === "patios" ? "Covered outdoor living space with wicker furniture and fire pit table overlooking pool in Tampa Bay, FL by Hawley Construction" :
+                      service.slug === "trex-decks" ? "Trex composite deck installation in Tampa Bay, FL with multi-level design and aluminum railing by Hawley Construction" :
+                      service.title
+                    }
                     className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-8">

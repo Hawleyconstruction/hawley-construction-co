@@ -420,7 +420,7 @@ function buildGeneralContractorSchema(): string {
     "@type": "GeneralContractor",
     "@id": `${BASE}/#business`,
     name: BUSINESS.name,
-    image: `${BASE}/og-image.png`,
+    image: `${BASE}/images/projects/kitchen/kitchen-02.jpg`,
     telephone: BUSINESS.telephone,
     email: BUSINESS.email,
     url: BASE,
@@ -653,10 +653,13 @@ function injectSEO(html: string, route: string, seo: RouteSEO): string {
 
   // ---- Inject Service schema (service pages) ----
   if (seo.serviceType) {
-    // Attach real project photo as image for bathroom pages
+    // Attach real project photo as image for bathroom and kitchen pages
     const bathroomRoutes = ["/services/bathroom-remodeling", "/bathroom-remodeling-st-petersburg", "/bathroom-remodeling-st-petersburg/"];
+    const kitchenRoutes = ["/services/kitchen-remodeling", "/kitchen-remodeling-st-petersburg", "/kitchen-remodeling-st-petersburg/"];
     const serviceImage = bathroomRoutes.includes(route)
       ? `${BASE}/images/projects/bathroom/bathroom-01.jpg`
+      : kitchenRoutes.includes(route)
+      ? `${BASE}/images/projects/kitchen/kitchen-02.jpg`
       : undefined;
     html = html.replace(
       "</head>",

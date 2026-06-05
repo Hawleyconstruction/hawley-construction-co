@@ -10,21 +10,21 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Awar
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
-const KITCHEN_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
-const KITCHEN_BEFORE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-before-gnpMvGCrqpA7wDknZQaauG.webp";
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
+const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.jpg"; // white + navy X-island + brick arch
+const KITCHEN_BEFORE = "/images/projects/kitchen/kitchen-02.jpg"; // reuse hero as before-state placeholder
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const CABINETRY_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
 const REMODEL_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
 const PATIO_AFTER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-after-h7cpoG8DbswTBZpi7g8JDx.webp";
 
 const galleryImages = [
-  { src: KITCHEN_AFTER, alt: "Open-concept kitchen renovation in Old Northeast St. Petersburg with quartz waterfall island" },
-  { src: KITCHEN_BEFORE, alt: "Before kitchen remodel in Snell Isle St. Petersburg FL" },
-  { src: CABINETRY_AFTER, alt: "Custom white shaker cabinetry kitchen remodel in Crescent Lake St. Petersburg" },
-  { src: REMODEL_AFTER, alt: "Open-concept kitchen and living area conversion in Historic Kenwood St. Petersburg" },
-  { src: OUTDOOR_IMG, alt: "Outdoor summer kitchen installation in Shore Acres St. Petersburg FL" },
-  { src: PATIO_AFTER, alt: "Covered lanai kitchen with paver patio in St. Petersburg Florida" },
+  { src: KITCHEN_AFTER, alt: "Kitchen remodel in St. Petersburg FL with white shaker cabinets, navy X-panel island, quartz countertop, and brick arch by Hawley Construction", width: 1600, height: 1066 },
+  { src: "/images/projects/kitchen/kitchen-06.jpg", alt: "Luxury kitchen remodel in Tampa Bay FL with dark charcoal cabinets, wood island, farmhouse sink, and geometric pendant lights by Hawley Construction", width: 1600, height: 1067 },
+  { src: "/images/projects/kitchen/kitchen-07.jpg", alt: "Custom kitchen remodel in St. Petersburg FL with white cabinets, walnut island, herringbone tile backsplash, and professional range by Hawley Construction", width: 1600, height: 685 },
+  { src: "/images/projects/kitchen/kitchen-01.jpg", alt: "Kitchen remodel in Tampa Bay FL with sage green island, natural wood upper cabinets, quartz countertop, and hardwood floors by Hawley Construction", width: 948, height: 631 },
+  { src: "/images/projects/kitchen/kitchen-05.jpg", alt: "Open-concept kitchen remodel in St. Petersburg FL with dark navy cabinets, orange La Cornue range, and dining area by Hawley Construction", width: 1194, height: 1600 },
+  { src: "/images/projects/kitchen/kitchen-03.jpg", alt: "Elegant kitchen remodel in Tampa Bay FL with white cabinets, navy island, floral barstools, and crystal chandeliers by Hawley Construction", width: 695, height: 322 },
 ];
 
 const services = [
@@ -286,7 +286,15 @@ export default function KitchenRemodelingStPete() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Kitchen remodeling St. Petersburg FL by Hawley Construction" className="w-full h-full object-cover" />
+          <img
+            src={HERO_IMG}
+            alt="Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction"
+            className="w-full h-full object-cover"
+            width="1600"
+            height="1067"
+            fetchPriority="high"
+            loading="eager"
+          />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.82) 0%, rgba(20,18,14,0.45) 60%, rgba(20,18,14,0.15) 100%)" }} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
@@ -380,9 +388,12 @@ export default function KitchenRemodelingStPete() {
             <div className="relative">
               <img
                 src={KITCHEN_AFTER}
-                alt="Completed kitchen remodel by Hawley Construction in St. Petersburg FL"
+                alt="Completed kitchen remodel in St. Petersburg FL with white shaker cabinets, navy X-panel island, quartz countertop, and brick arch by Hawley Construction"
                 className="w-full object-cover shadow-xl"
                 style={{ borderRadius: "2px", aspectRatio: "4/3" }}
+                width="1600"
+                height="1066"
+                loading="lazy"
               />
               <div
                 className="absolute -bottom-5 -left-5 px-6 py-4 shadow-lg"
@@ -481,6 +492,9 @@ export default function KitchenRemodelingStPete() {
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
                 />
               </div>
             ))}

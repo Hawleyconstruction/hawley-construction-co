@@ -8,7 +8,7 @@ import { Phone, Star, ChevronRight, CheckCircle2, ArrowRight } from "lucide-reac
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.jpg"; // wood linen cabinet + hex tile + glass shower
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
@@ -145,10 +145,12 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src={HERO_IMG}
-            alt="Luxury kitchen remodel Tampa Bay"
+            alt="Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction"
             className="w-full h-full object-cover"
             fetchPriority="high"
             loading="eager"
+            width="1600"
+            height="1067"
             onLoad={() => setHeroLoaded(true)}
           />
           <div
@@ -463,10 +465,12 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp"
-                alt="Kitchen remodel after - Tampa Bay"
+                src="/images/projects/kitchen/kitchen-02.jpg"
+                alt="Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction"
                 className="w-full h-72 md:h-96 object-cover"
                 loading="lazy"
+                width="1600"
+                height="1067"
               />
             </div>
             <div

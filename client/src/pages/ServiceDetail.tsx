@@ -8,7 +8,7 @@ import { CheckCircle2, Phone, ArrowLeft, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-kitchen-mSpoc3xtKks8iMHpTCvAxs.webp";
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
 const OUTDOOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-outdoor-living-new-hVfbb6yZQe8ungx9xcEYX8.webp";
 const SUNROOM_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-sunroom-screened-TouYoyDabjd4tNaeYJgTRx.webp";
@@ -18,7 +18,7 @@ const TREX_DECK_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/
 // Before/After gallery data per service
 const galleryData: Record<string, { before: string; after: string; caption: string }[]> = {
   "kitchen-remodeling": [
-    { before: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-before-gnpMvGCrqpA7wDknZQaauG.webp", after: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp", caption: "Full kitchen remodel — St. Petersburg, FL" },
+    { before: "/images/projects/kitchen/kitchen-02.jpg", after: "/images/projects/kitchen/kitchen-04.jpg", caption: "Full kitchen remodel — St. Petersburg, FL" },
   ],
   "bathroom-remodeling": [
     { before: "/images/projects/bathroom/bathroom-01.jpg", after: "/images/projects/bathroom/bathroom-03.jpg", caption: "Master bathroom renovation with marble shower & soaking tub — Tampa Bay, FL" },
@@ -491,11 +491,11 @@ export default function ServiceDetail() {
               <div className="img-zoom overflow-hidden mb-10" style={{ borderRadius: "2px" }}>
                 <img
                   src={service.img}
-                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : service.title}
+                  alt={slug === "bathroom-remodeling" ? "Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction" : slug === "kitchen-remodeling" ? "Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction" : service.title}
                   className="w-full h-80 object-cover"
                   width="1600"
                   height="1066"
-                  loading={slug === "bathroom-remodeling" ? "eager" : "lazy"}
+                  loading={slug === "bathroom-remodeling" || slug === "kitchen-remodeling" ? "eager" : "lazy"}
                 />
               </div>
               <p

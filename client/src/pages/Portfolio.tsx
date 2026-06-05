@@ -71,7 +71,9 @@ const portfolioData = [
     title: "Sunrooms",
     location: "Sarasota, FL",
     description: "Custom four-season sunroom addition with floor-to-ceiling energy-efficient glass panels, polished tile floor, and seamless connection to the main living space.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp",
+    image: "/images/fallbacks/sunroom-after-01.jpg",
+    imgWidth: 1400,
+    imgHeight: 1050,
   },
   {
     slug: "outdoor-living",
@@ -96,7 +98,9 @@ const portfolioData = [
     title: "Patio Installation",
     location: "Tarpon Springs, FL",
     description: "Herringbone pattern brick paver patio with curved edges, soldier course border, built-in seating wall, integrated landscape lighting, and tropical landscaping.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/patio-after-h7cpoG8DbswTBZpi7g8JDx.webp",
+    image: "/images/fallbacks/patio-after-01.jpg",
+    imgWidth: 1200,
+    imgHeight: 900,
   },
   {
     slug: "windows-doors",

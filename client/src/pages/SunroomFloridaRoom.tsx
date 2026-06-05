@@ -10,15 +10,15 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, Award, MapPin, Z
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/hawley-hero-sunroom-Ks9mNqPTaWXzVYbEjDcFRu.webp";
-const FALLBACK_HERO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
+const HERO_IMG = "/images/fallbacks/sunroom-01.jpg"; // local fallback — replace when real sunroom hero photo is available
+const FALLBACK_HERO = "/images/fallbacks/sunroom-after-01.jpg"; // local fallback
 
-const IMG1 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/sunroom-after-c5igWFwkXMiTD7G7dExTJ2.webp";
-const IMG2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/addition-after-ZJvFkDUDfMRPEBB8XzEDFv.webp";
-const IMG3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/outdoor-after-mFZsTRAQ7UMXN2JYfxu5Qy.webp";
-const IMG4 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/remodel-after-HirftJZMhQXYSKovsunpEJ.webp";
-const IMG5 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/kitchen-after-hsVXguHfNLPDyGVXHRHCyx.webp";
-const IMG6 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663540279873/mqBaZEe8cowVKqLebSdcGQ/cabinetry-after-k8HhBRBtCkgj4z34VvF6gu.webp";
+const IMG1 = "/images/fallbacks/sunroom-after-01.jpg"; // four-season sunroom interior
+const IMG2 = "/images/projects/additions/addition-02.jpg"; // home addition with screened porch & deck
+const IMG3 = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room
+const IMG4 = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
+const IMG5 = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen after remodel
+const IMG6 = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
 
 const galleryImages = [
   { src: IMG1, alt: "Custom four-season Florida room addition in Shore Acres St. Petersburg FL" },

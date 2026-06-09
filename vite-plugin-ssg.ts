@@ -337,7 +337,7 @@ const ROUTES: Record<string, RouteSEO> = {
   },
   "/trex-deck-builder-tampa-bay": {
     title: "Trex Deck Builder Tampa Bay | Hawley Construction Co.",
-    description: "Tampa Bay's trusted Trex deck builder. Custom composite decks built to last in Florida weather. Licensed, insured, free estimates. Call (704) 619-1480).",
+    description: "Tampa Bay's certified Trex deck builder. Custom composite decks built to last in Florida weather. Licensed & insured. Free estimates. Call (704) 619-1480.",
     canonical: `${BASE}/trex-deck-builder-tampa-bay/`,
     h1: "Trex Deck Builder — Tampa Bay",
     serviceType: "Trex Composite Deck Installation",

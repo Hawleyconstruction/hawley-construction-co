@@ -155,6 +155,7 @@ export default function TrexDeckBuilderTampaBay() {
     name: "", email: "", phone: "", projectType: "New Trex Deck", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
 
   useEffect(() => {
     document.title = "Trex Deck Builder Tampa Bay | Composite Deck Installation | Hawley Construction Co.";
@@ -272,15 +273,31 @@ export default function TrexDeckBuilderTampaBay() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError(false);
     try {
-      await fetch("https://formspree.io/f/mrerzpzj", {
+      const res = await fetch("https://formspree.io/f/mrerzpzj", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      setSubmitted(true);
+      if (res.ok) {
+        setSubmitted(true);
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-18172396876/cPy9CKLmgrQcEMyKo91D',
+            value: 50.0,
+            currency: 'USD',
+          });
+          (window as any).gtag('event', 'generate_lead', {
+            currency: 'USD',
+            value: 50,
+          });
+        }
+      } else {
+        setFormError(true);
+      }
     } catch {
-      setSubmitted(true);
+      setFormError(true);
     }
   };
 
@@ -758,6 +775,23 @@ export default function TrexDeckBuilderTampaBay() {
                   <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
                     We'll be in touch within one business day to schedule your free in-home deck estimate.
                   </p>
+                </div>
+              ) : formError ? (
+                <div className="flex flex-col items-center justify-center h-full py-12 text-center">
+                  <div className="mb-4 text-4xl">⚠️</div>
+                  <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
+                    Something went wrong
+                  </h3>
+                  <p className="text-sm mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
+                    We couldn't send your request. Please call us directly at (704) 619-1480 or try again.
+                  </p>
+                  <button
+                    onClick={() => setFormError(false)}
+                    className="text-sm underline"
+                    style={{ color: "oklch(0.45 0.01 250)" }}
+                  >
+                    Try again
+                  </button>
                 </div>
               ) : (
                 <>

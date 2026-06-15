@@ -3,7 +3,7 @@
  * Hero → Trust Stats → Services Grid → Gallery → Why Choose Us → Reviews → CTA → Contact
  */
 import { useEffect, useRef, useState } from "react";
-import { Link } from "wouter";
+// All internal links use real <a> tags for SEO crawlability
 import { Phone, Star, ChevronRight, CheckCircle2, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -186,9 +186,9 @@ export default function Home() {
                 High-Quality Kitchens, Bathrooms, Additions &amp; Outdoor Living Spaces — crafted with precision for the way you live.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
+                <a href="/contact" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
                   Get a Free Estimate
-                </Link>
+                </a>
                 <a href="tel:7046191480" className="btn-outline-light text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>
                   <Phone size={15} />
                   Call Now: 704-619-1480
@@ -272,7 +272,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, i) => (
-              <Link
+              <a
                 key={service.slug}
                 href={`/services/${service.slug}`}
                 className={`group block bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 ${
@@ -307,18 +307,18 @@ export default function Home() {
                     Learn More <ArrowRight size={13} />
                   </span>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
 
           <div className="mt-10 text-center">
-            <Link
+            <a
               href="/services"
               className="btn-gold inline-block"
               style={{ borderRadius: "2px" }}
             >
               View All Services
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -359,7 +359,7 @@ export default function Home() {
               },
               {
                 href: "/trex-deck-builder-tampa-bay/",
-                title: "Trex Deck Builder — Tampa Bay",
+                title: "Trex Deck Builder \u2014 Tampa Bay",
                 desc: "TrexPro composite decking with hurricane-rated framing. 25-year warranty, zero maintenance, Florida code compliant.",
                 img: TREX_DECK_IMG,
                 badge: "TrexPro Certified",
@@ -378,8 +378,15 @@ export default function Home() {
                 img: HOME_ADDITION_IMG,
                 badge: "Design-Build",
               },
+              {
+                href: "/general-contractor-st-petersburg/",
+                title: "General Contractor St. Petersburg",
+                desc: "Full-service general contracting for residential remodels, renovations, and new construction throughout Tampa Bay.",
+                img: HERO_IMG,
+                badge: null,
+              },
             ].map((item, i) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 className="group block overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 relative"
@@ -423,7 +430,7 @@ export default function Home() {
                     View Full Page <ArrowRight size={13} />
                   </span>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -534,13 +541,13 @@ export default function Home() {
 
           {/* View All link */}
           <div className="mt-10 text-center">
-            <Link
+            <a
               href="/our-work"
               className="btn-gold inline-block"
               style={{ borderRadius: "2px" }}
             >
               View All Before &amp; After Photos
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -591,13 +598,13 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-10">
-                <Link
+                <a
                   href="/contact"
                   className="btn-gold inline-block"
                   style={{ borderRadius: "2px" }}
                 >
                   Start Your Project
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -719,20 +726,44 @@ export default function Home() {
             Proudly Serving
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["Tampa", "St. Pete Beach", "St. Petersburg", "Clearwater", "Bradenton", "Tarpon Springs", "Sarasota"].map((area) => (
-              <span
-                key={area}
-                className="px-4 py-2 text-sm font-medium border"
-                style={{
-                  borderColor: "oklch(0.77 0.065 82)",
-                  color: "oklch(0.37 0.01 250)",
-                  fontFamily: "'DM Sans', sans-serif",
-                  borderRadius: "2px",
-                }}
-              >
-                {area}
-              </span>
-            ))}
+            {[
+              { name: "Tampa", href: "/areas/tampa/" },
+              { name: "St. Petersburg", href: "/areas/st-petersburg/" },
+              { name: "Clearwater", href: "/areas/clearwater/" },
+              { name: "St. Pete Beach", href: "" },
+              { name: "Bradenton", href: "" },
+              { name: "Tarpon Springs", href: "" },
+              { name: "Sarasota", href: "" },
+            ].map((area) =>
+              area.href ? (
+                <a
+                  key={area.name}
+                  href={area.href}
+                  className="px-4 py-2 text-sm font-medium border transition-colors hover:bg-gold/10"
+                  style={{
+                    borderColor: "oklch(0.77 0.065 82)",
+                    color: "oklch(0.37 0.01 250)",
+                    fontFamily: "'DM Sans', sans-serif",
+                    borderRadius: "2px",
+                  }}
+                >
+                  {area.name}
+                </a>
+              ) : (
+                <span
+                  key={area.name}
+                  className="px-4 py-2 text-sm font-medium border"
+                  style={{
+                    borderColor: "oklch(0.77 0.065 82)",
+                    color: "oklch(0.37 0.01 250)",
+                    fontFamily: "'DM Sans', sans-serif",
+                    borderRadius: "2px",
+                  }}
+                >
+                  {area.name}
+                </span>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -770,13 +801,13 @@ export default function Home() {
               Contact Hawley Construction Co. today for a free, no-obligation estimate. We serve Tampa, St. Petersburg, Clearwater, Bradenton, Sarasota, and surrounding areas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              <a
                 href="/contact"
                 className="btn-gold text-center"
                 style={{ borderRadius: "2px" }}
               >
                 Request Free Estimate
-              </Link>
+              </a>
               <a
                 href="tel:7046191480"
                 className="btn-outline-light text-center flex items-center justify-center gap-2"

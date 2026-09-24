@@ -10,21 +10,21 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Awar
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
-const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.jpg"; // white + navy X-island + brick arch
-const KITCHEN_BEFORE = "/images/projects/kitchen/kitchen-02.jpg"; // reuse hero as before-state placeholder
-const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room with gas fireplace
-const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
-const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
-const PATIO_AFTER = "/images/fallbacks/patio-after-01.jpg"; // paver patio after
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white cabinets + marble island + wood base
+const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.webp"; // white + navy X-island + brick arch
+const KITCHEN_BEFORE = "/images/projects/kitchen/kitchen-02.webp"; // reuse hero as before-state placeholder
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor living room with gas fireplace
+const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.webp"; // custom cabinetry
+const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.webp"; // full home remodel kitchen
+const PATIO_AFTER = "/images/fallbacks/patio-after-01.webp"; // paver patio after
 
 const galleryImages = [
   { src: KITCHEN_AFTER, alt: "Kitchen remodel in St. Petersburg FL with white shaker cabinets, navy X-panel island, quartz countertop, and brick arch by Hawley Construction", width: 1600, height: 1066 },
-  { src: "/images/projects/kitchen/kitchen-06.jpg", alt: "Luxury kitchen remodel in Tampa Bay FL with dark charcoal cabinets, wood island, farmhouse sink, and geometric pendant lights by Hawley Construction", width: 1600, height: 1067 },
-  { src: "/images/projects/kitchen/kitchen-07.jpg", alt: "Custom kitchen remodel in St. Petersburg FL with white cabinets, walnut island, herringbone tile backsplash, and professional range by Hawley Construction", width: 1600, height: 685 },
-  { src: "/images/projects/kitchen/kitchen-01.jpg", alt: "Kitchen remodel in Tampa Bay FL with sage green island, natural wood upper cabinets, quartz countertop, and hardwood floors by Hawley Construction", width: 948, height: 631 },
-  { src: "/images/projects/kitchen/kitchen-05.jpg", alt: "Open-concept kitchen remodel in St. Petersburg FL with dark navy cabinets, orange La Cornue range, and dining area by Hawley Construction", width: 1194, height: 1600 },
-  { src: "/images/projects/kitchen/kitchen-03.jpg", alt: "Elegant kitchen remodel in Tampa Bay FL with white cabinets, navy island, floral barstools, and crystal chandeliers by Hawley Construction", width: 695, height: 322 },
+  { src: "/images/projects/kitchen/kitchen-06.webp", alt: "Luxury kitchen remodel in Tampa Bay FL with dark charcoal cabinets, wood island, farmhouse sink, and geometric pendant lights by Hawley Construction", width: 1600, height: 1067 },
+  { src: "/images/projects/kitchen/kitchen-07.webp", alt: "Custom kitchen remodel in St. Petersburg FL with white cabinets, walnut island, herringbone tile backsplash, and professional range by Hawley Construction", width: 1600, height: 685 },
+  { src: "/images/projects/kitchen/kitchen-01.webp", alt: "Kitchen remodel in Tampa Bay FL with sage green island, natural wood upper cabinets, quartz countertop, and hardwood floors by Hawley Construction", width: 948, height: 631 },
+  { src: "/images/projects/kitchen/kitchen-05.webp", alt: "Open-concept kitchen remodel in St. Petersburg FL with dark navy cabinets, orange La Cornue range, and dining area by Hawley Construction", width: 1194, height: 1600 },
+  { src: "/images/projects/kitchen/kitchen-03.webp", alt: "Elegant kitchen remodel in Tampa Bay FL with white cabinets, navy island, floral barstools, and crystal chandeliers by Hawley Construction", width: 695, height: 322 },
 ];
 
 const services = [

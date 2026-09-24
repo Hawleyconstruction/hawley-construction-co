@@ -10,13 +10,13 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Awar
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island
-const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen remodel after
-const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.jpg"; // white marble shower + freestanding tub
-const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
-const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
-const ADDITION_AFTER = "/images/projects/additions/addition-02.jpg"; // home addition after
-const SUNROOM_AFTER = "/images/fallbacks/sunroom-after-01.jpg"; // sunroom after
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white shaker cabinets, marble quartz island
+const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remodel after
+const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.webp"; // white marble shower + freestanding tub
+const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.webp"; // custom cabinetry
+const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.webp"; // full home remodel kitchen
+const ADDITION_AFTER = "/images/projects/additions/addition-02.webp"; // home addition after
+const SUNROOM_AFTER = "/images/fallbacks/sunroom-after-01.webp"; // sunroom after
 
 const galleryImages = [
   { src: KITCHEN_AFTER, alt: "Custom kitchen remodel by general contractor in St. Petersburg FL" },

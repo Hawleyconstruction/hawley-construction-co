@@ -8,44 +8,44 @@ import { CheckCircle2, Phone, ArrowLeft, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
-const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
-const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room with gas fireplace, ceiling fan, TV, and teak lounge furniture
-const SUNROOM_IMG = "/images/fallbacks/sunroom-01.jpg";
-const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
-const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white cabinets + marble island + wood base
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor living room with gas fireplace, ceiling fan, TV, and teak lounge furniture
+const SUNROOM_IMG = "/images/fallbacks/sunroom-01.webp";
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.webp"; // aerial view of home addition with screened porch and deck
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 // Before/After gallery data per service
 const galleryData: Record<string, { before: string; after: string; caption: string }[]> = {
   "kitchen-remodeling": [
-    { before: "/images/projects/kitchen/kitchen-02.jpg", after: "/images/projects/kitchen/kitchen-04.jpg", caption: "Full kitchen remodel — St. Petersburg, FL" },
+    { before: "/images/projects/kitchen/kitchen-02.webp", after: "/images/projects/kitchen/kitchen-04.webp", caption: "Full kitchen remodel — St. Petersburg, FL" },
   ],
   "bathroom-remodeling": [
-    { before: "/images/projects/bathroom/bathroom-01.jpg", after: "/images/projects/bathroom/bathroom-03.jpg", caption: "Master bathroom renovation with marble shower & soaking tub — Tampa Bay, FL" },
+    { before: "/images/projects/bathroom/bathroom-01.webp", after: "/images/projects/bathroom/bathroom-03.webp", caption: "Master bathroom renovation with marble shower & soaking tub — Tampa Bay, FL" },
   ],
   "home-additions": [
-    { before: "/images/projects/additions/addition-01.jpg", after: "/images/projects/additions/addition-02.jpg", caption: "Home addition with screened porch & deck — Tampa Bay, FL" },
+    { before: "/images/projects/additions/addition-01.webp", after: "/images/projects/additions/addition-02.webp", caption: "Home addition with screened porch & deck — Tampa Bay, FL" },
   ],
   "full-home-remodels": [
-    { before: "/images/projects/additions/addition-01.jpg", after: "/images/projects/additions/addition-02.jpg", caption: "Full home remodel with addition — Tampa Bay, FL" },
+    { before: "/images/projects/additions/addition-01.webp", after: "/images/projects/additions/addition-02.webp", caption: "Full home remodel with addition — Tampa Bay, FL" },
   ],
   "sunrooms": [
-    { before: "/images/fallbacks/sunroom-before-01.jpg", after: "/images/fallbacks/sunroom-after-01.jpg", caption: "Four-season sunroom — Sarasota, FL" },
+    { before: "/images/fallbacks/sunroom-before-01.webp", after: "/images/fallbacks/sunroom-after-01.webp", caption: "Four-season sunroom — Sarasota, FL" },
   ],
   "outdoor-living": [
-    { before: "/images/projects/outdoor-living/outdoor-living-pool-01.jpg", after: "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg", caption: "Outdoor living transformation — Tampa Bay, FL" },
+    { before: "/images/projects/outdoor-living/outdoor-living-pool-01.webp", after: "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp", caption: "Outdoor living transformation — Tampa Bay, FL" },
   ],
   "patios": [
-    { before: "/images/fallbacks/patio-before-01.jpg", after: "/images/fallbacks/patio-after-01.jpg", caption: "Paver patio installation — Tarpon Springs, FL" },
+    { before: "/images/fallbacks/patio-before-01.webp", after: "/images/fallbacks/patio-after-01.webp", caption: "Paver patio installation — Tarpon Springs, FL" },
   ],
   "windows-doors": [
-    { before: "/images/fallbacks/windows-before-01.jpg", after: "/images/fallbacks/windows-after-01.jpg", caption: "Impact window & door replacement — St. Petersburg, FL" },
+    { before: "/images/fallbacks/windows-before-01.webp", after: "/images/fallbacks/windows-after-01.webp", caption: "Impact window & door replacement — St. Petersburg, FL" },
   ],
   "custom-cabinetry": [
-    { before: "/images/fallbacks/cabinetry-before-01.jpg", after: "/images/fallbacks/cabinetry-after-01.jpg", caption: "Custom cabinetry — Tampa, FL" },
+    { before: "/images/fallbacks/cabinetry-before-01.webp", after: "/images/fallbacks/cabinetry-after-01.webp", caption: "Custom cabinetry — Tampa, FL" },
   ],
   "trex-decks": [
-    { before: "/images/projects/decks/trex-deck-02.jpg", after: "/images/projects/decks/trex-deck-01.jpg", caption: "Trex composite deck installation — Tampa Bay, FL" },
+    { before: "/images/projects/decks/trex-deck-02.webp", after: "/images/projects/decks/trex-deck-01.webp", caption: "Trex composite deck installation — Tampa Bay, FL" },
   ],
 };
 

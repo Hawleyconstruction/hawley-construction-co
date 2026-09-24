@@ -7,7 +7,7 @@ import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white shaker cabinets, marble quartz island
 
 const projectTypes = [
   "Kitchen Remodeling",

@@ -10,15 +10,15 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, Award, MapPin, Z
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/fallbacks/sunroom-01.jpg"; // local fallback — replace when real sunroom hero photo is available
-const FALLBACK_HERO = "/images/fallbacks/sunroom-after-01.jpg"; // local fallback
+const HERO_IMG = "/images/fallbacks/sunroom-01.webp"; // local fallback — replace when real sunroom hero photo is available
+const FALLBACK_HERO = "/images/fallbacks/sunroom-after-01.webp"; // local fallback
 
-const IMG1 = "/images/fallbacks/sunroom-after-01.jpg"; // four-season sunroom interior
-const IMG2 = "/images/projects/additions/addition-02.jpg"; // home addition with screened porch & deck
-const IMG3 = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room
-const IMG4 = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
-const IMG5 = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen after remodel
-const IMG6 = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
+const IMG1 = "/images/fallbacks/sunroom-after-01.webp"; // four-season sunroom interior
+const IMG2 = "/images/projects/additions/addition-02.webp"; // home addition with screened porch & deck
+const IMG3 = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor living room
+const IMG4 = "/images/projects/kitchen/kitchen-02.webp"; // full home remodel kitchen
+const IMG5 = "/images/projects/kitchen/kitchen-04.webp"; // kitchen after remodel
+const IMG6 = "/images/fallbacks/cabinetry-after-01.webp"; // custom cabinetry
 
 const galleryImages = [
   { src: IMG1, alt: "Custom four-season Florida room addition in Shore Acres St. Petersburg FL" },

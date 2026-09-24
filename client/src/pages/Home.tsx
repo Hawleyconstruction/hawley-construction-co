@@ -8,12 +8,12 @@ import { Phone, Star, ChevronRight, CheckCircle2, ArrowRight } from "lucide-reac
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white cabinets + marble island + wood base
-const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.jpg"; // wood linen cabinet + hex tile + glass shower
-const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-living-01.jpg"; // Mediterranean-style covered loggia with arched columns, wood beam ceiling, and pool
-const SUNROOM_IMG = "/images/fallbacks/sunroom-01.jpg"; // local fallback — replace when real sunroom photo is available
-const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
-const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white cabinets + marble island + wood base
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-06.webp"; // wood linen cabinet + hex tile + glass shower
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-living-01.webp"; // Mediterranean-style covered loggia with arched columns, wood beam ceiling, and pool
+const SUNROOM_IMG = "/images/fallbacks/sunroom-01.webp"; // local fallback — replace when real sunroom photo is available
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.webp"; // aerial view of home addition with screened porch and deck
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 const services = [
   { title: "Kitchen Remodeling", desc: "Custom kitchens designed for the way you live — from quartz countertops to custom cabinetry.", slug: "kitchen-remodeling", img: HERO_IMG },
@@ -119,6 +119,11 @@ function Counter({ target, suffix = "" }: { target: number | string; suffix?: st
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
+  // Show hero text right away instead of waiting for the photo to download (slow on mobile)
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setHeroLoaded(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   useEffect(() => {
     document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
@@ -285,6 +290,8 @@ export default function Home() {
                     src={service.img}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6">
@@ -472,7 +479,7 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="/images/projects/kitchen/kitchen-02.jpg"
+                src="/images/projects/kitchen/kitchen-02.webp"
                 alt="Custom kitchen remodel in St. Petersburg, FL with white shaker cabinets, marble quartz island, and wood base by Hawley Construction"
                 className="w-full h-72 md:h-96 object-cover"
                 loading="lazy"
@@ -487,7 +494,7 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="/images/projects/bathroom/bathroom-03.jpg"
+                src="/images/projects/bathroom/bathroom-03.webp"
                 alt="Bathroom remodel in Tampa Bay, FL — white marble walk-in shower and freestanding tub by Hawley Construction"
                 width="1600" height="1067"
                 className="w-full h-72 md:h-96 object-cover"
@@ -501,7 +508,7 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="/images/fallbacks/sunroom-after-01.jpg"
+                src="/images/fallbacks/sunroom-after-01.webp"
                 alt="Four-season sunroom addition in Tampa Bay, FL by Hawley Construction"
                 width="1400" height="1050"
                 className="w-full h-64 md:h-72 object-cover"
@@ -515,7 +522,7 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="/images/projects/outdoor-living/outdoor-kitchen-01.jpg"
+                src="/images/projects/outdoor-living/outdoor-kitchen-01.webp"
                 alt="Custom outdoor kitchen with stone surround and built-in grills in Tampa Bay, FL by Hawley Construction"
                 width="1400" height="1050"
                 className="w-full h-64 md:h-72 object-cover"
@@ -529,7 +536,7 @@ export default function Home() {
               style={{ borderRadius: "2px" }}
             >
               <img
-                src="/images/projects/decks/trex-deck-03.jpg"
+                src="/images/projects/decks/trex-deck-03.webp"
                 alt="Waterfront multi-level Trex composite deck with pool surround in Tampa Bay, FL by Hawley Construction"
                 width="990"
                 height="620"

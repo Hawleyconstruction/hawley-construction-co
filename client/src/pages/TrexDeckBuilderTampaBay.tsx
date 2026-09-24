@@ -11,13 +11,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Use existing CDN images from the project
-const HERO_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
-const DECK_IMG_1 = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex deck at sunset
-const DECK_IMG_2 = "/images/projects/decks/trex-deck-02.jpg"; // grey Trex composite deck with white railing and Adirondack chairs
-const DECK_IMG_3 = "/images/projects/decks/trex-deck-03.jpg"; // waterfront multi-level composite deck with pool surround
-const DECK_IMG_4 = "/images/projects/outdoor-living/covered-porch-01.jpg"; // craftsman cedar timber-frame covered porch with cable railing
-const DECK_IMG_5 = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen remodel — used as lifestyle/quality reference
-const DECK_IMG_6 = "/images/projects/outdoor-living/outdoor-living-01.jpg"; // mediterranean loggia with arched columns and pool view
+const HERO_IMG = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex composite deck at sunset with aluminum railing
+const DECK_IMG_1 = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex deck at sunset
+const DECK_IMG_2 = "/images/projects/decks/trex-deck-02.webp"; // grey Trex composite deck with white railing and Adirondack chairs
+const DECK_IMG_3 = "/images/projects/decks/trex-deck-03.webp"; // waterfront multi-level composite deck with pool surround
+const DECK_IMG_4 = "/images/projects/outdoor-living/covered-porch-01.webp"; // craftsman cedar timber-frame covered porch with cable railing
+const DECK_IMG_5 = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remodel — used as lifestyle/quality reference
+const DECK_IMG_6 = "/images/projects/outdoor-living/outdoor-living-01.webp"; // mediterranean loggia with arched columns and pool view
 
 const galleryImages = [
   { src: DECK_IMG_1, alt: "Trex composite deck installation in Tampa Bay with multi-level design and aluminum railing by Hawley Construction", width: 1300, height: 729 },

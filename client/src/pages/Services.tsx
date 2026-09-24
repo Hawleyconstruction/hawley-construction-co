@@ -8,12 +8,12 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island, wood base
-const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower, light-blue double vanity
-const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor room with gas fireplace, ceiling fan, TV
-const SUNROOM_IMG = "/images/fallbacks/sunroom-01.jpg"; // local fallback — replace when real sunroom photo is available
-const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
-const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck at sunset with aluminum railing
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white shaker cabinets, marble quartz island, wood base
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble walk-in shower, light-blue double vanity
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor room with gas fireplace, ceiling fan, TV
+const SUNROOM_IMG = "/images/fallbacks/sunroom-01.webp"; // local fallback — replace when real sunroom photo is available
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.webp"; // aerial view of home addition with screened porch and deck
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex composite deck at sunset with aluminum railing
 
 const services = [
   {
@@ -67,7 +67,7 @@ const services = [
   {
     title: "Patios",
     slug: "patios",
-    img: "/images/projects/outdoor-living/outdoor-living-pool-01.jpg",
+    img: "/images/projects/outdoor-living/outdoor-living-pool-01.webp",
     tagline: "The Foundation of Outdoor Living",
     desc: "A beautifully designed patio is the cornerstone of any outdoor space. We install pavers, stamped concrete, natural stone, and tile patios that are built to withstand Florida's climate while looking stunning for years to come.",
     benefits: ["Paver & natural stone installation", "Stamped & decorative concrete", "Drainage & grading solutions", "Covered patio structures", "Seamless indoor-outdoor flow"],

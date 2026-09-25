@@ -10,21 +10,21 @@ import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Awar
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble shower + light-blue double vanity
-const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.jpg"; // white marble shower + freestanding tub
-const BATHROOM_BEFORE = "/images/projects/bathroom/bathroom-01.jpg"; // reuse hero as before-state placeholder
-const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen remodel after
-const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
-const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.jpg"; // full home remodel kitchen
-const WINDOWS_AFTER = "/images/fallbacks/windows-after-01.jpg"; // impact windows after
-const ADDITION_AFTER = "/images/projects/additions/addition-02.jpg"; // home addition after
-const SUNROOM_AFTER = "/images/fallbacks/sunroom-after-01.jpg"; // sunroom after
+const HERO_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble shower + light-blue double vanity
+const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.webp"; // white marble shower + freestanding tub
+const BATHROOM_BEFORE = "/images/projects/bathroom/bathroom-01.webp"; // reuse hero as before-state placeholder
+const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remodel after
+const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.webp"; // custom cabinetry
+const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.webp"; // full home remodel kitchen
+const WINDOWS_AFTER = "/images/fallbacks/windows-after-01.webp"; // impact windows after
+const ADDITION_AFTER = "/images/projects/additions/addition-02.webp"; // home addition after
+const SUNROOM_AFTER = "/images/fallbacks/sunroom-after-01.webp"; // sunroom after
 
 const galleryImages = [
-  { src: "/images/projects/bathroom/bathroom-05.jpg", alt: "Airy primary bathroom remodel in St. Petersburg FL with double vanity, gold fixtures, and marble countertop by Hawley Construction", width: 1600, height: 1064 },
-  { src: "/images/projects/bathroom/bathroom-02.jpg", alt: "Luxury bathroom remodel in Tampa Bay FL with dark tile, floating double vanity, Calacatta quartz countertop, and gold pendant lights by Hawley Construction", width: 1600, height: 1067 },
-  { src: "/images/projects/bathroom/bathroom-04.jpg", alt: "Modern walk-in shower remodel in St. Petersburg FL with white subway tile, patterned niche, matte black fixtures, and frameless glass door by Hawley Construction", width: 1600, height: 2000 },
-  { src: "/images/projects/bathroom/bathroom-06.jpg", alt: "Bathroom remodel in Tampa Bay FL with custom wood linen cabinet, hex tile floor, and glass walk-in shower with blue accent tile by Hawley Construction", width: 1600, height: 2000 },
+  { src: "/images/projects/bathroom/bathroom-05.webp", alt: "Airy primary bathroom remodel in St. Petersburg FL with double vanity, gold fixtures, and marble countertop by Hawley Construction", width: 1600, height: 1064 },
+  { src: "/images/projects/bathroom/bathroom-02.webp", alt: "Luxury bathroom remodel in Tampa Bay FL with dark tile, floating double vanity, Calacatta quartz countertop, and gold pendant lights by Hawley Construction", width: 1600, height: 1067 },
+  { src: "/images/projects/bathroom/bathroom-04.webp", alt: "Modern walk-in shower remodel in St. Petersburg FL with white subway tile, patterned niche, matte black fixtures, and frameless glass door by Hawley Construction", width: 1600, height: 2000 },
+  { src: "/images/projects/bathroom/bathroom-06.webp", alt: "Bathroom remodel in Tampa Bay FL with custom wood linen cabinet, hex tile floor, and glass walk-in shower with blue accent tile by Hawley Construction", width: 1600, height: 2000 },
 ];
 
 const services = [

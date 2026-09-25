@@ -8,12 +8,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "./Blog";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island, wood base
-const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower, light-blue double vanity
-const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor room with gas fireplace, ceiling fan, TV
-const SUNROOM_IMG = "/images/fallbacks/sunroom-01.jpg"; // local fallback — replace when real sunroom photo is available
-const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.jpg"; // aerial view of home addition with screened porch and deck
-const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.jpg"; // elevated multi-level Trex composite deck with aluminum railing
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white shaker cabinets, marble quartz island, wood base
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble walk-in shower, light-blue double vanity
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor room with gas fireplace, ceiling fan, TV
+const SUNROOM_IMG = "/images/fallbacks/sunroom-01.webp"; // local fallback — replace when real sunroom photo is available
+const HOME_ADDITION_IMG = "/images/projects/additions/addition-02.webp"; // aerial view of home addition with screened porch and deck
+const TREX_DECK_IMG = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex composite deck with aluminum railing
 
 const articleContent: Record<string, { sections: { heading?: string; body: string }[] }> = {
   "top-kitchen-remodeling-trends-tampa": {

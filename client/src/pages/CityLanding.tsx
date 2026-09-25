@@ -9,9 +9,9 @@ import { Phone, CheckCircle2, ArrowRight, MapPin, Star, Clock, Shield } from "lu
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/kitchen/kitchen-02.jpg"; // white shaker cabinets, marble quartz island, wood base — St. Petersburg
-const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.jpg"; // blue marble walk-in shower, light-blue double vanity — St. Petersburg
-const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor room with gas fireplace, ceiling fan, outdoor TV
+const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white shaker cabinets, marble quartz island, wood base — St. Petersburg
+const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble walk-in shower, light-blue double vanity — St. Petersburg
+const OUTDOOR_IMG = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor room with gas fireplace, ceiling fan, outdoor TV
 
 interface CityData {
   name: string;

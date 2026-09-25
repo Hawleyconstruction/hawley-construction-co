@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -5,20 +6,20 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import BlogPost from "./pages/BlogPost";
-import ServiceDetail from "./pages/ServiceDetail";
-import CityLanding from "./pages/CityLanding";
-import FAQ from "./pages/FAQ";
-import Portfolio from "./pages/Portfolio";
-import KitchenRemodelingStPete from "./pages/KitchenRemodelingStPete";
-import BathroomRemodelingStPete from "./pages/BathroomRemodelingStPete";
-import TrexDeckBuilderTampaBay from "./pages/TrexDeckBuilderTampaBay";
-import SunroomFloridaRoom from "./pages/SunroomFloridaRoom";
-import AduInLawSuiteBuilder from "./pages/AduInLawSuiteBuilder";
-import GeneralContractorStPete from "./pages/GeneralContractorStPete";
+const Services = lazy(() => import("./pages/Services"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Contact = lazy(() => import("./pages/Contact"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const CityLanding = lazy(() => import("./pages/CityLanding"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const KitchenRemodelingStPete = lazy(() => import("./pages/KitchenRemodelingStPete"));
+const BathroomRemodelingStPete = lazy(() => import("./pages/BathroomRemodelingStPete"));
+const TrexDeckBuilderTampaBay = lazy(() => import("./pages/TrexDeckBuilderTampaBay"));
+const SunroomFloridaRoom = lazy(() => import("./pages/SunroomFloridaRoom"));
+const AduInLawSuiteBuilder = lazy(() => import("./pages/AduInLawSuiteBuilder"));
+const GeneralContractorStPete = lazy(() => import("./pages/GeneralContractorStPete"));
 
 function Router() {
   return (
@@ -56,7 +57,9 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <Suspense fallback={<div className="min-h-screen" />}>
+            <Router />
+          </Suspense>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

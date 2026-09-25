@@ -151,7 +151,16 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), viteSsgPlugin()];
+// Manus editor/debug plugins are only needed while editing in Manus (dev server).
+// In production they inject ~360KB of editor runtime + data-loc attributes into
+// every page, which made the site very slow on phones.
+const isProd = process.env.NODE_ENV === "production" || process.argv.includes("build");
+const plugins = [
+  react(),
+  tailwindcss(),
+  ...(isProd ? [] : [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()]),
+  viteSsgPlugin(),
+];
 
 export default defineConfig({
   plugins,
@@ -167,6 +176,18 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // Split big third-party libraries into their own long-cached files
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (/[\\/](react|react-dom|scheduler|wouter)[\\/]/.test(id)) return "react";
+          if (id.includes("framer-motion") || id.includes("motion-dom") || id.includes("motion-utils")) return "motion";
+          if (id.includes("@radix-ui")) return "radix";
+          if (id.includes("lucide-react")) return "icons";
+        },
+      },
+    },
   },
   server: {
     port: 3000,

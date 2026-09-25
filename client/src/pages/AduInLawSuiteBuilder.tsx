@@ -10,12 +10,12 @@ import { CheckCircle2, Phone, ChevronDown, Shield, Award, Home, MapPin, Zap, Bui
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const IMG1 = "/images/projects/additions/addition-01.jpg"; // craftsman-style addition with separate entrance, deck, and screened porch
-const IMG2 = "/images/projects/additions/addition-02.jpg"; // aerial view of completed home addition with screened porch and deck
-const IMG3 = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.jpg"; // covered outdoor living room with gas fireplace
-const IMG4 = "/images/fallbacks/sunroom-after-01.jpg"; // four-season sunroom addition
-const IMG5 = "/images/projects/kitchen/kitchen-04.jpg"; // kitchen remodel after
-const IMG6 = "/images/fallbacks/cabinetry-after-01.jpg"; // custom cabinetry
+const IMG1 = "/images/projects/additions/addition-01.webp"; // craftsman-style addition with separate entrance, deck, and screened porch
+const IMG2 = "/images/projects/additions/addition-02.webp"; // aerial view of completed home addition with screened porch and deck
+const IMG3 = "/images/projects/outdoor-living/outdoor-fireplace-lounge-01.webp"; // covered outdoor living room with gas fireplace
+const IMG4 = "/images/fallbacks/sunroom-after-01.webp"; // four-season sunroom addition
+const IMG5 = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remodel after
+const IMG6 = "/images/fallbacks/cabinetry-after-01.webp"; // custom cabinetry
 
 const galleryImages = [
   { src: IMG1, alt: "In-law suite addition in St. Petersburg FL with separate entrance, craftsman gable, composite deck, and screened porch by Hawley Construction", width: 1279, height: 1600 },
@@ -221,7 +221,7 @@ export default function AduInLawSuiteBuilder() {
       "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
       "priceRange": "$$$",
-      "image": "https://hawleyremodeling.com/images/projects/additions/addition-01.jpg",
+      "image": "https://hawleyremodeling.com/images/projects/additions/addition-01.webp",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "316 11th Ave NE",

@@ -315,10 +315,10 @@ export default function BathroomRemodelingStPete() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              St. Petersburg, FL · Licensed & Insured
+              Tampa Bay, FL · Licensed & Insured
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Bathroom Remodeling in St. Petersburg, FL
+              Bathroom Remodeling in Tampa Bay
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
               Walk-in showers, freestanding tubs, custom tile work. Fixed-price quotes, licensed contractors, 1-year workmanship warranty.

@@ -372,7 +372,7 @@ const ROUTES: Record<string, RouteSEO> = {
     title: "Bathroom Remodeling St. Petersburg, FL | Hawley Construction Co.",
     description: "Expert bathroom remodeling in St. Petersburg, FL. Walk-in showers, vanities, full renovations. Licensed & insured. Get a free estimate from Hawley Construction.",
     canonical: `${BASE}/bathroom-remodeling-st-petersburg/`,
-    h1: "Bathroom Remodeling in St. Petersburg, FL",
+    h1: "Bathroom Remodeling in Tampa Bay",
     serviceType: "Bathroom Remodeling",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },

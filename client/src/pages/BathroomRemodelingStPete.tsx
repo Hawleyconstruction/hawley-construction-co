@@ -370,7 +370,7 @@ export default function BathroomRemodelingStPete() {
               </h2>
               <div className="space-y-5 text-base leading-relaxed" style={{ color: "oklch(0.35 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}>
                 <p>
-                  Behind every beautiful walk-in shower is plumbing rework, waterproofing, structural framing, and tile installation that has to last decades. We've been remodeling bathrooms across Tampa Bay for 5+ years — from compact powder rooms to luxury primary suites — under Florida license <strong>CBC #1369038</strong>.
+                  Behind every beautiful walk-in shower is plumbing rework, waterproofing, structural framing, and tile installation that has to last decades. We've been remodeling bathrooms across Tampa Bay for 5+ years — from compact powder rooms to luxury primary suites — fully licensed and insured.
                 </p>
                 <p>
                   Owner Landon Hawley personally walks every bathroom project from first consultation to final walkthrough. We pull our own permits, coordinate every trade, and hand you a written fixed-price quote before we start — so there are no surprise change orders halfway through your renovation.

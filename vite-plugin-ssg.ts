@@ -336,14 +336,14 @@ const ROUTES: Record<string, RouteSEO> = {
     ],
   },
   "/trex-deck-builder-tampa-bay": {
-    title: "Trex Deck Builder Tampa Bay | Hawley Construction Co.",
-    description: "Tampa Bay's certified Trex deck builder. Custom composite decks built to last in Florida weather. Licensed & insured. Free estimates. Call (704) 619-1480.",
+    title: "Composite Deck Builder Tampa Bay | Hawley Construction Co.",
+    description: "Tampa Bay's composite deck builder. Custom composite decks built to last in Florida weather. Licensed & insured. Free estimates. Call (704) 619-1480.",
     canonical: `${BASE}/trex-deck-builder-tampa-bay/`,
-    h1: "Trex Deck Builder — Tampa Bay",
-    serviceType: "Trex Composite Deck Installation",
+    h1: "Composite Deck Builder — Tampa Bay",
+    serviceType: "Composite Deck Installation",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
-      { name: "Trex Deck Builder Tampa Bay", item: `${BASE}/trex-deck-builder-tampa-bay/` },
+      { name: "Composite Deck Builder Tampa Bay", item: `${BASE}/trex-deck-builder-tampa-bay/` },
     ],
   },
   "/sunroom-florida-room-contractor": {
@@ -372,7 +372,7 @@ const ROUTES: Record<string, RouteSEO> = {
     title: "Bathroom Remodeling St. Petersburg, FL | Hawley Construction Co.",
     description: "Expert bathroom remodeling in St. Petersburg, FL. Walk-in showers, vanities, full renovations. Licensed & insured. Get a free estimate from Hawley Construction.",
     canonical: `${BASE}/bathroom-remodeling-st-petersburg/`,
-    h1: "Bathroom Remodeling in St. Petersburg, FL",
+    h1: "Bathroom Remodeling in Tampa Bay",
     serviceType: "Bathroom Remodeling",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },

@@ -352,7 +352,7 @@ export default function SunroomFloridaRoom() {
                   Most "sunroom companies" in Tampa Bay install pre-fab kits — limited sizes, limited designs, and rooflines that rarely match the existing home. As a full-service general contractor, we design and build your sunroom or Florida room as a true addition: custom rooflines, matching siding, proper foundations, integrated electrical and HVAC.
                 </p>
                 <p>
-                  The result looks like it was always part of your house — because it was designed that way from the start. We hold Florida General Contractor license <strong>CBC #1369038</strong> and pull all permits ourselves.
+                  The result looks like it was always part of your house — because it was designed that way from the start. We hold a Florida General Contractor license and pull all permits ourselves.
                 </p>
                 <p>
                   Many clients combine a sunroom with a new{" "}

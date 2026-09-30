@@ -315,10 +315,10 @@ export default function BathroomRemodelingStPete() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              St. Petersburg, FL · Licensed & Insured
+              Tampa Bay, FL · Licensed & Insured
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Bathroom Remodeling in St. Petersburg, FL
+              Bathroom Remodeling in Tampa Bay
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
               Walk-in showers, freestanding tubs, custom tile work. Fixed-price quotes, licensed contractors, 1-year workmanship warranty.
@@ -370,7 +370,7 @@ export default function BathroomRemodelingStPete() {
               </h2>
               <div className="space-y-5 text-base leading-relaxed" style={{ color: "oklch(0.35 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}>
                 <p>
-                  Behind every beautiful walk-in shower is plumbing rework, waterproofing, structural framing, and tile installation that has to last decades. We've been remodeling bathrooms across Tampa Bay for 5+ years — from compact powder rooms to luxury primary suites — under Florida license <strong>CBC #1369038</strong>.
+                  Behind every beautiful walk-in shower is plumbing rework, waterproofing, structural framing, and tile installation that has to last decades. We've been remodeling bathrooms across Tampa Bay for 5+ years — from compact powder rooms to luxury primary suites — fully licensed and insured.
                 </p>
                 <p>
                   Owner Landon Hawley personally walks every bathroom project from first consultation to final walkthrough. We pull our own permits, coordinate every trade, and hand you a written fixed-price quote before we start — so there are no surprise change orders halfway through your renovation.

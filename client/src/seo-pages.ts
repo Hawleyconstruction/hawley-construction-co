@@ -149,13 +149,13 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: `${BASE}/kitchen-remodeling-st-petersburg/`,
   },
   "/trex-deck-builder-tampa-bay": {
-    title: "Trex Deck Builder Tampa Bay | Hawley Construction Co.",
-    description: "Tampa Bay's trusted Trex deck builder. Custom composite decks built to last in Florida weather. Licensed, insured, free estimates. Call (704) 619-1480.",
+    title: "Composite Deck Builder Tampa Bay | Hawley Construction Co.",
+    description: "Tampa Bay's trusted composite deck builder. Custom composite decks built to last in Florida weather. Licensed, insured, free estimates. Call (704) 619-1480.",
     canonical: `${BASE}/trex-deck-builder-tampa-bay/`,
   },
   "/trex-deck-builder-tampa-bay/": {
-    title: "Trex Deck Builder Tampa Bay | Hawley Construction Co.",
-    description: "Tampa Bay's trusted Trex deck builder. Custom composite decks built to last in Florida weather. Licensed, insured, free estimates. Call (704) 619-1480.",
+    title: "Composite Deck Builder Tampa Bay | Hawley Construction Co.",
+    description: "Tampa Bay's trusted composite deck builder. Custom composite decks built to last in Florida weather. Licensed, insured, free estimates. Call (704) 619-1480.",
     canonical: `${BASE}/trex-deck-builder-tampa-bay/`,
   },
   "/sunroom-florida-room-contractor": {

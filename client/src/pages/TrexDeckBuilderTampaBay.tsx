@@ -1,7 +1,7 @@
 /**
- * Trex Deck Builder Tampa Bay Landing Page
+ * Composite Deck Builder Tampa Bay Landing Page
  * URL: /trex-deck-builder-tampa-bay/
- * Target keyword: "Trex deck builder Tampa Bay"
+ * Target keyword: "composite deck builder Tampa Bay"
  * Design: Modern Craftsman — mirrors kitchen/bathroom landing pages
  */
 import { useEffect, useState } from "react";
@@ -20,23 +20,23 @@ const DECK_IMG_5 = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remode
 const DECK_IMG_6 = "/images/projects/outdoor-living/outdoor-living-01.webp"; // mediterranean loggia with arched columns and pool view
 
 const galleryImages = [
-  { src: DECK_IMG_1, alt: "Trex composite deck installation in Tampa Bay with multi-level design and aluminum railing by Hawley Construction", width: 1300, height: 729 },
-  { src: DECK_IMG_2, alt: "Grey Trex Enhance composite deck with white railing system and Adirondack chairs in St. Petersburg, FL", width: 1600, height: 900 },
+  { src: DECK_IMG_1, alt: "Composite deck installation in Tampa Bay with multi-level design and aluminum railing by Hawley Construction", width: 1300, height: 729 },
+  { src: DECK_IMG_2, alt: "Grey composite deck with white railing system and Adirondack chairs in St. Petersburg, FL", width: 1600, height: 900 },
   { src: DECK_IMG_3, alt: "Waterfront multi-level composite deck with pool surround and fire pit in Tampa Bay, FL", width: 990, height: 620 },
-  { src: DECK_IMG_4, alt: "Trex pergola and shade structure in Shore Acres St. Petersburg FL" },
-  { src: DECK_IMG_5, alt: "Trex Transcend Lineage deck with LED post-cap lighting in Wesley Chapel FL" },
-  { src: DECK_IMG_6, alt: "Trex deck replacement over existing framing in Old Northeast St. Petersburg FL" },
+  { src: DECK_IMG_4, alt: "Composite pergola and shade structure in Shore Acres St. Petersburg FL" },
+  { src: DECK_IMG_5, alt: "Composite deck with LED post-cap lighting in Wesley Chapel FL" },
+  { src: DECK_IMG_6, alt: "Composite deck replacement over existing framing in Old Northeast St. Petersburg FL" },
 ];
 
 const services = [
   {
-    title: "New Trex Deck Construction",
+    title: "New Composite Deck Construction",
     desc: "Ground-level to elevated, single-level to multi-level. Includes structural design, permits, framing, decking, railings, and post caps.",
     icon: "🏗️",
   },
   {
     title: "Deck Replacement & Resurfacing",
-    desc: "Tear off your old wood deck, evaluate the framing, replace what's needed, and install Trex on top. Often more cost-effective than a full rebuild.",
+    desc: "Tear off your old wood deck, evaluate the framing, replace what's needed, and install composite decking on top. Often more cost-effective than a full rebuild.",
     icon: "🔄",
   },
   {
@@ -45,12 +45,12 @@ const services = [
     icon: "🏊",
   },
   {
-    title: "Trex Pergolas & Shade Structures",
+    title: "Composite Pergolas & Shade Structures",
     desc: "Match your deck with a fully integrated shade structure. Engineered to Florida wind-load requirements.",
     icon: "⛱️",
   },
   {
-    title: "Trex Railings & Accent Lighting",
+    title: "Composite Railings & Accent Lighting",
     desc: "Cable, glass, or composite balusters. Riser and post-cap LED lighting installed at deck construction.",
     icon: "💡",
   },
@@ -58,27 +58,27 @@ const services = [
 
 const productLines = [
   {
-    name: "Trex Transcend Lineage",
+    name: "Premium Heat-Resistant Composite",
     tagline: "Premium · Best Heat Performance",
     desc: "Tropical-hardwood look with the best heat-management performance. Ideal for full-sun Tampa Bay decks.",
     featured: true,
   },
   {
-    name: "Trex Transcend",
-    tagline: "Top-Tier · 50-Year Warranty",
-    desc: "Top-tier color range and the longest warranty Trex offers — 50 years residential. Our most popular line.",
+    name: "Top-Tier Capped Composite",
+    tagline: "Top-Tier · Longest Warranties",
+    desc: "The deepest color range and the longest manufacturer warranties available — up to 50 years residential on top lines. Our most popular choice.",
     featured: false,
   },
   {
-    name: "Trex Enhance",
+    name: "Mid-Range Composite",
     tagline: "Mid-Range · Balanced Value",
     desc: "Balanced price and performance. A great choice for shaded decks or budget-conscious projects.",
     featured: false,
   },
   {
-    name: "Trex Select",
+    name: "Entry-Level Composite",
     tagline: "Entry-Level · Best Price",
-    desc: "Entry-level composite with the best price point. Still backed by Trex's 25-year fade-and-stain warranty.",
+    desc: "Entry-level composite with the best price point. Still typically backed by a 25-year manufacturer fade-and-stain warranty.",
     featured: false,
   },
 ];
@@ -87,7 +87,7 @@ const processSteps = [
   {
     num: "01",
     title: "Free In-Home Consultation",
-    desc: "We visit your property, assess site conditions, discuss Trex product lines, and understand exactly how you want to use your deck.",
+    desc: "We visit your property, assess site conditions, discuss composite decking options, and understand exactly how you want to use your deck.",
   },
   {
     num: "02",
@@ -102,38 +102,38 @@ const processSteps = [
   {
     num: "04",
     title: "Warranty Walkthrough",
-    desc: "We walk the finished deck with you, register your Trex warranty, and leave you with all documentation.",
+    desc: "We walk the finished deck with you, register your manufacturer warranty, and leave you with all documentation.",
   },
 ];
 
 const faqs = [
   {
-    q: "What's the difference between Trex Enhance, Select, and Transcend?",
-    a: "Mostly performance and warranty length. Transcend has the deepest color range, the best heat performance, and a 50-year residential warranty. Select is the most budget-friendly at 25 years. Enhance sits in the middle — a great balance of price and performance for most Tampa Bay homeowners.",
+    q: "What's the difference between entry-level, mid-range, and top-tier composite decking?",
+    a: "Mostly performance and warranty length. Top-tier capped composites have the deepest color range, the best heat performance, and warranties up to 50 years residential. Entry-level lines are the most budget-friendly, typically with 25-year warranties. Mid-range sits in the middle — a great balance of price and performance for most Tampa Bay homeowners.",
   },
   {
-    q: "Does Trex get hot in the Florida sun?",
-    a: "Modern Trex (especially the Lineage and Transcend lines) is significantly cooler than older composites and far cooler than dark-stained wood. Any decking gets warm in direct sun, but we can help you choose a lighter color and product line that minimizes heat absorption.",
+    q: "Does composite decking get hot in the Florida sun?",
+    a: "Modern capped composite (especially premium heat-resistant lines) is significantly cooler than older composites and far cooler than dark-stained wood. Any decking gets warm in direct sun, but we can help you choose a lighter color and product line that minimizes heat absorption.",
   },
   {
-    q: "How long does a Trex deck last in Tampa Bay's climate?",
-    a: "Trex Transcend has a 50-year limited residential warranty. Real-world life with proper framing and coastal-rated hardware is 25+ years. The boards themselves won't rot, splinter, or fade — the limiting factor is always the substructure, which we build to last.",
+    q: "How long does a composite deck last in Tampa Bay's climate?",
+    a: "Top-tier composite lines carry up to a 50-year limited residential warranty. Real-world life with proper framing and coastal-rated hardware is 25+ years. The boards themselves won't rot, splinter, or fade — the limiting factor is always the substructure, which we build to last.",
   },
   {
     q: "Can you replace just the deck boards on my existing deck?",
     a: "Often, yes — if the framing is sound. We inspect the substructure before quoting a resurface. If joists are undersized for composite span requirements or show rot, we'll tell you upfront what needs to be replaced.",
   },
   {
-    q: "Are you a certified Trex installer?",
-    a: "Yes. We are TrexPro installers, which means we've been trained and certified by Trex on proper installation techniques, span requirements, and warranty compliance.",
+    q: "What composite decking brands do you install?",
+    a: "We install all major composite and PVC decking brands and follow each manufacturer's installation guidelines — proper joist spacing, span requirements, and fastening — so your warranty stays valid.",
   },
   {
     q: "Do you handle pool deck waterproofing?",
     a: "Yes. For decks attached to pool enclosures or extending over a structure, we handle waterproof membranes and flashing details to protect the structure below.",
   },
   {
-    q: "How much does a Trex deck cost in Tampa Bay?",
-    a: "Composite decking runs $35–$80 per square foot installed in Tampa Bay, depending on Trex line, height/complexity, railing choice, and site conditions. A 300 sq ft deck typically runs $12K–$24K total. We provide fixed-price quotes after an in-home consultation.",
+    q: "How much does a composite deck cost in Tampa Bay?",
+    a: "Composite decking runs $35–$80 per square foot installed in Tampa Bay, depending on product line, height/complexity, railing choice, and site conditions. A 300 sq ft deck typically runs $12K–$24K total. We provide fixed-price quotes after an in-home consultation.",
   },
 ];
 
@@ -152,20 +152,20 @@ const serviceAreas = [
 export default function TrexDeckBuilderTampaBay() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", projectType: "New Trex Deck", message: "",
+    name: "", email: "", phone: "", projectType: "New Composite Deck", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
 
   useEffect(() => {
-    document.title = "Trex Deck Builder Tampa Bay | Composite Deck Installation | Hawley Construction Co.";
+    document.title = "Composite Deck Builder Tampa Bay | Composite Deck Installation | Hawley Construction Co.";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
       metaDesc.setAttribute("name", "description");
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute("content", "TrexPro composite deck builder in St. Petersburg, Tampa & Clearwater. Hurricane-rated framing, 25+ year warranty. Free estimate: (704) 619-1480.");
+    metaDesc.setAttribute("content", "Composite deck builder in St. Petersburg, Tampa & Clearwater. Hurricane-rated framing, 25+ year warranty. Free estimate: (704) 619-1480.");
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -179,8 +179,8 @@ export default function TrexDeckBuilderTampaBay() {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Trex Composite Deck Builder Tampa Bay",
-      "description": "TrexPro composite deck installation in Tampa Bay, FL. New deck construction, deck replacement, pool decks, pergolas, and Trex railings. Hurricane-rated framing, licensed and insured, fixed-price quotes.",
+      "name": "Composite Deck Builder Tampa Bay",
+      "description": "Composite deck installation in Tampa Bay, FL. New deck construction, deck replacement, pool decks, pergolas, and composite railings. Hurricane-rated framing, licensed and insured, fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
         "@id": "https://hawleyremodeling.com",
@@ -308,19 +308,19 @@ export default function TrexDeckBuilderTampaBay() {
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Trex composite deck builder Tampa Bay by Hawley Construction" className="w-full h-full object-cover" />
+          <img src={HERO_IMG} alt="Composite deck builder Tampa Bay by Hawley Construction" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.85) 0%, rgba(20,18,14,0.5) 60%, rgba(20,18,14,0.15) 100%)" }} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Tampa Bay · TrexPro Installer · Licensed & Insured
+              Tampa Bay · Composite Deck Specialists · Licensed & Insured
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Trex Composite Deck Builder in Tampa Bay
+              Composite Deck Builder in Tampa Bay
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Florida-built. Hurricane-rated framing. 25-year Trex fade and stain warranty. From design to finished deck in 2–4 weeks.
+              Florida-built. Hurricane-rated framing. Up to 25+ year manufacturer fade and stain warranties. From design to finished deck in 2–4 weeks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a
@@ -341,7 +341,7 @@ export default function TrexDeckBuilderTampaBay() {
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               {[
-                { icon: <Award size={14} />, text: "TrexPro Installer" },
+                { icon: <Award size={14} />, text: "Composite Deck Specialists" },
                 { icon: <Shield size={14} />, text: "Licensed & Insured" },
                 { icon: <Zap size={14} />, text: "Hurricane-Rated Construction" },
                 { icon: <Star size={14} />, text: "5-Star Rated on Google" },
@@ -356,26 +356,26 @@ export default function TrexDeckBuilderTampaBay() {
         </div>
       </section>
 
-      {/* ── WHY TREX ── */}
+      {/* ── WHY COMPOSITE ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-                Why Tampa Bay Homeowners Choose Trex Composite Over Wood
+                Why Tampa Bay Homeowners Choose Composite Decking Over Wood
               </p>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
                 Florida's Climate Destroys Wood Decks.
               </h2>
               <div className="space-y-5 text-base leading-relaxed" style={{ color: "oklch(0.35 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}>
                 <p>
-                  Florida's sun, humidity, and salt air destroy traditional wood decks within a few years. Trex composite boards are engineered for exactly these conditions — UV-stable, mold-resistant, splinter-free, and backed by a 25-year fade-and-stain warranty.
+                  Florida's sun, humidity, and salt air destroy traditional wood decks within a few years. Composite deck boards are engineered for exactly these conditions — UV-stable, mold-resistant, splinter-free, and backed by a 25-year fade-and-stain warranty.
                 </p>
                 <p>
                   Beyond the boards themselves, what matters in Tampa Bay is what's underneath. We frame every deck to Florida Building Code wind-load standards using galvanized hardware, properly spaced joists for composite span requirements, and ledger flashing that won't rot out the house wall.
                 </p>
                 <p>
-                  We are TrexPro installers under Florida license <strong>CBC #1369038</strong>. Owner Landon Hawley walks every deck project from consultation to warranty walkthrough.
+                  We are licensed composite deck installers. Owner Landon Hawley walks every deck project from consultation to warranty walkthrough.
                 </p>
                 <p>
                   Many clients pair their new deck with an{" "}
@@ -387,7 +387,7 @@ export default function TrexDeckBuilderTampaBay() {
               </div>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
-                  "TrexPro certified installer",
+                  "Composite decking specialists",
                   "Hurricane-rated framing",
                   "We pull all permits",
                   "Fixed-price contracts",
@@ -404,7 +404,7 @@ export default function TrexDeckBuilderTampaBay() {
             <div className="relative">
               <img
                 src={DECK_IMG_1}
-                alt="Completed Trex composite deck by Hawley Construction in Tampa Bay FL"
+                alt="Completed composite deck by Hawley Construction in Tampa Bay FL"
                 className="w-full object-cover shadow-xl"
                 style={{ borderRadius: "2px", aspectRatio: "4/3" }}
               />
@@ -416,7 +416,7 @@ export default function TrexDeckBuilderTampaBay() {
                   Shore Acres, St. Petersburg
                 </p>
                 <p className="text-sm font-medium" style={{ color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                  Trex Transcend deck · 3 weeks
+                  Composite deck · 3 weeks
                 </p>
               </div>
             </div>
@@ -429,7 +429,7 @@ export default function TrexDeckBuilderTampaBay() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Our Trex Deck Services
+              Our Composite Deck Services
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
               Everything Your Deck Project Needs
@@ -460,13 +460,13 @@ export default function TrexDeckBuilderTampaBay() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Trex Product Lines We Install
+              Composite Decking Options We Install
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
               We Help You Choose the Right Line
             </h2>
             <p className="text-base max-w-xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-              Based on your sun exposure, foot traffic, and budget — we'll recommend the Trex line that gives you the best value for your specific situation.
+              Based on your sun exposure, foot traffic, and budget — we'll recommend the composite line that gives you the best value for your specific situation.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -572,10 +572,10 @@ export default function TrexDeckBuilderTampaBay() {
                 Investment
               </p>
               <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                What Does a Trex Deck Cost in Tampa Bay?
+                What Does a Composite Deck Cost in Tampa Bay?
               </h2>
               <p className="text-base leading-relaxed mb-6" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.35 0.01 250)" }}>
-                Composite decking runs <strong>$35–$80 per square foot installed</strong> in Tampa Bay, depending on Trex line, height/complexity, railing choice, and site conditions. A 300 sq ft deck typically runs <strong>$12K–$24K total</strong>.
+                Composite decking runs <strong>$35–$80 per square foot installed</strong> in Tampa Bay, depending on product line, height/complexity, railing choice, and site conditions. A 300 sq ft deck typically runs <strong>$12K–$24K total</strong>.
               </p>
               <div className="space-y-3">
                 {[
@@ -610,7 +610,7 @@ export default function TrexDeckBuilderTampaBay() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Recent Trex Projects in Tampa Bay
+              Recent Composite Deck Projects in Tampa Bay
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
               See Our Work
@@ -647,7 +647,7 @@ export default function TrexDeckBuilderTampaBay() {
               Frequently Asked Questions
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              Trex Decks in Tampa Bay
+              Composite Decks in Tampa Bay
             </h2>
           </div>
           <div className="space-y-3">
@@ -725,10 +725,10 @@ export default function TrexDeckBuilderTampaBay() {
                 Ready to Start?
               </p>
               <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Ready to build your Trex deck?
+                Ready to build your composite deck?
               </h2>
               <p className="text-base text-white/75 mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Free in-home estimates. Fixed-price quotes. TrexPro certified. No pressure.
+                Free in-home estimates. Fixed-price quotes. Licensed & insured. No pressure.
               </p>
               <div className="space-y-4 mb-8">
                 <a
@@ -852,11 +852,11 @@ export default function TrexDeckBuilderTampaBay() {
                         className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors bg-white"
                         style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
                       >
-                        <option>New Trex Deck</option>
+                        <option>New Composite Deck</option>
                         <option>Deck Replacement / Resurfacing</option>
                         <option>Pool Deck / Surround</option>
-                        <option>Trex Pergola</option>
-                        <option>Trex Railings</option>
+                        <option>Composite Pergola</option>
+                        <option>Composite Railings</option>
                         <option>Other</option>
                       </select>
                     </div>
@@ -870,7 +870,7 @@ export default function TrexDeckBuilderTampaBay() {
                         onChange={e => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors resize-none"
                         style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                        placeholder="Approximate deck size, height off ground, Trex line interest, timeline..."
+                        placeholder="Approximate deck size, height off ground, decking color/line interest, timeline..."
                       />
                     </div>
                     <button

@@ -376,7 +376,7 @@ export default function KitchenRemodelingStPete() {
                   Hawley Construction Co. has been building and remodeling kitchens across St. Petersburg and the Tampa Bay area for 5+ years. Owner Landon Hawley personally walks every project from first consultation to final walkthrough, which is why we still get most of our work from referrals in neighborhoods like <strong>Old Northeast, Snell Isle, Crescent Lake, Historic Kenwood,</strong> and <strong>Shore Acres</strong>.
                 </p>
                 <p>
-                  Every kitchen we build is permitted, fully licensed, and insured under Florida license <strong>CBC #1369038</strong>. We pull our own permits, coordinate every trade, and hand you a written fixed-price quote before we start — so there are no surprise change orders halfway through.
+                  Every kitchen we build is permitted, fully licensed, and insured. We pull our own permits, coordinate every trade, and hand you a written fixed-price quote before we start — so there are no surprise change orders halfway through.
                 </p>
                 <p>
                   Many of our kitchen clients also take the opportunity to update their{" "}

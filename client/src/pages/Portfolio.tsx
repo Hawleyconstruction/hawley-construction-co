@@ -158,14 +158,14 @@ export default function Portfolio() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyremodeling.com/our-work");
+    canonical.setAttribute("href", "https://hawleyremodeling.com/our-work/");
     // Inject ImageGallery schema
     const schema = {
       "@context": "https://schema.org",
       "@type": "ImageGallery",
       "name": "Hawley Construction Co. Project Gallery",
       "description": "Completed home remodeling projects by Hawley Construction Co. in Tampa Bay, Florida.",
-      "url": "https://hawleyremodeling.com/our-work",
+      "url": "https://hawleyremodeling.com/our-work/",
       "creator": {
         "@type": "HomeAndConstructionBusiness",
         "name": "Hawley Construction Co.",
@@ -257,7 +257,7 @@ export default function Portfolio() {
                     {project.description}
                   </p>
                   <Link
-                    href={`/services/${project.slug}`}
+                    href={`/services/${project.slug}/`}
                     className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide"
                     style={{ color: "oklch(0.55 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
                   >
@@ -285,7 +285,7 @@ export default function Portfolio() {
           >
             Every project starts with a free consultation. Let's discuss your vision and bring it to life.
           </p>
-          <Link href="/contact" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
+          <Link href="/contact/" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
             Get a Free Estimate
           </Link>
         </div>

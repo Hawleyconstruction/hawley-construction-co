@@ -87,7 +87,7 @@ export default function BlogPost() {
           <h1 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             Article Not Found
           </h1>
-          <Link href="/blog" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
+          <Link href="/blog/" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
             View All Articles
           </Link>
         </div>
@@ -117,7 +117,7 @@ export default function BlogPost() {
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', `https://hawleyremodeling.com/blog/${slug}`);
+      canonical.setAttribute('href', `https://hawleyremodeling.com/blog/${slug}/`);
       // Inject Article schema
       const schema = {
         "@context": "https://schema.org",
@@ -132,7 +132,7 @@ export default function BlogPost() {
           "name": "Hawley Construction Co.",
           "url": "https://hawleyremodeling.com"
         },
-        "mainEntityOfPage": `https://hawleyremodeling.com/blog/${slug}`
+        "mainEntityOfPage": `https://hawleyremodeling.com/blog/${slug}/`
       };
       const existing = document.getElementById('article-schema');
       if (existing) existing.remove();
@@ -149,7 +149,7 @@ export default function BlogPost() {
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       // Reset canonical
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');
+      if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com/');
     };
   }, [slug, post]);
 
@@ -161,7 +161,7 @@ export default function BlogPost() {
       <section className="relative pt-32 pb-0 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide mb-6"
             style={{ color: "oklch(0.64 0.055 230)", fontFamily: "'DM Sans', sans-serif" }}
           >
@@ -250,7 +250,7 @@ export default function BlogPost() {
                   Contact Hawley Construction Co. for a free, no-obligation estimate. Serving Tampa Bay since 2019.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="btn-gold block text-center mb-3"
                   style={{ borderRadius: "2px" }}
                 >
@@ -278,7 +278,7 @@ export default function BlogPost() {
                   {relatedPosts.map((related) => (
                     <Link
                       key={related.slug}
-                      href={`/blog/${related.slug}`}
+                      href={`/blog/${related.slug}/`}
                       className="flex gap-3 group"
                     >
                       <div className="w-20 h-16 flex-shrink-0 overflow-hidden" style={{ borderRadius: "2px" }}>

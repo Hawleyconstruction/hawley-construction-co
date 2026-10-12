@@ -120,9 +120,9 @@ const faqs = [
 ];
 
 const serviceAreas = [
-  { name: "St. Petersburg", href: "/areas/st-petersburg" },
-  { name: "Tampa", href: "/areas/tampa" },
-  { name: "Clearwater", href: "/areas/clearwater" },
+  { name: "St. Petersburg", href: "/areas/st-petersburg/" },
+  { name: "Tampa", href: "/areas/tampa/" },
+  { name: "Clearwater", href: "/areas/clearwater/" },
   { name: "Largo", href: null },
   { name: "Seminole", href: null },
   { name: "Pinellas Park", href: null },
@@ -252,7 +252,7 @@ export default function GeneralContractorStPete() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawleyremodeling.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hawleyremodeling.com/services" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hawleyremodeling.com/services/" },
         { "@type": "ListItem", "position": 3, "name": "General Contractor St. Petersburg", "item": "https://hawleyremodeling.com/general-contractor-st-petersburg/" },
       ],
     };
@@ -313,7 +313,7 @@ export default function GeneralContractorStPete() {
           <nav className="flex items-center justify-center gap-2 text-white/70 text-sm mb-6">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-gold transition-colors">Services</Link>
+            <Link href="/services/" className="hover:text-gold transition-colors">Services</Link>
             <span>/</span>
             <span className="text-white">General Contractor St. Petersburg</span>
           </nav>
@@ -405,7 +405,7 @@ export default function GeneralContractorStPete() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/our-work" className="btn-outline-navy">
+            <Link href="/our-work/" className="btn-outline-navy">
               View Full Portfolio
             </Link>
           </div>

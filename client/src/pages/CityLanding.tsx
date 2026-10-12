@@ -199,7 +199,7 @@ export default function CityLanding() {
               {data.heroSubheading}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
+              <Link href="/contact/" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
                 Get a Free Estimate
               </Link>
               <a href="tel:7046191480" className="btn-outline-light text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>
@@ -282,7 +282,7 @@ export default function CityLanding() {
               { title: "Outdoor Living", desc: `Create the ultimate ${data.name} outdoor retreat with custom patios, pergolas, outdoor kitchens, and fire features.`, slug: "outdoor-living" },
               { title: "Trex Decks", desc: `Low-maintenance composite decking perfect for ${data.name}'s climate. Resists moisture, fading, and requires no staining or sealing.`, slug: "trex-decks" },
             ].map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="group bg-white p-6 shadow-sm hover:shadow-md transition-all" style={{ borderRadius: "2px" }}>
+              <Link key={service.slug} href={`/services/${service.slug}/`} className="group bg-white p-6 shadow-sm hover:shadow-md transition-all" style={{ borderRadius: "2px" }}>
                 <h3 className="text-lg font-bold mb-3 group-hover:text-gold transition-colors" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
                   {service.title}
                 </h3>
@@ -351,7 +351,7 @@ export default function CityLanding() {
             Schedule a free in-home consultation with Hawley Construction. We'll discuss your vision, provide a detailed estimate, and create a timeline for your project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
+            <Link href="/contact/" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
               Schedule Free Consultation
             </Link>
             <a href="tel:7046191480" className="btn-outline-light text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>

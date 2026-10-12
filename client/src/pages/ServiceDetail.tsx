@@ -323,7 +323,7 @@ export default function ServiceDetail() {
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', `https://hawleyremodeling.com/services/${slug}`);
+      canonical.setAttribute('href', `https://hawleyremodeling.com/services/${slug}/`);
       // Inject Service schema
       const serviceSchema = {
         "@context": "https://schema.org",
@@ -337,7 +337,7 @@ export default function ServiceDetail() {
           "url": "https://hawleyremodeling.com"
         },
         "areaServed": ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Wesley Chapel", "Bradenton", "Sarasota"],
-        "url": `https://hawleyremodeling.com/services/${slug}`
+        "url": `https://hawleyremodeling.com/services/${slug}/`
       };
       const existingService = document.getElementById('service-schema');
       if (existingService) existingService.remove();
@@ -373,7 +373,7 @@ export default function ServiceDetail() {
       // Reset title and canonical
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');
+      if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com/');
     };
   }, [slug]);
 
@@ -385,7 +385,7 @@ export default function ServiceDetail() {
           <h1 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             Service Not Found
           </h1>
-          <Link href="/services" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
+          <Link href="/services/" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
             View All Services
           </Link>
         </div>
@@ -406,7 +406,7 @@ export default function ServiceDetail() {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href="/services"
+            href="/services/"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide mb-6"
             style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
           >
@@ -502,7 +502,7 @@ export default function ServiceDetail() {
                   {service.cta}
                 </p>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="btn-gold block text-center mb-3"
                   style={{ borderRadius: "2px" }}
                 >

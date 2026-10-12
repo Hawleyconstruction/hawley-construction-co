@@ -179,7 +179,7 @@ export default function FAQ() {
             We're happy to answer any questions about your remodeling project. Schedule a free consultation or give us a call.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-gold text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>
+            <Link href="/contact/" className="btn-gold text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>
               Contact Us <ArrowRight size={14} />
             </Link>
             <a href="tel:7046191480" className="btn-outline text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>

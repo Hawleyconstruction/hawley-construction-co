@@ -80,7 +80,7 @@ export default function Blog() {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://hawleyremodeling.com/blog');
+    canonical.setAttribute('href', 'https://hawleyremodeling.com/blog/');
     return () => {
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');
@@ -126,7 +126,7 @@ export default function Blog() {
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href={`/blog/${featured.slug}`}
+            href={`/blog/${featured.slug}/`}
             className="group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white shadow-sm overflow-hidden"
             style={{ borderRadius: "2px" }}
           >
@@ -199,7 +199,7 @@ export default function Blog() {
             {rest.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}/`}
                 className="group bg-white shadow-sm overflow-hidden"
                 style={{ borderRadius: "2px" }}
               >

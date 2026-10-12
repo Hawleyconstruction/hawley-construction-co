@@ -191,7 +191,7 @@ export default function Home() {
                 High-Quality Kitchens, Bathrooms, Additions &amp; Outdoor Living Spaces — crafted with precision for the way you live.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/contact" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
+                <a href="/contact/" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
                   Get a Free Estimate
                 </a>
                 <a href="tel:7046191480" className="btn-outline-light text-center flex items-center justify-center gap-2" style={{ borderRadius: "2px" }}>
@@ -279,7 +279,7 @@ export default function Home() {
             {services.map((service, i) => (
               <a
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={`/services/${service.slug}/`}
                 className={`group block bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 ${
                   servicesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
@@ -320,7 +320,7 @@ export default function Home() {
 
           <div className="mt-10 text-center">
             <a
-              href="/services"
+              href="/services/"
               className="btn-gold inline-block"
               style={{ borderRadius: "2px" }}
             >
@@ -549,7 +549,7 @@ export default function Home() {
           {/* View All link */}
           <div className="mt-10 text-center">
             <a
-              href="/our-work"
+              href="/our-work/"
               className="btn-gold inline-block"
               style={{ borderRadius: "2px" }}
             >
@@ -606,7 +606,7 @@ export default function Home() {
               </ul>
               <div className="mt-10">
                 <a
-                  href="/contact"
+                  href="/contact/"
                   className="btn-gold inline-block"
                   style={{ borderRadius: "2px" }}
                 >
@@ -809,7 +809,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/contact"
+                href="/contact/"
                 className="btn-gold text-center"
                 style={{ borderRadius: "2px" }}
               >

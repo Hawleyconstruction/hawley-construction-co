@@ -48,7 +48,7 @@ export default function Contact() {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://hawleyremodeling.com/contact');
+    canonical.setAttribute('href', 'https://hawleyremodeling.com/contact/');
     return () => {
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');

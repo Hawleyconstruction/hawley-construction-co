@@ -9,12 +9,12 @@ import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Our Work", href: "/our-work" },
-  { label: "Areas", href: "/areas/tampa" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Services", href: "/services/" },
+  { label: "Our Work", href: "/our-work/" },
+  { label: "Areas", href: "/areas/tampa/" },
+  { label: "FAQ", href: "/faq/" },
+  { label: "Blog", href: "/blog/" },
+  { label: "Contact", href: "/contact/" },
 ];
 
 export default function Navbar() {
@@ -103,7 +103,7 @@ export default function Navbar() {
                 704-619-1480
               </a>
               <Link
-                href="/contact"
+                href="/contact/"
                 className="btn-gold text-xs"
                 style={{ borderRadius: "2px" }}
               >
@@ -152,7 +152,7 @@ export default function Navbar() {
               704-619-1480
             </a>
             <Link
-              href="/contact"
+              href="/contact/"
               className="btn-gold text-center"
               style={{ borderRadius: "2px" }}
             >

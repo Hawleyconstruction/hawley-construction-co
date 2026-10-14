@@ -14,6 +14,31 @@
       gtag('config', 'G-1L7LLQBK32');
     </script>
 
+    <!-- ChatGPT Ads (OpenAI) pixel + conversions: Quote Form Lead (lead_created), Phone Call Tap (phone_call_click) -->
+    <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"9CPErtV81VxntZ7NRSsCKZ",debug:false});</script>
+    <script>
+      (function() {
+        // Quote forms already call gtag('event','generate_lead') after a successful submit.
+        var origGtag = window.gtag;
+        window.gtag = function() {
+          try {
+            if (arguments[0] === 'event' && arguments[1] === 'generate_lead') {
+              window.oaiq('measure', 'lead_created', { type: 'customer_action' });
+            }
+          } catch (e) {}
+          return origGtag.apply(this, arguments);
+        };
+        // Phone taps, including links rendered after page load.
+        document.addEventListener('click', function(e) {
+          var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+          if (!a) return;
+          try {
+            window.oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: 'phone_call_click' });
+          } catch (err) {}
+        }, true);
+      })();
+    </script>
+
     <!-- Phone-click conversion tracker (site-wide) -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {

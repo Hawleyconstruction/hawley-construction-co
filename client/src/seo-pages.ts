@@ -19,13 +19,13 @@ const BASE: string =
 
 export const PAGE_SEO: Record<string, PageSEO> = {
   "/": {
-    title: "Hawley Construction Co. | Kitchen & Bathroom Remodeling Tampa Bay FL | Trex Decks, Additions & Sunrooms",
-    description: "Hawley Construction Co. is Tampa Bay's trusted home remodeling contractor. Custom kitchens, bathrooms, additions, sunrooms & Trex decks. Free estimates.",
+    title: "Hawley Construction Co. | Kitchen & Bathroom Remodeling Tampa Bay FL | Decks, Additions & Sunrooms",
+    description: "Hawley Construction Co. is Tampa Bay's trusted home remodeling contractor. Custom kitchens, bathrooms, additions, sunrooms & decks. Free estimates.",
     canonical: `${BASE}/`,
   },
   "/services": {
     title: "Remodeling & Construction Services in Tampa Bay | Hawley Construction Co.",
-    description: "Explore our full range of home remodeling services in Tampa Bay — kitchens, bathrooms, additions, sunrooms, Trex decks, outdoor living & more. Free estimates.",
+    description: "Explore our full range of home remodeling services in Tampa Bay — kitchens, bathrooms, additions, sunrooms, decks, outdoor living & more. Free estimates.",
     canonical: `${BASE}/services`,
   },
   "/services/kitchen-remodeling": {
@@ -72,11 +72,6 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     title: "Custom Cabinetry Tampa Bay | Hawley Construction Co.",
     description: "Custom cabinetry for kitchens, bathrooms, and living spaces in Tampa Bay. Built to your specs by Hawley Construction Co. Licensed & insured. Free estimates.",
     canonical: `${BASE}/services/custom-cabinetry`,
-  },
-  "/services/trex-decks": {
-    title: "Trex Deck Installation Tampa Bay | Hawley Construction Co.",
-    description: "Certified Trex composite deck installation in Tampa Bay. Low-maintenance, weather-resistant decks built to last. Licensed contractor. Free estimates.",
-    canonical: `${BASE}/services/trex-decks`,
   },
   "/our-work": {
     title: "Our Recent Remodeling Projects | Hawley Construction Co.",

@@ -21,7 +21,7 @@ const serif = { fontFamily: "'Playfair Display', serif" };
 const HERO_IMG = "/images/projects/decks/trex-deck-01.webp";
 
 const photos = [
-  { src: "/images/projects/decks/trex-deck-02.webp", alt: "Grey composite deck with white railing and dark balusters" },
+  { src: "/images/projects/decks/covered-deck-01.webp", alt: "Covered composite deck with cedar ceiling, ceiling fan and black aluminum railing" },
   { src: "/images/projects/decks/trex-deck-03.webp", alt: "Two-tone composite deck around a pool on the water" },
   { src: "/images/projects/outdoor-living/covered-porch-01.webp", alt: "Covered porch with cedar posts, wood skirting and cable railing" },
 ];

@@ -1,139 +1,80 @@
 /**
- * Composite Deck Builder Tampa Bay Landing Page
- * URL: /trex-deck-builder-tampa-bay/
- * Target keyword: "composite deck builder Tampa Bay"
- * Design: Modern Craftsman — mirrors kitchen/bathroom landing pages
+ * Deck Builder Tampa Bay — wood & composite decks
+ * URL: /trex-deck-builder-tampa-bay/  (Google Ads "Real deck campaign" landing page)
+ * Design: Modern Craftsman — same palette/type as the other landing pages, plainer copy.
  */
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Award, MapPin, Zap } from "lucide-react";
+import { CheckCircle2, Phone, ChevronDown, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Use existing CDN images from the project
-const HERO_IMG = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex composite deck at sunset with aluminum railing
-const DECK_IMG_1 = "/images/projects/decks/trex-deck-01.webp"; // elevated multi-level Trex deck at sunset
-const DECK_IMG_2 = "/images/projects/decks/trex-deck-02.webp"; // grey Trex composite deck with white railing and Adirondack chairs
-const DECK_IMG_3 = "/images/projects/decks/trex-deck-03.webp"; // waterfront multi-level composite deck with pool surround
-const DECK_IMG_4 = "/images/projects/outdoor-living/covered-porch-01.webp"; // craftsman cedar timber-frame covered porch with cable railing
-const DECK_IMG_5 = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remodel — used as lifestyle/quality reference
-const DECK_IMG_6 = "/images/projects/outdoor-living/outdoor-living-01.webp"; // mediterranean loggia with arched columns and pool view
+const GOLD = "oklch(0.77 0.065 82)";
+const INK = "oklch(0.18 0.008 250)";
+const BODY = "oklch(0.35 0.01 250)";
+const MUTED = "oklch(0.45 0.01 250)";
+const CREAM = "oklch(0.97 0.005 82)";
+const NIGHT = "oklch(0.12 0.008 250)";
+const sans = { fontFamily: "'DM Sans', sans-serif" };
+const serif = { fontFamily: "'Playfair Display', serif" };
 
-const galleryImages = [
-  { src: DECK_IMG_1, alt: "Composite deck installation in Tampa Bay with multi-level design and aluminum railing by Hawley Construction", width: 1300, height: 729 },
-  { src: DECK_IMG_2, alt: "Grey composite deck with white railing system and Adirondack chairs in St. Petersburg, FL", width: 1600, height: 900 },
-  { src: DECK_IMG_3, alt: "Waterfront multi-level composite deck with pool surround and fire pit in Tampa Bay, FL", width: 990, height: 620 },
-  { src: DECK_IMG_4, alt: "Composite pergola and shade structure in Shore Acres St. Petersburg FL" },
-  { src: DECK_IMG_5, alt: "Composite deck with LED post-cap lighting in Wesley Chapel FL" },
-  { src: DECK_IMG_6, alt: "Composite deck replacement over existing framing in Old Northeast St. Petersburg FL" },
+const HERO_IMG = "/images/projects/decks/trex-deck-01.webp";
+
+const photos = [
+  { src: "/images/projects/decks/trex-deck-02.webp", alt: "Grey composite deck with white railing and dark balusters" },
+  { src: "/images/projects/decks/trex-deck-03.webp", alt: "Two-tone composite deck around a pool on the water" },
+  { src: "/images/projects/outdoor-living/covered-porch-01.webp", alt: "Covered porch with cedar posts, wood skirting and cable railing" },
 ];
 
 const services = [
-  {
-    title: "New Composite Deck Construction",
-    desc: "Ground-level to elevated, single-level to multi-level. Includes structural design, permits, framing, decking, railings, and post caps.",
-    icon: "🏗️",
-  },
-  {
-    title: "Deck Replacement & Resurfacing",
-    desc: "Tear off your old wood deck, evaluate the framing, replace what's needed, and install composite decking on top. Often more cost-effective than a full rebuild.",
-    icon: "🔄",
-  },
-  {
-    title: "Pool Decks & Pool Surrounds",
-    desc: "Composite around saltwater pools holds up where wood and pavers fail. We handle waterproof membranes and flashing details.",
-    icon: "🏊",
-  },
-  {
-    title: "Composite Pergolas & Shade Structures",
-    desc: "Match your deck with a fully integrated shade structure. Engineered to Florida wind-load requirements.",
-    icon: "⛱️",
-  },
-  {
-    title: "Composite Railings & Accent Lighting",
-    desc: "Cable, glass, or composite balusters. Riser and post-cap LED lighting installed at deck construction.",
-    icon: "💡",
-  },
+  { title: "New decks", desc: "Ground-level or raised, attached to the house or freestanding." },
+  { title: "Deck replacement", desc: "Old boards off, framing checked and fixed, new wood or composite on top." },
+  { title: "Repairs & re-framing", desc: "Rotted joists, soft spots, loose railings and failing stairs." },
+  { title: "Stairs & railings", desc: "Wood, composite, aluminum or cable rail." },
+  { title: "Waterproof decks", desc: "Watertight decks and balconies that keep the space underneath dry." },
+  { title: "Pool decks", desc: "Decking around pools and inside screened enclosures." },
+  { title: "Pergolas & covers", desc: "Shade over part or all of the deck." },
 ];
 
-const productLines = [
-  {
-    name: "Premium Heat-Resistant Composite",
-    tagline: "Premium · Best Heat Performance",
-    desc: "Tropical-hardwood look with the best heat-management performance. Ideal for full-sun Tampa Bay decks.",
-    featured: true,
-  },
-  {
-    name: "Top-Tier Capped Composite",
-    tagline: "Top-Tier · Longest Warranties",
-    desc: "The deepest color range and the longest manufacturer warranties available — up to 50 years residential on top lines. Our most popular choice.",
-    featured: false,
-  },
-  {
-    name: "Mid-Range Composite",
-    tagline: "Mid-Range · Balanced Value",
-    desc: "Balanced price and performance. A great choice for shaded decks or budget-conscious projects.",
-    featured: false,
-  },
-  {
-    name: "Entry-Level Composite",
-    tagline: "Entry-Level · Best Price",
-    desc: "Entry-level composite with the best price point. Still typically backed by a 25-year manufacturer fade-and-stain warranty.",
-    featured: false,
-  },
-];
-
-const processSteps = [
-  {
-    num: "01",
-    title: "Free In-Home Consultation",
-    desc: "We visit your property, assess site conditions, discuss composite decking options, and understand exactly how you want to use your deck.",
-  },
-  {
-    num: "02",
-    title: "Design & Fixed-Price Quote",
-    desc: "You receive a detailed written quote with structural design, product line selection, and all permit fees included — no surprises.",
-  },
-  {
-    num: "03",
-    title: "Permitted Build with One Project Manager",
-    desc: "We pull permits, schedule inspections, and manage every phase of the build. One point of contact start to finish.",
-  },
-  {
-    num: "04",
-    title: "Warranty Walkthrough",
-    desc: "We walk the finished deck with you, register your manufacturer warranty, and leave you with all documentation.",
-  },
+const steps = [
+  { num: "1", title: "Call or send the form", desc: "Tell us what you have in mind. A rough size and a couple of photos help." },
+  { num: "2", title: "We come take a look", desc: "We measure, check what's under any existing deck, and talk through wood vs. composite. Free." },
+  { num: "3", title: "You get a fixed price", desc: "A written quote covering materials, labor and permits. The price doesn't move once you sign." },
+  { num: "4", title: "We build it", desc: "Permits pulled, inspections scheduled, and a final walk-through with you when it's done." },
 ];
 
 const faqs = [
   {
-    q: "What's the difference between entry-level, mid-range, and top-tier composite decking?",
-    a: "Mostly performance and warranty length. Top-tier capped composites have the deepest color range, the best heat performance, and warranties up to 50 years residential. Entry-level lines are the most budget-friendly, typically with 25-year warranties. Mid-range sits in the middle — a great balance of price and performance for most Tampa Bay homeowners.",
+    q: "Should I go with wood or composite?",
+    a: "If keeping the cost down matters most, pressure-treated wood is the way to go — just plan on sealing it. If you don't want to spend weekends on upkeep, composite costs more up front but needs almost nothing after. We build both and will give you prices for each so you can compare.",
   },
   {
-    q: "Does composite decking get hot in the Florida sun?",
-    a: "Modern capped composite (especially premium heat-resistant lines) is significantly cooler than older composites and far cooler than dark-stained wood. Any decking gets warm in direct sun, but we can help you choose a lighter color and product line that minimizes heat absorption.",
+    q: "How long does a wood deck last in Florida?",
+    a: "A pressure-treated deck that's cleaned and sealed regularly commonly lasts 10–15 years here. Without that upkeep, the sun and rain shorten its life quite a bit.",
   },
   {
-    q: "How long does a composite deck last in Tampa Bay's climate?",
-    a: "Top-tier composite lines carry up to a 50-year limited residential warranty. Real-world life with proper framing and coastal-rated hardware is 25+ years. The boards themselves won't rot, splinter, or fade — the limiting factor is always the substructure, which we build to last.",
+    q: "How long does a composite deck last?",
+    a: "The boards won't rot or splinter, and many composite lines carry 25- to 50-year limited warranties. What usually decides how long any deck lasts is the framing underneath, so that's where we're careful.",
   },
   {
-    q: "Can you replace just the deck boards on my existing deck?",
-    a: "Often, yes — if the framing is sound. We inspect the substructure before quoting a resurface. If joists are undersized for composite span requirements or show rot, we'll tell you upfront what needs to be replaced.",
+    q: "Can you just replace the boards on my existing deck?",
+    a: "Often, yes — if the framing is sound. We check the joists before we quote. If they're rotted or spaced too wide for the new boards, we'll tell you up front what needs replacing.",
   },
   {
-    q: "What composite decking brands do you install?",
-    a: "We install all major composite and PVC decking brands and follow each manufacturer's installation guidelines — proper joist spacing, span requirements, and fastening — so your warranty stays valid.",
+    q: "Do you build waterproof decks?",
+    a: "Yes. We build waterproof decks and balconies so the area underneath stays dry. Tell us what's below the deck and we'll go over the options when we come out.",
   },
   {
-    q: "Do you handle pool deck waterproofing?",
-    a: "Yes. For decks attached to pool enclosures or extending over a structure, we handle waterproof membranes and flashing details to protect the structure below.",
+    q: "Do you pull permits?",
+    a: "Yes. We pull the permit and schedule the inspections as part of the job.",
   },
   {
-    q: "How much does a composite deck cost in Tampa Bay?",
-    a: "Composite decking runs $35–$80 per square foot installed in Tampa Bay, depending on product line, height/complexity, railing choice, and site conditions. A 300 sq ft deck typically runs $12K–$24K total. We provide fixed-price quotes after an in-home consultation.",
+    q: "What does a deck cost?",
+    a: "It depends on size, height, railing and materials. We come out, measure and give you a fixed price in writing before any work starts.",
+  },
+  {
+    q: "What composite brands do you install?",
+    a: "We install the major composite and PVC brands, including Trex, and follow each manufacturer's installation rules so your warranty stays valid.",
   },
 ];
 
@@ -141,31 +82,31 @@ const serviceAreas = [
   { name: "St. Petersburg", href: "/areas/st-petersburg" },
   { name: "Tampa", href: "/areas/tampa" },
   { name: "Clearwater", href: "/areas/clearwater" },
-  { name: "Brandon", href: null },
-  { name: "Wesley Chapel", href: null },
   { name: "Largo", href: null },
   { name: "Pinellas Park", href: null },
   { name: "Seminole", href: null },
   { name: "St. Pete Beach", href: null },
+  { name: "Brandon", href: null },
+  { name: "Wesley Chapel", href: null },
 ];
 
 export default function TrexDeckBuilderTampaBay() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", projectType: "New Composite Deck", message: "",
+    name: "", email: "", phone: "", projectType: "Not sure yet — wood or composite", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
 
   useEffect(() => {
-    document.title = "Composite Deck Builder Tampa Bay | Composite Deck Installation | Hawley Construction Co.";
+    document.title = "Deck Builder Tampa Bay | Wood & Composite Decks | Hawley Construction Co.";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
       metaDesc.setAttribute("name", "description");
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute("content", "Composite deck builder in St. Petersburg, Tampa & Clearwater. Hurricane-rated framing, 25+ year warranty. Free estimate: (704) 619-1480.");
+    metaDesc.setAttribute("content", "Wood, composite and waterproof decks in St. Petersburg, Tampa & Clearwater. New decks, deck replacement and repairs. Permits handled, fixed-price quotes. (704) 619-1480.");
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -175,12 +116,11 @@ export default function TrexDeckBuilderTampaBay() {
     }
     canonical.setAttribute("href", "https://hawleyremodeling.com/trex-deck-builder-tampa-bay/");
 
-    // Service schema
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Composite Deck Builder Tampa Bay",
-      "description": "Composite deck installation in Tampa Bay, FL. New deck construction, deck replacement, pool decks, pergolas, and composite railings. Hurricane-rated framing, licensed and insured, fixed-price quotes.",
+      "name": "Deck Builder Tampa Bay — Wood & Composite Decks",
+      "description": "Wood, composite and waterproof deck construction, deck replacement and deck repair in Tampa Bay, FL. Permits handled, fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
         "@id": "https://hawleyremodeling.com",
@@ -198,22 +138,15 @@ export default function TrexDeckBuilderTampaBay() {
       },
       "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
       "url": "https://hawleyremodeling.com/trex-deck-builder-tampa-bay/",
-      "serviceType": "Composite Deck Installation",
-      "offers": {
-        "@type": "Offer",
-        "priceRange": "$12,000 - $80,000+",
-        "priceCurrency": "USD"
-      }
+      "serviceType": "Deck construction"
     };
-    const existingSvc = document.getElementById("trex-service-schema");
-    if (existingSvc) existingSvc.remove();
+    document.getElementById("trex-service-schema")?.remove();
     const svcScript = document.createElement("script");
     svcScript.id = "trex-service-schema";
     svcScript.type = "application/ld+json";
     svcScript.text = JSON.stringify(serviceSchema);
     document.head.appendChild(svcScript);
 
-    // FAQ schema
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -223,15 +156,13 @@ export default function TrexDeckBuilderTampaBay() {
         "acceptedAnswer": { "@type": "Answer", "text": f.a },
       })),
     };
-    const existingFaq = document.getElementById("trex-faq-schema");
-    if (existingFaq) existingFaq.remove();
+    document.getElementById("trex-faq-schema")?.remove();
     const faqScript = document.createElement("script");
     faqScript.id = "trex-faq-schema";
     faqScript.type = "application/ld+json";
     faqScript.text = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
-    // LocalBusiness schema
     const lbSchema = {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
@@ -239,7 +170,6 @@ export default function TrexDeckBuilderTampaBay() {
       "name": "Hawley Construction Co.",
       "url": "https://hawleyremodeling.com",
       "telephone": "+17046191480",
-      "priceRange": "$$$",
       "image": "https://hawleyremodeling.com/og-image.png",
       "address": {
         "@type": "PostalAddress",
@@ -253,8 +183,7 @@ export default function TrexDeckBuilderTampaBay() {
       "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
       "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyremodeling.com"]
     };
-    const existingLb = document.getElementById("trex-lb-schema");
-    if (existingLb) existingLb.remove();
+    document.getElementById("trex-lb-schema")?.remove();
     const lbScript = document.createElement("script");
     lbScript.id = "trex-lb-schema";
     lbScript.type = "application/ld+json";
@@ -301,377 +230,130 @@ export default function TrexDeckBuilderTampaBay() {
     }
   };
 
+  const inputClass = "w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors";
+  const labelClass = "block text-xs font-semibold uppercase tracking-wide mb-1";
+
   return (
     <>
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Composite deck builder Tampa Bay by Hawley Construction" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.85) 0%, rgba(20,18,14,0.5) 60%, rgba(20,18,14,0.15) 100%)" }} />
+          <img src={HERO_IMG} alt="Raised deck with black aluminum railing behind a brick home" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.88) 0%, rgba(20,18,14,0.6) 55%, rgba(20,18,14,0.2) 100%)" }} />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Tampa Bay · Composite Deck Specialists · Licensed & Insured
+            <p className="text-sm mb-4 text-white/80" style={sans}>
+              Hawley Construction · St. Petersburg &amp; Tampa Bay
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Composite Deck Builder in Tampa Bay
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={serif}>
+              Wood and composite decks, built right.
             </h1>
-            <p className="text-lg text-white/85 mb-8 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Florida-built. Hurricane-rated framing. Up to 25+ year manufacturer fade and stain warranties. From design to finished deck in 2–4 weeks.
+            <p className="text-lg text-white/85 mb-8 leading-relaxed" style={sans}>
+              We build new decks, waterproof decks, replace worn-out ones, and fix the framing underneath — in pressure-treated wood or composite like Trex. Permits handled, and a fixed price before we start.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm tracking-wide transition-all duration-200"
-                style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                className="inline-flex items-center justify-center px-7 py-4 font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90"
+                style={{ backgroundColor: GOLD, color: INK, ...sans, borderRadius: "2px" }}
               >
-                Get Your Free Deck Estimate →
+                Get a free estimate
               </a>
               <a
                 href="tel:7046191480"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm tracking-wide border border-white/40 text-white hover:bg-white/10 transition-all duration-200"
-                style={{ fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                style={{ ...sans, borderRadius: "2px" }}
               >
                 <Phone size={16} />
                 (704) 619-1480
               </a>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-              {[
-                { icon: <Award size={14} />, text: "Composite Deck Specialists" },
-                { icon: <Shield size={14} />, text: "Licensed & Insured" },
-                { icon: <Zap size={14} />, text: "Hurricane-Rated Construction" },
-                { icon: <Star size={14} />, text: "5-Star Rated on Google" },
-              ].map((badge) => (
-                <div key={badge.text} className="flex items-center gap-2 text-white/90 text-xs font-medium" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  <span style={{ color: "oklch(0.77 0.065 82)" }}>{badge.icon}</span>
-                  {badge.text}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY COMPOSITE ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-                Why Tampa Bay Homeowners Choose Composite Decking Over Wood
-              </p>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                Florida's Climate Destroys Wood Decks.
-              </h2>
-              <div className="space-y-5 text-base leading-relaxed" style={{ color: "oklch(0.35 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                <p>
-                  Florida's sun, humidity, and salt air destroy traditional wood decks within a few years. Composite deck boards are engineered for exactly these conditions — UV-stable, mold-resistant, splinter-free, and backed by a 25-year fade-and-stain warranty.
-                </p>
-                <p>
-                  Beyond the boards themselves, what matters in Tampa Bay is what's underneath. We frame every deck to Florida Building Code wind-load standards using galvanized hardware, properly spaced joists for composite span requirements, and ledger flashing that won't rot out the house wall.
-                </p>
-                <p>
-                  We are licensed composite deck installers. Owner Landon Hawley walks every deck project from consultation to warranty walkthrough.
-                </p>
-                <p>
-                  Many clients pair their new deck with an{" "}
-                  <Link href="/outdoor-kitchen-contractor-st-petersburg/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>outdoor kitchen</Link>{" "}
-                  or a{" "}
-                  <Link href="/sunroom-florida-room-contractor/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>screened sunroom addition</Link>{" "}
-                  — we can bundle both projects under one contract.
-                </p>
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  "Composite decking specialists",
-                  "Hurricane-rated framing",
-                  "We pull all permits",
-                  "Fixed-price contracts",
-                  "Galvanized coastal hardware",
-                  "1-year workmanship warranty",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.35 0.01 250)" }}>
-                    <CheckCircle2 size={16} style={{ color: "oklch(0.77 0.065 82)", flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src={DECK_IMG_1}
-                alt="Completed composite deck by Hawley Construction in Tampa Bay FL"
-                className="w-full object-cover shadow-xl"
-                style={{ borderRadius: "2px", aspectRatio: "4/3" }}
-              />
-              <div
-                className="absolute -bottom-5 -left-5 px-6 py-4 shadow-lg"
-                style={{ backgroundColor: "oklch(0.77 0.065 82)", borderRadius: "2px" }}
-              >
-                <p className="text-xs font-semibold tracking-wide uppercase" style={{ color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                  Shore Acres, St. Petersburg
-                </p>
-                <p className="text-sm font-medium" style={{ color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                  Composite deck · 3 weeks
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.005 82)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Our Composite Deck Services
+            <p className="text-sm text-white/75" style={sans}>
+              Licensed &amp; insured · Permits pulled · Free on-site estimates
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              Everything Your Deck Project Needs
-            </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+      </section>
+
+      {/* ── WHAT WE BUILD ── */}
+      <section className="py-20" style={{ backgroundColor: CREAM }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-12" style={{ ...serif, color: INK }}>
+            What we build
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
             {services.map((svc) => (
-              <div
-                key={svc.title}
-                className="bg-white p-7 shadow-sm hover:shadow-md transition-shadow duration-200"
-                style={{ borderRadius: "2px", borderLeft: "3px solid oklch(0.77 0.065 82)" }}
-              >
-                <div className="text-3xl mb-4">{svc.icon}</div>
-                <h3 className="text-lg font-bold mb-3" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                  {svc.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                  {svc.desc}
-                </p>
+              <div key={svc.title} className="pt-5" style={{ borderTop: "1px solid oklch(0.88 0.02 82)" }}>
+                <h3 className="text-lg font-bold mb-2" style={{ ...serif, color: INK }}>{svc.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ ...sans, color: MUTED }}>{svc.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── PRODUCT LINES ── */}
+      {/* ── HOW IT WORKS ── */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Composite Decking Options We Install
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              We Help You Choose the Right Line
-            </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-              Based on your sun exposure, foot traffic, and budget — we'll recommend the composite line that gives you the best value for your specific situation.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {productLines.map((line) => (
-              <div
-                key={line.name}
-                className="p-7 relative"
-                style={{
-                  borderRadius: "2px",
-                  backgroundColor: line.featured ? "oklch(0.18 0.008 250)" : "oklch(0.97 0.005 82)",
-                  border: line.featured ? "none" : "1px solid oklch(0.92 0.02 82)",
-                }}
-              >
-                {line.featured && (
-                  <div
-                    className="absolute top-3 right-3 px-2 py-1 text-xs font-semibold"
-                    style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-                  >
-                    Best for FL
-                  </div>
-                )}
-                <p className="text-xs font-semibold tracking-wide uppercase mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: line.featured ? "oklch(0.77 0.065 82)" : "oklch(0.6 0.02 82)" }}>
-                  {line.tagline}
-                </p>
-                <h3 className="text-base font-bold mb-3" style={{ fontFamily: "'Playfair Display', serif", color: line.featured ? "white" : "oklch(0.18 0.008 250)" }}>
-                  {line.name}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: line.featured ? "oklch(0.75 0.01 250)" : "oklch(0.45 0.01 250)" }}>
-                  {line.desc}
-                </p>
-              </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            How it works
+          </h2>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((s) => (
+              <li key={s.num} className="flex flex-col gap-3">
+                <span className="w-9 h-9 flex items-center justify-center text-sm font-bold" style={{ ...sans, backgroundColor: CREAM, color: INK, borderRadius: "999px" }}>
+                  {s.num}
+                </span>
+                <h3 className="text-base font-bold" style={{ ...sans, color: INK }}>{s.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ ...sans, color: MUTED }}>{s.desc}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.005 82)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              The Hawley Deck Process
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              From First Call to Finished Deck
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step) => (
-              <div key={step.num} className="relative">
-                <div
-                  className="text-5xl font-bold mb-4 leading-none"
-                  style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.92 0.04 82)" }}
-                >
-                  {step.num}
-                </div>
-                <h3 className="text-base font-bold mb-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.18 0.008 250)" }}>
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                  {step.desc}
-                </p>
+      {/* ── OUR WORK ── */}
+      <section className="py-20" style={{ backgroundColor: CREAM }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            Our work
+          </h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {photos.map((p) => (
+              <div key={p.src} className="overflow-hidden" style={{ borderRadius: "2px", aspectRatio: "4/3" }}>
+                <img src={p.src} alt={p.alt} className="w-full h-full object-cover" loading="lazy" />
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── HURRICANE / CODE SECTION ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div
-              className="p-8"
-              style={{ backgroundColor: "oklch(0.12 0.008 250)", borderRadius: "2px" }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <Shield size={24} style={{ color: "oklch(0.77 0.065 82)" }} />
-                <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Hurricane & Code Compliance
-                </h3>
-              </div>
-              <p className="text-sm leading-relaxed text-white/75 mb-5" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Every deck we build over 30 inches above grade is engineered for Pinellas County's wind zones. We submit permits, schedule inspections, and use only hardware rated for exterior coastal use.
-              </p>
-              <ul className="space-y-2">
-                {[
-                  "Florida Building Code wind-load framing",
-                  "Galvanized & stainless coastal hardware",
-                  "Proper composite span spacing",
-                  "Ledger flashing to protect house wall",
-                  "All permits pulled and inspections scheduled",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-white/80" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    <CheckCircle2 size={14} className="mt-0.5 flex-shrink-0" style={{ color: "oklch(0.77 0.065 82)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-                Investment
-              </p>
-              <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                What Does a Composite Deck Cost in Tampa Bay?
-              </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.35 0.01 250)" }}>
-                Composite decking runs <strong>$35–$80 per square foot installed</strong> in Tampa Bay, depending on product line, height/complexity, railing choice, and site conditions. A 300 sq ft deck typically runs <strong>$12K–$24K total</strong>.
-              </p>
-              <div className="space-y-3">
-                {[
-                  { label: "Small deck (150–250 sq ft)", range: "$8K–$18K" },
-                  { label: "Mid-size deck (250–400 sq ft)", range: "$12K–$28K" },
-                  { label: "Large deck / multi-level (400+ sq ft)", range: "$25K–$60K+" },
-                ].map((tier) => (
-                  <div
-                    key={tier.label}
-                    className="flex items-center justify-between px-5 py-4"
-                    style={{ backgroundColor: "oklch(0.97 0.005 82)", borderRadius: "2px" }}
-                  >
-                    <span className="text-sm font-medium" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.35 0.01 250)" }}>
-                      {tier.label}
-                    </span>
-                    <span className="text-base font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                      {tier.range}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 text-xs" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.55 0.01 250)" }}>
-                All quotes are fixed-price. Ask about financing options during your consultation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── GALLERY ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.12 0.008 250)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Recent Composite Deck Projects in Tampa Bay
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              See Our Work
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {galleryImages.map((img, i) => (
-              <div key={i} className="overflow-hidden group" style={{ borderRadius: "2px", aspectRatio: "4/3" }}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/our-work"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors"
-              style={{ fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-            >
-              View Full Portfolio →
-            </Link>
           </div>
         </div>
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.005 82)" }}>
+      <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Frequently Asked Questions
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              Composite Decks in Tampa Bay
-            </h2>
-          </div>
-          <div className="space-y-3">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            Common questions
+          </h2>
+          <div className="divide-y" style={{ borderTop: "1px solid oklch(0.9 0.01 82)", borderBottom: "1px solid oklch(0.9 0.01 82)" }}>
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white shadow-sm overflow-hidden" style={{ borderRadius: "2px" }}>
+              <div key={i}>
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  className="w-full flex items-center justify-between py-5 text-left"
+                  aria-expanded={openFaq === i}
                 >
-                  <span className="text-sm font-semibold pr-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.18 0.008 250)" }}>
-                    {faq.q}
-                  </span>
+                  <span className="text-base font-semibold pr-4" style={{ ...sans, color: INK }}>{faq.q}</span>
                   <ChevronDown
                     size={18}
                     className="flex-shrink-0 transition-transform duration-200"
-                    style={{ color: "oklch(0.77 0.065 82)", transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)" }}
+                    style={{ color: GOLD, transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)" }}
                   />
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-5">
-                    <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                      {faq.a}
-                    </p>
-                  </div>
+                  <p className="pb-5 text-sm leading-relaxed" style={{ ...sans, color: MUTED }}>{faq.a}</p>
                 )}
               </div>
             ))}
@@ -680,77 +362,45 @@ export default function TrexDeckBuilderTampaBay() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section className="py-14 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <MapPin size={18} style={{ color: "oklch(0.77 0.065 82)" }} />
-              <span className="text-sm font-semibold tracking-wide uppercase" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.18 0.008 250)" }}>
-                Service Areas
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {serviceAreas.map((area) => (
-                area.href ? (
-                  <Link
-                    key={area.name}
-                    href={area.href}
-                    className="px-3 py-1 text-xs font-medium hover:opacity-80 transition-opacity"
-                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px", textDecoration: "none" }}
-                  >
-                    {area.name}
-                  </Link>
-                ) : (
-                  <span
-                    key={area.name}
-                    className="px-3 py-1 text-xs font-medium"
-                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-                  >
-                    {area.name}
-                  </span>
-                )
-              ))}
-            </div>
+      <section className="py-12" style={{ backgroundColor: CREAM }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center gap-4">
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <MapPin size={18} style={{ color: GOLD }} />
+            <span className="text-sm font-semibold" style={{ ...sans, color: INK }}>We build decks in</span>
           </div>
+          <p className="text-sm" style={{ ...sans, color: BODY }}>
+            {serviceAreas.map((area, i) => (
+              <span key={area.name}>
+                {area.href ? (
+                  <Link href={area.href} style={{ color: BODY, textDecoration: "underline" }}>{area.name}</Link>
+                ) : area.name}
+                {i < serviceAreas.length - 1 ? " · " : ""}
+              </span>
+            ))}
+            {" "}and nearby.
+          </p>
         </div>
       </section>
 
-      {/* ── CONTACT / FINAL CTA ── */}
-      <section id="contact" className="py-24" style={{ backgroundColor: "oklch(0.12 0.008 250)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── CONTACT ── */}
+      <section id="contact" className="py-24" style={{ backgroundColor: NIGHT }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Left — copy */}
             <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-                Ready to Start?
-              </p>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Ready to build your composite deck?
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white" style={serif}>
+                Tell us about your deck
               </h2>
-              <p className="text-base text-white/75 mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Free in-home estimates. Fixed-price quotes. Licensed & insured. No pressure.
+              <p className="text-base text-white/75 mb-8 leading-relaxed" style={sans}>
+                Send the form or give us a call. We'll set up a time to come out, take measurements and give you a price — no charge, no pressure.
               </p>
-              <div className="space-y-4 mb-8">
-                <a
-                  href="tel:7046191480"
-                  className="flex items-center gap-3 text-white hover:text-gold transition-colors"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  <Phone size={18} style={{ color: "oklch(0.77 0.065 82)" }} />
-                  <span className="text-lg font-semibold">(704) 619-1480</span>
-                </a>
-                <p className="text-sm text-white/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Mon–Fri 8am–6pm · St. Petersburg, FL 33701
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-medium mt-2 hover:opacity-80 transition-opacity"
-                  style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  View full contact page →
-                </Link>
-              </div>
-              <div className="overflow-hidden shadow-lg" style={{ borderRadius: "2px", height: "220px" }}>
+              <a href="tel:7046191480" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity mb-2" style={sans}>
+                <Phone size={18} style={{ color: GOLD }} />
+                <span className="text-lg font-semibold">(704) 619-1480</span>
+              </a>
+              <p className="text-sm text-white/60 mb-8" style={sans}>
+                Mon–Fri 8am–6pm · 316 11th Ave NE, St. Petersburg, FL 33701
+              </p>
+              <div className="overflow-hidden" style={{ borderRadius: "2px", height: "220px" }}>
                 <iframe
                   title="Hawley Construction Co. location in St. Petersburg FL"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.1!2d-82.6403!3d27.7676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s316+11th+Ave+NE%2C+St.+Petersburg%2C+FL+33701!5e0!3m2!1sen!2sus!4v1"
@@ -764,124 +414,106 @@ export default function TrexDeckBuilderTampaBay() {
               </div>
             </div>
 
-            {/* Right — form */}
-            <div className="bg-white p-8 shadow-xl" style={{ borderRadius: "2px" }}>
+            <div className="bg-white p-8" style={{ borderRadius: "2px" }}>
               {submitted ? (
                 <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-                  <CheckCircle2 size={48} className="mb-4" style={{ color: "oklch(0.77 0.065 82)" }} />
-                  <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                    Thank you!
-                  </h3>
-                  <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                    We'll be in touch within one business day to schedule your free in-home deck estimate.
+                  <CheckCircle2 size={48} className="mb-4" style={{ color: GOLD }} />
+                  <h3 className="text-xl font-bold mb-2" style={{ ...serif, color: INK }}>Thank you!</h3>
+                  <p className="text-sm" style={{ ...sans, color: MUTED }}>
+                    We'll be in touch within one business day to set up your free estimate.
                   </p>
                 </div>
               ) : formError ? (
                 <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-                  <div className="mb-4 text-4xl">⚠️</div>
-                  <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                    Something went wrong
-                  </h3>
-                  <p className="text-sm mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                    We couldn't send your request. Please call us directly at (704) 619-1480 or try again.
+                  <h3 className="text-xl font-bold mb-2" style={{ ...serif, color: INK }}>Something went wrong</h3>
+                  <p className="text-sm mb-4" style={{ ...sans, color: MUTED }}>
+                    We couldn't send your request. Please call us at (704) 619-1480 or try again.
                   </p>
-                  <button
-                    onClick={() => setFormError(false)}
-                    className="text-sm underline"
-                    style={{ color: "oklch(0.45 0.01 250)" }}
-                  >
+                  <button onClick={() => setFormError(false)} className="text-sm underline" style={{ color: MUTED }}>
                     Try again
                   </button>
                 </div>
               ) : (
                 <>
-                  <h3 className="text-xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                    Get Your Free Deck Estimate
-                  </h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ ...serif, color: INK }}>Get a free deck estimate</h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                        Name *
-                      </label>
+                      <label className={labelClass} style={{ ...sans, color: MUTED }}>Name *</label>
                       <input
                         type="text"
                         required
                         value={formData.name}
                         onChange={e => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors"
-                        style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+                        className={inputClass}
+                        style={{ borderRadius: "2px", ...sans }}
                         placeholder="Your full name"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                          Email *
-                        </label>
+                        <label className={labelClass} style={{ ...sans, color: MUTED }}>Email *</label>
                         <input
                           type="email"
                           required
                           value={formData.email}
                           onChange={e => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors"
-                          style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+                          className={inputClass}
+                          style={{ borderRadius: "2px", ...sans }}
                           placeholder="your@email.com"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                          Phone
-                        </label>
+                        <label className={labelClass} style={{ ...sans, color: MUTED }}>Phone</label>
                         <input
                           type="tel"
                           value={formData.phone}
                           onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors"
-                          style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+                          className={inputClass}
+                          style={{ borderRadius: "2px", ...sans }}
                           placeholder="(xxx) xxx-xxxx"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                        Project Type
-                      </label>
+                      <label className={labelClass} style={{ ...sans, color: MUTED }}>Project</label>
                       <select
                         value={formData.projectType}
                         onChange={e => setFormData({ ...formData, projectType: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors bg-white"
-                        style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
+                        className={`${inputClass} bg-white`}
+                        style={{ borderRadius: "2px", ...sans }}
                       >
-                        <option>New Composite Deck</option>
-                        <option>Deck Replacement / Resurfacing</option>
-                        <option>Pool Deck / Surround</option>
-                        <option>Composite Pergola</option>
-                        <option>Composite Railings</option>
+                        <option>Not sure yet — wood or composite</option>
+                        <option>New wood deck</option>
+                        <option>New composite deck</option>
+                        <option>Deck replacement / resurfacing</option>
+                        <option>Deck repair</option>
+                        <option>Waterproof deck</option>
+                        <option>Pool deck</option>
+                        <option>Stairs or railings</option>
+                        <option>Pergola / cover</option>
                         <option>Other</option>
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                        Tell Us About Your Project
-                      </label>
+                      <label className={labelClass} style={{ ...sans, color: MUTED }}>About your project</label>
                       <textarea
                         rows={4}
                         value={formData.message}
                         onChange={e => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors resize-none"
-                        style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                        placeholder="Approximate deck size, height off ground, decking color/line interest, timeline..."
+                        className={`${inputClass} resize-none`}
+                        style={{ borderRadius: "2px", ...sans }}
+                        placeholder="Rough size, how high off the ground, wood or composite, timing..."
                       />
                     </div>
                     <button
                       type="submit"
                       className="w-full py-4 font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90"
-                      style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                      style={{ backgroundColor: GOLD, color: INK, ...sans, borderRadius: "2px" }}
                     >
-                      Request My Free Deck Estimate →
+                      Request my free estimate
                     </button>
-                    <p className="text-xs text-center" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.6 0.01 250)" }}>
-                      No spam. No obligation. We respond within 1 business day.
+                    <p className="text-xs text-center" style={{ ...sans, color: "oklch(0.6 0.01 250)" }}>
+                      We'll reply within one business day.
                     </p>
                   </form>
                 </>

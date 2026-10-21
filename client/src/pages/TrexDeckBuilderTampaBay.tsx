@@ -99,6 +99,15 @@ export default function TrexDeckBuilderTampaBay() {
   const [formError, setFormError] = useState(false);
 
   useEffect(() => {
+    // Jump to a section when arriving with a #hash (used by ad sitelinks)
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const t = window.setTimeout(() => document.getElementById(hash)?.scrollIntoView({ block: "start" }), 150);
+      return () => window.clearTimeout(t);
+    }
+  }, []);
+
+  useEffect(() => {
     document.title = "Deck Builder Tampa Bay | Wood & Composite Decks | Hawley Construction Co.";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {

@@ -336,14 +336,14 @@ const ROUTES: Record<string, RouteSEO> = {
     ],
   },
   "/trex-deck-builder-tampa-bay": {
-    title: "Composite Deck Builder Tampa Bay | Hawley Construction Co.",
-    description: "Tampa Bay's composite deck builder. Custom composite decks built to last in Florida weather. Licensed & insured. Free estimates. Call (704) 619-1480.",
+    title: "Deck Builder Tampa Bay | Wood & Composite Decks | Hawley Construction Co.",
+    description: "Wood, composite and waterproof decks in St. Petersburg, Tampa & Clearwater. New decks, deck replacement and repairs. Permits handled, fixed-price quotes. Call (704) 619-1480.",
     canonical: `${BASE}/trex-deck-builder-tampa-bay/`,
-    h1: "Composite Deck Builder — Tampa Bay",
-    serviceType: "Composite Deck Installation",
+    h1: "Wood and composite decks, built right.",
+    serviceType: "Deck Construction",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
-      { name: "Composite Deck Builder Tampa Bay", item: `${BASE}/trex-deck-builder-tampa-bay/` },
+      { name: "Deck Builder Tampa Bay", item: `${BASE}/trex-deck-builder-tampa-bay/` },
     ],
   },
   "/sunroom-florida-room-contractor": {

@@ -163,11 +163,12 @@
           } catch (e) {}
           return origGtag.apply(this, arguments);
         };
-        // Phone taps, including links rendered after page load. A tap is NOT a Google Ads conversion
-        // (only real calls are - see the call tracking above); it's sent to GA4 and ChatGPT Ads for info.
+        // Phone taps, including links rendered after page load. A tap IS a Google Ads conversion
+        // ("Website phone tap", Phone call lead goal) and is also sent to GA4 and ChatGPT Ads.
         document.addEventListener('click', function(e) {
           var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
           if (!a) return;
+          try { origGtag('event', 'conversion', { send_to: 'AW-18172396876/WVh0CP26g6QdEMyKo9lD', value: 50.0, currency: 'USD' }); } catch (err) {}
           try { origGtag('event', 'phone_call_click', { phone_number: a.getAttribute('href').replace('tel:', '') }); } catch (err) {}
           try {
             window.oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: 'phone_call_click' });

@@ -61,14 +61,14 @@ interface RouteSEO {
 
 const ROUTES: Record<string, RouteSEO> = {
   "/": {
-    title: "Hawley Construction Co. | Kitchen & Bathroom Remodeling Tampa Bay FL | Trex Decks, Additions & Sunrooms",
-    description: "Hawley Construction Co. is Tampa Bay's trusted home remodeling contractor. Custom kitchens, bathrooms, additions, sunrooms & Trex decks. Free estimates.",
+    title: "Hawley Construction Co. | Kitchen & Bathroom Remodeling Tampa Bay FL | Decks, Additions & Sunrooms",
+    description: "Hawley Construction Co. is Tampa Bay's trusted home remodeling contractor. Custom kitchens, bathrooms, additions, sunrooms & decks. Free estimates.",
     canonical: `${BASE}/`,
     h1: "Tampa Bay's Trusted Home Remodeling Contractor",
   },
   "/services": {
     title: "Remodeling & Construction Services in Tampa Bay | Hawley Construction Co.",
-    description: "Explore our full range of home remodeling services in Tampa Bay — kitchens, bathrooms, additions, sunrooms, Trex decks, outdoor living & more. Free estimates.",
+    description: "Explore our full range of home remodeling services in Tampa Bay — kitchens, bathrooms, additions, sunrooms, decks, outdoor living & more. Free estimates.",
     canonical: `${BASE}/services`,
     h1: "Our Services",
     breadcrumbs: [
@@ -182,18 +182,6 @@ const ROUTES: Record<string, RouteSEO> = {
       { name: "Home", item: `${BASE}/` },
       { name: "Services", item: `${BASE}/services` },
       { name: "Custom Cabinetry", item: `${BASE}/services/custom-cabinetry` },
-    ],
-  },
-  "/services/trex-decks": {
-    title: "Trex Deck Installation Tampa Bay | Hawley Construction Co.",
-    description: "Certified Trex composite deck installation in Tampa Bay. Low-maintenance, weather-resistant decks built to last. Licensed contractor. Free estimates.",
-    canonical: `${BASE}/services/trex-decks`,
-    h1: "Trex Deck Installation in Tampa Bay",
-    serviceType: "Trex Composite Deck Installation",
-    breadcrumbs: [
-      { name: "Home", item: `${BASE}/` },
-      { name: "Services", item: `${BASE}/services` },
-      { name: "Trex Decks", item: `${BASE}/services/trex-decks` },
     ],
   },
   "/our-work": {
@@ -398,14 +386,14 @@ const ROUTES: Record<string, RouteSEO> = {
 const FAQ_ITEMS = [
   { q: "How much does a kitchen remodel cost in Tampa Bay?", a: "A kitchen remodel in Tampa Bay costs between $25,000 and $85,000 depending on scope and materials. A minor refresh ranges from $15,000–$30,000. A mid-range remodel costs $35,000–$55,000. A full custom kitchen renovation ranges from $60,000–$100,000+. Hawley Construction provides free detailed estimates for all projects." },
   { q: "How much does a bathroom remodel cost in Florida?", a: "Bathroom remodeling in the Tampa Bay area costs between $12,000 and $50,000. A basic refresh starts at $8,000–$15,000. A standard remodel costs $18,000–$35,000. A luxury master bathroom ranges from $35,000–$60,000+." },
-  { q: "How much does a Trex deck cost in Florida?", a: "A Trex composite deck in Florida costs between $45–$85 per square foot installed. A standard 300 sq ft Trex deck costs $13,500–$25,500 installed. Trex decks last 25+ years with no staining or sealing required." },
+  { q: "How much does a deck cost in Florida?", a: "Deck cost depends on size, height, railing and materials — wood or composite. Hawley Construction measures the site and gives a fixed price in writing before any work starts." },
   { q: "How much does a home addition cost in Tampa?", a: "Home additions in Tampa cost between $150–$350 per square foot. A 400 sq ft addition typically ranges from $60,000–$140,000 total including permits, foundation, framing, and finishes." },
   { q: "How much does a sunroom cost in Florida?", a: "A sunroom addition in Florida costs between $25,000 and $80,000. A three-season sunroom costs $15,000–$35,000. A four-season sunroom with insulated glass and HVAC costs $40,000–$80,000." },
   { q: "How long does a kitchen remodel take?", a: "A kitchen remodel takes 6–12 weeks from demolition to completion. The timeline includes design and material selection (2–4 weeks), permits (1–2 weeks), demolition and rough work (1–2 weeks), cabinetry and countertop installation (2–3 weeks), and finishing (1–2 weeks)." },
   { q: "How long does a bathroom remodel take?", a: "A standard bathroom remodel takes 3–6 weeks. A full master bathroom renovation with custom tile, walk-in shower, and new plumbing takes 5–8 weeks." },
   { q: "What is the remodeling process with Hawley Construction?", a: "The Hawley Construction remodeling process follows 6 steps: (1) Free in-home consultation. (2) Design phase with material selections. (3) Detailed proposal with fixed pricing and timeline. (4) Permit acquisition handled by our team. (5) Construction with daily site cleanup and weekly progress updates. (6) Final walkthrough and quality inspection." },
   { q: "Do you handle permits for remodeling projects?", a: "Yes, Hawley Construction handles all building permits for every project. We submit permit applications, coordinate inspections, and ensure all work meets Florida Building Code requirements." },
-  { q: "What services does Hawley Construction offer?", a: "Hawley Construction offers kitchen remodeling, bathroom renovations, home additions, sunroom construction, outdoor living spaces, and Trex composite deck installation. We handle projects from design through completion, including permits, structural work, plumbing, electrical, tile, cabinetry, and finishing." },
+  { q: "What services does Hawley Construction offer?", a: "Hawley Construction offers kitchen remodeling, bathroom renovations, home additions, sunroom construction, outdoor living spaces, and wood and composite decks. We handle projects from design through completion, including permits, structural work, plumbing, electrical, tile, cabinetry, and finishing." },
   { q: "What areas does Hawley Construction serve?", a: "Hawley Construction serves the entire Tampa Bay metropolitan area including Tampa, St. Petersburg, Clearwater, Brandon, Wesley Chapel, Largo, Dunedin, Safety Harbor, Palm Harbor, Tarpon Springs, Oldsmar, Riverview, and surrounding communities in Hillsborough and Pinellas counties." },
   { q: "Is Hawley Construction licensed and insured?", a: "Yes, Hawley Construction is fully licensed as a General Contractor in the state of Florida, bonded, and carries comprehensive liability insurance and workers' compensation coverage." },
   { q: "Why choose Trex decking over wood in Florida?", a: "Trex composite decking outperforms wood in Florida because it resists moisture, mold, and rot. It won't warp, crack, or splinter like pressure-treated wood. It requires zero staining, sealing, or painting. It resists UV fading with a 25-year warranty." },
@@ -468,7 +456,7 @@ function buildGeneralContractorSchema(): string {
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kitchen Remodeling" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bathroom Remodeling" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Trex Deck Installation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wood & Composite Deck Construction" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sunroom Construction" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "ADU & In-Law Suite Construction" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Home Additions" } },
@@ -657,7 +645,7 @@ function injectSEO(html: string, route: string, seo: RouteSEO): string {
     const bathroomRoutes = ["/services/bathroom-remodeling", "/bathroom-remodeling-st-petersburg", "/bathroom-remodeling-st-petersburg/"];
     const kitchenRoutes = ["/services/kitchen-remodeling", "/kitchen-remodeling-st-petersburg", "/kitchen-remodeling-st-petersburg/"];
     const additionRoutes = ["/services/home-additions", "/services/full-home-remodels", "/adu-in-law-suite-builder", "/adu-in-law-suite-builder/"];
-    const deckRoutes = ["/services/trex-decks", "/trex-deck-builder-tampa-bay", "/trex-deck-builder-tampa-bay/"];
+    const deckRoutes = ["/trex-deck-builder-tampa-bay", "/trex-deck-builder-tampa-bay/"];
     const outdoorRoutes = ["/services/outdoor-living"];
     const serviceImage = bathroomRoutes.includes(route)
       ? `${BASE}/images/projects/bathroom/bathroom-01.jpg`

@@ -18,11 +18,103 @@
     <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"9CPErtV81VxntZ7NRSsCKZ",debug:false});</script>
     <script>
       (function() {
-        // Quote forms already call gtag('event','generate_lead') after a successful submit.
+        // ---- Lead spam screening ----
+        // Every submission still goes to Formspree and your inbox. Ones that look like spam get
+        // "POSSIBLE SPAM" in the email subject plus a spam_check line, and are NOT reported to
+        // Google Ads or ChatGPT Ads as conversions.
+        var TRAP = 'hc_extra_info';
+        var started = new WeakMap();
+        var lastSubmit = null;
+        var suppressUntil = 0;
+        var suppressReasons = '';
+
+        function addTrap(form) {
+          if (form.querySelector('input[name="' + TRAP + '"]')) return;
+          var wrap = document.createElement('div');
+          wrap.setAttribute('aria-hidden', 'true');
+          wrap.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';
+          var input = document.createElement('input');
+          input.type = 'text'; input.name = TRAP; input.tabIndex = -1; input.autocomplete = 'off'; input.value = '';
+          wrap.appendChild(input);
+          form.appendChild(wrap);
+        }
+        function addTraps() { var f = document.forms; for (var i = 0; i < f.length; i++) addTrap(f[i]); }
+        new MutationObserver(addTraps).observe(document.documentElement, { childList: true, subtree: true });
+        document.addEventListener('DOMContentLoaded', addTraps);
+
+        function markStart(e) {
+          var form = e.target && e.target.form;
+          if (form && !started.has(form) && !(e.target.name === TRAP)) started.set(form, Date.now());
+        }
+        document.addEventListener('focusin', markStart, true);
+        document.addEventListener('input', markStart, true);
+        document.addEventListener('submit', function(e) {
+          var form = e.target;
+          var trap = form.querySelector && form.querySelector('input[name="' + TRAP + '"]');
+          var t0 = started.get(form);
+          lastSubmit = { at: Date.now(), honeypot: !!(trap && trap.value), seconds: t0 ? Math.round((Date.now() - t0) / 1000) : null };
+        }, true);
+
+        function spamReasons(d, ctx) {
+          var r = [];
+          if (ctx) {
+            if (ctx.honeypot) r.push('hidden spam-trap field was filled in');
+            if (ctx.seconds === null) r.push('no typing detected on the form');
+            else if (ctx.seconds < 8) r.push('form filled in ' + ctx.seconds + 's');
+          }
+          var digits = String(d.phone || '').replace(/\D/g, '');
+          if (digits.length && digits.length !== 10 && !(digits.length === 11 && digits.charAt(0) === '1')) r.push('phone number is not a valid US number');
+          var email = String(d.email || '').toLowerCase();
+          var text = (String(d.message || '') + ' ' + email).toLowerCase();
+          var pitch = ['takeoff', 'take-off', 'send us your plans', 'send plans', 'send over your plans', 'your drawings',
+            ' seo', 'seo ', 'google ads', 'google review', 'negative review', 'whatsapp', 'telegram',
+            'lead generation', 'leads for your business', 'backlink', 'web design', 'website design', 'virtual assistant',
+            'i help businesses', 'csi division', 'bluebeam', 'planswift', 'free sample', 'free proposal'];
+          var hits = pitch.filter(function(p) { return text.indexOf(p) !== -1; });
+          if (hits.length || email.indexOf('estimat') !== -1) r.push('looks like a sales pitch (' + (hits.length ? hits.slice(0, 3).join(', ') : 'estimator email').replace(/\s+/g, ' ').trim() + ')');
+          var msg = String(d.message || '').trim();
+          if (msg && msg.length < 12 && !/\s/.test(msg)) r.push('message is gibberish/too short');
+          return r;
+        }
+
+        var origFetch = window.fetch;
+        window.fetch = function(input, init) {
+          try {
+            var url = typeof input === 'string' ? input : (input && input.url) || '';
+            if (url.indexOf('formspree.io/f/') !== -1 && init && typeof init.body === 'string') {
+              var data = JSON.parse(init.body);
+              var ctx = lastSubmit && Date.now() - lastSubmit.at < 30000 ? lastSubmit : null;
+              lastSubmit = null;
+              var reasons = spamReasons(data, ctx);
+              if (reasons.length) {
+                data._subject = 'POSSIBLE SPAM - Hawley website form - ' + (data.name || 'no name');
+                data.spam_check = 'POSSIBLE SPAM (not counted as an ad conversion): ' + reasons.join('; ');
+                suppressUntil = Date.now() + 30000;
+                suppressReasons = reasons.join('; ');
+                init = Object.assign({}, init, { body: JSON.stringify(data) });
+              } else {
+                suppressUntil = 0;
+              }
+            }
+          } catch (e) {}
+          return origFetch.call(this, input, init);
+        };
+
+        // Quote forms call gtag('event','conversion') then gtag('event','generate_lead') after a successful submit.
         var origGtag = window.gtag;
         window.gtag = function() {
           try {
-            if (arguments[0] === 'event' && arguments[1] === 'generate_lead') {
+            var isLeadConv = arguments[0] === 'event' && arguments[1] === 'conversion' && arguments[2] &&
+              String(arguments[2].send_to || '').indexOf('cPy9CKLmgrQcEMyKo91D') !== -1;
+            var isLead = arguments[0] === 'event' && arguments[1] === 'generate_lead';
+            if ((isLeadConv || isLead) && Date.now() < suppressUntil) {
+              if (isLead) {
+                suppressUntil = 0;
+                return origGtag.call(this, 'event', 'possible_spam_lead', { reasons: suppressReasons });
+              }
+              return;
+            }
+            if (isLead) {
               window.oaiq('measure', 'lead_created', { type: 'customer_action' });
             }
           } catch (e) {}

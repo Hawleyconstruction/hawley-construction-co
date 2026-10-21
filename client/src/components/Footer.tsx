@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const services = [
   { label: "Kitchen Remodeling", href: "/kitchen-remodeling-st-petersburg/" },
   { label: "Bathroom Remodeling", href: "/bathroom-remodeling-st-petersburg/" },
-  { label: "Trex Decks", href: "/trex-deck-builder-tampa-bay/" },
+  { label: "Wood & Composite Decks", href: "/trex-deck-builder-tampa-bay/" },
   { label: "Sunrooms & Florida Rooms", href: "/sunroom-florida-room-contractor/" },
   { label: "ADU & In-Law Suites", href: "/adu-in-law-suite-builder/" },
   { label: "General Contractor", href: "/general-contractor-st-petersburg/" },

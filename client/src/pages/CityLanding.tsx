@@ -39,7 +39,7 @@ const cityData: Record<string, CityData> = {
     neighborhoods: ["South Tampa", "Westchase", "Carrollwood", "Seminole Heights", "Hyde Park", "Davis Islands", "Palma Ceia", "Bayshore", "Channelside", "Ybor City"],
     zipCodes: ["33601", "33602", "33603", "33604", "33605", "33606", "33607", "33609", "33610", "33611", "33612", "33613", "33614", "33615", "33616", "33617", "33618", "33619", "33620", "33621", "33624", "33625", "33626", "33629", "33634", "33635"],
     metaTitle: "Home Remodeling Tampa FL | Kitchen & Bathroom Contractor | Hawley Construction",
-    metaDescription: "Tampa's trusted home remodeling contractor. Custom kitchens, bathrooms, additions & Trex decks. Licensed & insured. Free estimates. Call (704) 619-1480.",
+    metaDescription: "Tampa's trusted home remodeling contractor. Custom kitchens, bathrooms, additions & decks. Licensed & insured. Free estimates. Call (704) 619-1480.",
     heroHeading: "Tampa's Trusted Home Remodeling Contractor",
     heroSubheading: "Custom kitchens, bathrooms, home additions, and outdoor living spaces for Tampa homeowners. Licensed, insured, and committed to quality craftsmanship.",
     whyContent: "Tampa homeowners choose Hawley Construction because we understand the unique needs of Florida homes. From hurricane-rated additions to moisture-resistant bathroom materials, we build with Tampa's climate in mind. Our team serves all Tampa neighborhoods including South Tampa, Westchase, Carrollwood, Seminole Heights, and Hyde Park.",
@@ -59,13 +59,13 @@ const cityData: Record<string, CityData> = {
     neighborhoods: ["Downtown St. Pete", "Old Northeast", "Snell Isle", "Shore Acres", "Kenwood", "Crescent Heights", "Historic Uptown", "Jungle Terrace", "Pasadena", "Tierra Verde"],
     zipCodes: ["33701", "33702", "33703", "33704", "33705", "33706", "33707", "33708", "33709", "33710", "33711", "33712", "33713", "33714", "33715", "33716"],
     metaTitle: "Home Remodeling St. Petersburg FL | Kitchen & Bath Renovation | Hawley Construction",
-    metaDescription: "St. Petersburg's premier remodeling contractor. Kitchen renovations, bathroom remodels, Trex decks & sunrooms. Free estimates. Call (704) 619-1480.",
+    metaDescription: "St. Petersburg's premier remodeling contractor. Kitchen renovations, bathroom remodels, decks & sunrooms. Free estimates. Call (704) 619-1480.",
     heroHeading: "St. Petersburg's Premier Remodeling Contractor",
     heroSubheading: "Transforming St. Pete homes with custom kitchens, spa-like bathrooms, sunrooms, and composite decks designed for the Florida coastal lifestyle.",
     whyContent: "St. Petersburg homeowners trust Hawley Construction because we specialize in renovations that complement the city's unique architectural character — from historic bungalow updates in Old Northeast to modern coastal kitchens in Shore Acres. We use moisture-resistant materials and coastal-grade finishes that withstand St. Pete's salt air and humidity.",
     faqItems: [
       { q: "How much does a kitchen remodel cost in St. Petersburg?", a: "Kitchen remodeling in St. Petersburg typically ranges from $25,000 to $80,000. Historic homes in Old Northeast and Snell Isle may require additional structural work, increasing costs by 10-20%. Hawley Construction provides free in-home estimates for all St. Pete kitchen renovation projects." },
-      { q: "What is the best decking material for St. Petersburg homes?", a: "Trex composite decking is the best choice for St. Petersburg homes due to its resistance to moisture, salt air, and UV fading. Unlike wood decking that warps and rots in Florida's humid climate, Trex decks maintain their appearance for 25+ years with minimal maintenance. Hawley Construction is a certified Trex deck builder serving all of St. Pete." },
+      { q: "What is the best decking material for St. Petersburg homes?", a: "Composite decking such as Trex holds up best to moisture, salt air and UV in St. Petersburg and needs almost no upkeep. Pressure-treated wood costs less up front but needs regular sealing. Hawley Construction builds both and will price each so you can compare." },
       { q: "Do I need a permit for remodeling in Pinellas County?", a: "Yes, most remodeling projects in St. Petersburg require permits from Pinellas County or the City of St. Petersburg building department. Kitchen and bathroom remodels involving plumbing, electrical, or structural changes all require permits. Hawley Construction manages the entire permitting process for our St. Pete clients." },
       { q: "How long does a sunroom addition take in St. Petersburg?", a: "A sunroom addition in St. Petersburg typically takes 6-10 weeks from permit approval to completion. The timeline includes foundation work (1-2 weeks), framing and roofing (2-3 weeks), and finishing with windows, electrical, and interior work (2-3 weeks). Permit processing in Pinellas County adds 2-3 weeks." },
     ],
@@ -79,9 +79,9 @@ const cityData: Record<string, CityData> = {
     neighborhoods: ["Clearwater Beach", "Countryside", "Safety Harbor", "Dunedin", "Palm Harbor", "Belleair", "Indian Rocks Beach", "Largo", "Seminole", "Oldsmar"],
     zipCodes: ["33755", "33756", "33759", "33760", "33761", "33762", "33763", "33764", "33765", "33767"],
     metaTitle: "Home Remodeling Clearwater FL | Kitchen & Bath Contractor | Hawley Construction",
-    metaDescription: "Clearwater's trusted remodeling contractor. Custom kitchens, bathrooms, outdoor living & Trex decks. Licensed & insured. Free estimates. Call (704) 619-1480.",
+    metaDescription: "Clearwater's trusted remodeling contractor. Custom kitchens, bathrooms, outdoor living & decks. Licensed & insured. Free estimates. Call (704) 619-1480.",
     heroHeading: "Clearwater's Trusted Home Remodeling Experts",
-    heroSubheading: "Custom kitchen renovations, bathroom remodels, outdoor living spaces, and Trex decks for Clearwater homeowners. Quality craftsmanship with coastal durability.",
+    heroSubheading: "Custom kitchen renovations, bathroom remodels, outdoor living spaces, and decks for Clearwater homeowners. Quality craftsmanship with coastal durability.",
     whyContent: "Clearwater homeowners choose Hawley Construction for our expertise in coastal Florida renovations. We select materials specifically rated for salt air exposure, high humidity, and hurricane conditions. From waterfront kitchen remodels in Clearwater Beach to outdoor living spaces in Countryside, we deliver lasting quality throughout the Clearwater area.",
     faqItems: [
       { q: "How much does a bathroom remodel cost in Clearwater?", a: "Bathroom remodeling in Clearwater ranges from $12,000 for a basic refresh to $45,000+ for a luxury master bathroom renovation. Popular upgrades include walk-in showers with frameless glass, freestanding tubs, and heated flooring. Hawley Construction provides free estimates for all Clearwater bathroom projects." },
@@ -280,9 +280,9 @@ export default function CityLanding() {
               { title: "Home Additions", desc: `Expand your ${data.name} home with a seamless addition. Extra bedrooms, family rooms, or in-law suites built to match your existing architecture.`, slug: "home-additions" },
               { title: "Sunrooms", desc: `Enjoy Florida sunshine year-round with a custom sunroom addition. Energy-efficient glass, climate control, and seamless indoor-outdoor flow.`, slug: "sunrooms" },
               { title: "Outdoor Living", desc: `Create the ultimate ${data.name} outdoor retreat with custom patios, pergolas, outdoor kitchens, and fire features.`, slug: "outdoor-living" },
-              { title: "Trex Decks", desc: `Low-maintenance composite decking perfect for ${data.name}'s climate. Resists moisture, fading, and requires no staining or sealing.`, slug: "trex-decks" },
+              { title: "Wood & Composite Decks", desc: `Wood and composite decks built for ${data.name}'s climate — new decks, waterproof decks, replacements and repairs.`, slug: "trex-decks" },
             ].map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="group bg-white p-6 shadow-sm hover:shadow-md transition-all" style={{ borderRadius: "2px" }}>
+              <Link key={service.slug} href={service.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${service.slug}`} className="group bg-white p-6 shadow-sm hover:shadow-md transition-all" style={{ borderRadius: "2px" }}>
                 <h3 className="text-lg font-bold mb-3 group-hover:text-gold transition-colors" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
                   {service.title}
                 </h3>

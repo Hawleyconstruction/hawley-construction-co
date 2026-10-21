@@ -22,8 +22,8 @@ const faqCategories = [
         a: "Bathroom remodeling in the Tampa Bay area costs between $12,000 and $50,000. A basic refresh (new vanity, fixtures, paint) starts at $8,000–$15,000. A standard remodel with new tile, shower, and fixtures costs $18,000–$35,000. A luxury master bathroom with walk-in shower, freestanding tub, heated floors, and custom tile ranges from $35,000–$60,000+.",
       },
       {
-        q: "How much does a Trex deck cost in Florida?",
-        a: "A Trex composite deck in Florida costs between $45–$85 per square foot installed, depending on the Trex line chosen (Select, Enhance, or Transcend) and deck complexity. A standard 300 sq ft Trex deck costs $13,500–$25,500 installed. Multi-level decks, built-in seating, and custom railings increase the cost. Trex decks last 25+ years with no staining or sealing required.",
+        q: "How much does a deck cost in Florida?",
+        a: "Deck cost depends on size, height, railing and materials — wood or composite. We come out, measure and give you a fixed price in writing before any work starts.",
       },
       {
         q: "How much does a home addition cost in Tampa?",
@@ -61,7 +61,7 @@ const faqCategories = [
     items: [
       {
         q: "What services does Hawley Construction offer?",
-        a: "Hawley Construction offers comprehensive home remodeling services including: kitchen remodeling, bathroom renovations, home additions, sunroom construction, outdoor living spaces (patios, pergolas, outdoor kitchens), and Trex composite deck installation. We handle projects from design through completion, including permits, structural work, plumbing, electrical, tile, cabinetry, and finishing.",
+        a: "Hawley Construction offers comprehensive home remodeling services including: kitchen remodeling, bathroom renovations, home additions, sunroom construction, outdoor living spaces (patios, pergolas, outdoor kitchens), and wood and composite decks. We handle projects from design through completion, including permits, structural work, plumbing, electrical, tile, cabinetry, and finishing.",
       },
       {
         q: "What areas does Hawley Construction serve?",
@@ -86,7 +86,7 @@ const faqCategories = [
       },
       {
         q: "Why choose Trex decking over wood in Florida?",
-        a: "Trex composite decking outperforms wood in Florida because: (1) It resists moisture, mold, and rot — critical in Florida's humidity. (2) It won't warp, crack, or splinter like pressure-treated wood. (3) It requires zero staining, sealing, or painting — ever. (4) It resists UV fading with a 25-year warranty. (5) It's made from 95% recycled materials. Wood decks in Florida typically need replacement every 8–12 years; Trex lasts 25+ years.",
+        a: "Trex composite decking outperforms wood in Florida because: (1) It resists moisture, mold, and rot — critical in Florida's humidity. (2) It won't warp, crack, or splinter like pressure-treated wood. (3) It requires zero staining, sealing, or painting — ever. (4) It resists UV fading with a 25-year warranty. (5) It's made from 95% recycled materials. Pressure-treated wood costs less up front but needs regular sealing. We build both.",
       },
       {
         q: "What tile is best for Florida bathrooms?",
@@ -105,7 +105,7 @@ export default function FAQ() {
       metaDesc.setAttribute("name", "description");
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute("content", "Answers to common questions about home remodeling in Tampa Bay. Kitchen costs, bathroom timelines, Trex decks, permits, and more from Hawley Construction.");
+    metaDesc.setAttribute("content", "Answers to common questions about home remodeling in Tampa Bay. Kitchen costs, bathroom timelines, decks, permits, and more from Hawley Construction.");
 
     // FAQPage schema for all questions
     const allFaqs = faqCategories.flatMap((cat) => cat.items);

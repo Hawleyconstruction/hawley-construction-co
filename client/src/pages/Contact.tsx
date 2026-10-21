@@ -19,7 +19,7 @@ const projectTypes = [
   "Patio",
   "Windows & Doors",
   "Custom Cabinetry",
-  "Trex Deck",
+  "Deck (wood or composite)",
   "Other",
 ];
 

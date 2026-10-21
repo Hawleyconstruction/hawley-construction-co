@@ -1,5 +1,9 @@
 # Redirect www to apex domain (301 permanent)
 https://www.hawleyremodeling.com/* https://hawleyremodeling.com/:splat 301!
 
+# Old Trex service page -> new wood & composite deck page
+/services/trex-decks /trex-deck-builder-tampa-bay/ 301!
+/services/trex-decks/ /trex-deck-builder-tampa-bay/ 301!
+
 # SPA fallback — serve pre-rendered index.html for all routes
 /* /index.html 200

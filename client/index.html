@@ -12,6 +12,43 @@
       gtag('js', new Date());
       gtag('config', 'AW-18172396876');
       gtag('config', 'G-1L7LLQBK32');
+
+      // Google Ads "Call (704-619-1480)" = calls from the website (counts calls of 60s+).
+      // For visitors who came from a Google ad, Google supplies a forwarding number; we swap it
+      // into every displayed phone number and tel: link (including ones React renders later).
+      (function() {
+        var NUMBER_RE = /\(?\b704\)?[\s.\-]*619[\s.\-]*1480\b/g;
+        var TEL_RE = /^tel:\s*(\+?1)?[\s.\-]*\(?704\)?[\s.\-]*619[\s.\-]*1480$/i;
+        var swap = null, scheduled = false;
+        function apply() {
+          scheduled = false;
+          if (!swap || !document.body) return;
+          var links = document.querySelectorAll('a[href^="tel:"]');
+          for (var i = 0; i < links.length; i++) {
+            if (TEL_RE.test(links[i].getAttribute('href').replace(/%20/g, ' '))) links[i].setAttribute('href', 'tel:' + swap.tel);
+          }
+          var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), node, hits = [];
+          while ((node = walker.nextNode())) {
+            var p = node.parentNode && node.parentNode.nodeName;
+            if (p === 'SCRIPT' || p === 'STYLE' || p === 'NOSCRIPT') continue;
+            NUMBER_RE.lastIndex = 0;
+            if (NUMBER_RE.test(node.nodeValue)) hits.push(node);
+          }
+          for (var j = 0; j < hits.length; j++) hits[j].nodeValue = hits[j].nodeValue.replace(NUMBER_RE, swap.display);
+        }
+        function schedule() { if (!scheduled) { scheduled = true; setTimeout(apply, 50); } }
+        window.hcPhoneSwap = function(formattedNumber, mobileNumber) {
+          if (!formattedNumber) return;
+          var digits = String(mobileNumber || formattedNumber).replace(/[^\d+]/g, '');
+          swap = { display: formattedNumber, tel: digits };
+          schedule();
+          new MutationObserver(schedule).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+        };
+        gtag('config', 'AW-18172396876/N_-5COOc5NAcEMyKo9lD', {
+          'phone_conversion_number': '704-619-1480',
+          'phone_conversion_callback': window.hcPhoneSwap
+        });
+      })();
     </script>
 
     <!-- ChatGPT Ads (OpenAI) pixel + conversions: Quote Form Lead (lead_created), Phone Call Tap (phone_call_click) -->
@@ -117,36 +154,26 @@
             if (isLead) {
               window.oaiq('measure', 'lead_created', { type: 'customer_action' });
             }
+            if (isLeadConv) {
+              // The quote forms still use an old label that has no Google Ads conversion action behind it.
+              // Send form fills to the "Website quote form" conversion (Submit lead form) instead.
+              var params = Object.assign({}, arguments[2], { send_to: 'AW-18172396876/9Q3sCPuI-aMdEMyKo9lD' });
+              return origGtag.call(this, 'event', 'conversion', params);
+            }
           } catch (e) {}
           return origGtag.apply(this, arguments);
         };
-        // Phone taps, including links rendered after page load.
+        // Phone taps, including links rendered after page load. A tap is NOT a Google Ads conversion
+        // (only real calls are - see the call tracking above); it's sent to GA4 and ChatGPT Ads for info.
         document.addEventListener('click', function(e) {
           var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
           if (!a) return;
+          try { origGtag('event', 'phone_call_click', { phone_number: a.getAttribute('href').replace('tel:', '') }); } catch (err) {}
           try {
             window.oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: 'phone_call_click' });
           } catch (err) {}
         }, true);
       })();
-    </script>
-
-    <!-- Phone-click conversion tracker (site-wide) -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
-          link.addEventListener('click', function() {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-18172396876/cPy9CKLmgrQcEMyKo91D',
-              'value': 50.0,
-              'currency': 'USD'
-            });
-            gtag('event', 'phone_call_click', {
-              'phone_number': link.getAttribute('href').replace('tel:', '')
-            });
-          });
-        });
-      });
     </script>
 
     <title>Hawley Construction Co. | Kitchen &amp; Bathroom Remodeling Tampa Bay FL | Trex Decks, Additions &amp; Sunrooms</title>

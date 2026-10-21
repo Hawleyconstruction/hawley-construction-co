@@ -356,7 +356,7 @@ export default function SunroomFloridaRoom() {
                 </p>
                 <p>
                   Many clients combine a sunroom with a new{" "}
-                  <Link href="/trex-deck-builder-tampa-bay/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>Trex deck</Link>{" "}
+                  <Link href="/trex-deck-builder-tampa-bay/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>deck</Link>{" "}
                   or an{" "}
                   <Link href="/adu-in-law-suite-builder/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>ADU addition</Link>{" "}
                   — we can manage both under one contract.

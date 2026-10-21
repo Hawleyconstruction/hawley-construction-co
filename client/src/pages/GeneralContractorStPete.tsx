@@ -44,8 +44,8 @@ const services = [
     icon: "☀️",
   },
   {
-    title: "Trex Composite Decks",
-    desc: "Certified Trex installer. Low-maintenance composite decks that stand up to Florida's heat, humidity, and UV exposure.",
+    title: "Wood & Composite Decks",
+    desc: "New decks, waterproof decks, replacements and repairs in pressure-treated wood or composite.",
     icon: "🪵",
   },
   {
@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "What types of projects do you take on in St. Petersburg?",
-    a: "We handle kitchen and bathroom remodels, home additions, sunrooms, Trex composite decks, ADUs, full home renovations, custom cabinetry, window and door replacements, and outdoor living spaces.",
+    a: "We handle kitchen and bathroom remodels, home additions, sunrooms, wood and composite decks, ADUs, full home renovations, custom cabinetry, window and door replacements, and outdoor living spaces.",
   },
   {
     q: "Do you pull permits for projects in St. Petersburg?",
@@ -161,7 +161,7 @@ export default function GeneralContractorStPete() {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "General Contractor St. Petersburg FL",
-      "description": "Full-service general contracting in St. Petersburg, FL. Kitchen and bathroom remodeling, home additions, sunrooms, Trex decks, ADUs, and full home renovations. Licensed, insured, fixed-price quotes.",
+      "description": "Full-service general contracting in St. Petersburg, FL. Kitchen and bathroom remodeling, home additions, sunrooms, decks, ADUs, and full home renovations. Licensed, insured, fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
         "@id": "https://hawleyremodeling.com",
@@ -590,7 +590,7 @@ export default function GeneralContractorStPete() {
                 <option value="Kitchen Remodeling">Kitchen Remodeling</option>
                 <option value="Bathroom Remodeling">Bathroom Remodeling</option>
                 <option value="Home Addition">Home Addition</option>
-                <option value="Trex Deck">Trex Deck</option>
+                <option value="Deck (wood or composite)">Deck (wood or composite)</option>
                 <option value="Sunroom / Florida Room">Sunroom / Florida Room</option>
                 <option value="ADU / In-Law Suite">ADU / In-Law Suite</option>
                 <option value="Full Home Remodel">Full Home Remodel</option>

@@ -89,12 +89,12 @@ const services = [
     benefits: ["Full custom sizing & configuration", "Soft-close hinges & drawer systems", "Wide range of finishes & styles", "Built-in organization solutions", "Matching furniture-grade quality"],
   },
   {
-    title: "Trex Decks",
+    title: "Wood & Composite Decks",
     slug: "trex-decks",
     img: TREX_DECK_IMG,
-    tagline: "Low Maintenance, High Impact",
-    desc: "Trex composite decking is the gold standard for Florida homeowners who want the look of real wood without the maintenance. Our certified Trex installers build decks that resist fading, staining, and moisture — backed by a 25-year warranty.",
-    benefits: ["Trex certified installation", "25-year fade & stain warranty", "No painting, staining, or sealing", "Slip-resistant surface", "Eco-friendly recycled materials"],
+    tagline: "Wood, Composite & Waterproof",
+    desc: "We build new decks, waterproof decks, deck replacements and repairs in pressure-treated wood or composite like Trex. Permits handled, and a fixed price before we start.",
+    benefits: ["Pressure-treated wood or composite", "Waterproof decks & balconies", "Framing checked and fixed", "Permits pulled for you", "Fixed-price written quote"],
   },
 ];
 
@@ -107,7 +107,7 @@ export default function Services() {
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', 'Explore all home remodeling services by Hawley Construction Co. in Tampa Bay: kitchen remodeling, bathroom renovation, home additions, sunrooms, Trex decks, outdoor living, custom cabinetry, windows & doors. Free estimates.');
+    metaDesc.setAttribute('content', 'Explore all home remodeling services by Hawley Construction Co. in Tampa Bay: kitchen remodeling, bathroom renovation, home additions, sunrooms, decks, outdoor living, custom cabinetry, windows & doors. Free estimates.');
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
@@ -228,7 +228,7 @@ export default function Services() {
                       Get Free Estimate
                     </Link>
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={service.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${service.slug}`}
                       className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide"
                       style={{ color: "oklch(0.64 0.055 230)", fontFamily: "'DM Sans', sans-serif" }}
                     >

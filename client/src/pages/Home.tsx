@@ -21,7 +21,7 @@ const services = [
   { title: "Home Additions", desc: "Expand your living space with expertly crafted additions that blend seamlessly with your home.", slug: "home-additions", img: HOME_ADDITION_IMG },
   { title: "Sunrooms", desc: "Bring the Florida sunshine indoors with a beautiful, energy-efficient sunroom addition.", slug: "sunrooms", img: SUNROOM_IMG },
   { title: "Outdoor Living", desc: "Create the ultimate outdoor retreat with custom patios, pergolas, and outdoor kitchens.", slug: "outdoor-living", img: OUTDOOR_IMG },
-  { title: "Trex Decks", desc: "Low-maintenance composite decking that looks stunning and lasts for decades.", slug: "trex-decks", img: TREX_DECK_IMG },
+  { title: "Wood & Composite Decks", desc: "New decks, waterproof decks, replacements and repairs in pressure-treated wood or composite.", slug: "trex-decks", img: TREX_DECK_IMG },
 ];
 
 const stats = [
@@ -279,7 +279,7 @@ export default function Home() {
             {services.map((service, i) => (
               <a
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={service.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${service.slug}`}
                 className={`group block bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 ${
                   servicesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
@@ -366,10 +366,10 @@ export default function Home() {
               },
               {
                 href: "/trex-deck-builder-tampa-bay/",
-                title: "Trex Deck Builder \u2014 Tampa Bay",
-                desc: "TrexPro composite decking with hurricane-rated framing. 25-year warranty, zero maintenance, Florida code compliant.",
+                title: "Deck Builder \u2014 Tampa Bay",
+                desc: "Wood and composite decks, waterproof decks, replacements and repairs. Permits handled and a fixed price before we start.",
                 img: TREX_DECK_IMG,
-                badge: "TrexPro Certified",
+                badge: null,
               },
               {
                 href: "/sunroom-florida-room-contractor/",

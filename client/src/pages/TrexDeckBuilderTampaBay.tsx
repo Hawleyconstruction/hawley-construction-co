@@ -279,7 +279,7 @@ export default function TrexDeckBuilderTampaBay() {
       </section>
 
       {/* ── WHAT WE BUILD ── */}
-      <section className="py-20" style={{ backgroundColor: CREAM }}>
+      <section id="what-we-build" className="py-20 scroll-mt-20" style={{ backgroundColor: CREAM }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-12" style={{ ...serif, color: INK }}>
             What we build
@@ -296,7 +296,7 @@ export default function TrexDeckBuilderTampaBay() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="py-20 bg-white">
+      <section id="how-it-works" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
             How it works
@@ -316,7 +316,7 @@ export default function TrexDeckBuilderTampaBay() {
       </section>
 
       {/* ── OUR WORK ── */}
-      <section className="py-20" style={{ backgroundColor: CREAM }}>
+      <section id="our-work" className="py-20 scroll-mt-20" style={{ backgroundColor: CREAM }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
             Our work
@@ -332,7 +332,7 @@ export default function TrexDeckBuilderTampaBay() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 bg-white">
+      <section id="faq" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
             Common questions

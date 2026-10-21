@@ -124,7 +124,7 @@ const portfolioData = [
   },
   {
     slug: "trex-decks",
-    title: "Trex Deck Installation",
+    title: "Composite Deck",
     location: "Tampa Bay, FL",
     description: "Multi-level Trex composite deck with aluminum railing system, elevated design, and outdoor living space — built to Florida wind-load requirements.",
     image: "/images/projects/decks/trex-deck-01.webp",
@@ -257,7 +257,7 @@ export default function Portfolio() {
                     {project.description}
                   </p>
                   <Link
-                    href={`/services/${project.slug}`}
+                    href={project.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${project.slug}`}
                     className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide"
                     style={{ color: "oklch(0.55 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
                   >

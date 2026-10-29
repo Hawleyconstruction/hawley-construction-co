@@ -11,7 +11,7 @@
 
   <!-- Services Index -->
   <url>
-    <loc>https://hawleyremodeling.com/services</loc>
+    <loc>https://hawleyremodeling.com/services/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,55 +19,55 @@
 
   <!-- Individual Service Pages -->
   <url>
-    <loc>https://hawleyremodeling.com/services/kitchen-remodeling</loc>
+    <loc>https://hawleyremodeling.com/services/kitchen-remodeling/</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/bathroom-remodeling</loc>
+    <loc>https://hawleyremodeling.com/services/bathroom-remodeling/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/home-additions</loc>
+    <loc>https://hawleyremodeling.com/services/home-additions/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/full-home-remodels</loc>
+    <loc>https://hawleyremodeling.com/services/full-home-remodels/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/sunrooms</loc>
+    <loc>https://hawleyremodeling.com/services/sunrooms/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/outdoor-living</loc>
+    <loc>https://hawleyremodeling.com/services/outdoor-living/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/patios</loc>
+    <loc>https://hawleyremodeling.com/services/patios/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/windows-doors</loc>
+    <loc>https://hawleyremodeling.com/services/windows-doors/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/services/custom-cabinetry</loc>
+    <loc>https://hawleyremodeling.com/services/custom-cabinetry/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -75,7 +75,7 @@
 
   <!-- Our Work / Portfolio -->
   <url>
-    <loc>https://hawleyremodeling.com/our-work</loc>
+    <loc>https://hawleyremodeling.com/our-work/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -83,19 +83,19 @@
 
   <!-- City/Area Landing Pages -->
   <url>
-    <loc>https://hawleyremodeling.com/areas/tampa</loc>
+    <loc>https://hawleyremodeling.com/areas/tampa/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/areas/st-petersburg</loc>
+    <loc>https://hawleyremodeling.com/areas/st-petersburg/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/areas/clearwater</loc>
+    <loc>https://hawleyremodeling.com/areas/clearwater/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -103,7 +103,7 @@
 
   <!-- FAQ -->
   <url>
-    <loc>https://hawleyremodeling.com/faq</loc>
+    <loc>https://hawleyremodeling.com/faq/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -111,7 +111,7 @@
 
   <!-- Blog Index -->
   <url>
-    <loc>https://hawleyremodeling.com/blog</loc>
+    <loc>https://hawleyremodeling.com/blog/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -119,31 +119,31 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://hawleyremodeling.com/blog/top-kitchen-remodeling-trends-tampa</loc>
+    <loc>https://hawleyremodeling.com/blog/top-kitchen-remodeling-trends-tampa/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/blog/bathroom-remodel-cost-tampa</loc>
+    <loc>https://hawleyremodeling.com/blog/bathroom-remodel-cost-tampa/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/blog/benefits-sunroom-florida</loc>
+    <loc>https://hawleyremodeling.com/blog/benefits-sunroom-florida/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/blog/trex-deck-vs-wood-deck</loc>
+    <loc>https://hawleyremodeling.com/blog/trex-deck-vs-wood-deck/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hawleyremodeling.com/blog/plan-home-addition-tampa-bay</loc>
+    <loc>https://hawleyremodeling.com/blog/plan-home-addition-tampa-bay/</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -151,7 +151,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://hawleyremodeling.com/contact</loc>
+    <loc>https://hawleyremodeling.com/contact/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -2,7 +2,7 @@
  * ServiceDetail Page — Individual service deep-dive
  * SEO-optimized with keyword-rich content per service + FAQ schema for AI search
  */
-import { useEffect, useState } from "react"; // useState used by FaqAccordion
+import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
 import { CheckCircle2, Phone, ArrowLeft, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -297,12 +297,200 @@ function FaqAccordion({ faqs }: { faqs: { q: string; a: string }[] }) {
   );
 }
 
+// Services that show an on-page quote form (ad landing pages). Other services link to /contact.
+const QUOTE_FORM_SLUGS = ["kitchen-remodeling"];
+
+const quoteProjectTypes: Record<string, string[]> = {
+  "kitchen-remodeling": [
+    "Kitchen Remodeling",
+    "Cabinet Replacement",
+    "Countertop Upgrade",
+    "Open-Concept Conversion",
+    "Full Home Remodel",
+    "Other",
+  ],
+};
+
+const quoteCounties = [
+  "Pinellas County (St. Pete / Clearwater)",
+  "Hillsborough County (Tampa)",
+  "Pasco County",
+  "Manatee County (Bradenton)",
+  "Sarasota County",
+  "Other",
+];
+
+function QuoteFormSection({ slug, serviceTitle }: { slug: string; serviceTitle: string }) {
+  const types = quoteProjectTypes[slug] || [serviceTitle, "Other"];
+  const [formData, setFormData] = useState({
+    name: "", phone: "", email: "", county: "", projectType: types[0], message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formError, setFormError] = useState(false);
+
+  const set = (k: keyof typeof formData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      setFormData((prev) => ({ ...prev, [k]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormError(false);
+    setLoading(true);
+    try {
+      const res = await fetch("https://formspree.io/f/mrerzpzj", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...formData, page: `/services/${slug}/` }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        // Google Ads + GA4 + ChatGPT lead tracking (index.html routes these and screens spam)
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "conversion", {
+            send_to: "AW-18172396876/cPy9CKLmgrQcEMyKo91D",
+            value: 50.0,
+            currency: "USD",
+          });
+          (window as any).gtag("event", "generate_lead", { currency: "USD", value: 50 });
+        }
+      } else {
+        setFormError(true);
+      }
+    } catch {
+      setFormError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const labelCls = "block text-xs font-semibold uppercase tracking-wide mb-1";
+  const labelStyle = { fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" };
+  const inputCls = "w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors bg-white";
+  const inputStyle = { borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" };
+
+  return (
+    <section id="quote" className="py-16 md:py-24 scroll-mt-20" style={{ backgroundColor: "oklch(0.18 0.008 250)" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <span className="section-divider" />
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Get your free kitchen estimate
+            </h2>
+            <p className="text-base text-white/75 mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              Tell us about your kitchen and we'll set up a free in-home estimate anywhere in Tampa Bay. No pressure, no obligation.
+            </p>
+            <ul className="flex flex-col gap-3 mb-8">
+              {["Free in-home estimate", "Written, fixed-price quote", "We respond within 1 business day"].map((t) => (
+                <li key={t} className="flex items-start gap-2">
+                  <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0" style={{ color: "oklch(0.77 0.065 82)" }} />
+                  <span className="text-sm text-white/85" style={{ fontFamily: "'DM Sans', sans-serif" }}>{t}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="tel:7046191480"
+              className="inline-flex items-center gap-3 text-white hover:opacity-80 transition-opacity"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              <Phone size={18} style={{ color: "oklch(0.77 0.065 82)" }} />
+              <span className="text-lg font-semibold">Or call (704) 619-1480</span>
+            </a>
+          </div>
+
+          <div className="bg-white p-6 sm:p-8 shadow-xl" style={{ borderRadius: "2px" }}>
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center">
+                <CheckCircle2 size={48} className="mb-4" style={{ color: "oklch(0.77 0.065 82)" }} />
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
+                  Thank you!
+                </h3>
+                <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
+                  We'll be in touch within one business day to set up your free in-home estimate.
+                </p>
+              </div>
+            ) : formError ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center">
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
+                  Something went wrong
+                </h3>
+                <p className="text-sm mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
+                  We couldn't send your request. Please call us at (704) 619-1480 or try again.
+                </p>
+                <button type="button" onClick={() => setFormError(false)} className="text-sm underline" style={{ color: "oklch(0.45 0.01 250)" }}>
+                  Try again
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="q-name" className={labelCls} style={labelStyle}>Name *</label>
+                  <input id="q-name" name="name" type="text" required autoComplete="name" value={formData.name} onChange={set("name")} className={inputCls} style={inputStyle} placeholder="Your full name" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="q-phone" className={labelCls} style={labelStyle}>Phone *</label>
+                    <input id="q-phone" name="phone" type="tel" required autoComplete="tel" value={formData.phone} onChange={set("phone")} className={inputCls} style={inputStyle} placeholder="(xxx) xxx-xxxx" />
+                  </div>
+                  <div>
+                    <label htmlFor="q-email" className={labelCls} style={labelStyle}>Email *</label>
+                    <input id="q-email" name="email" type="email" required autoComplete="email" value={formData.email} onChange={set("email")} className={inputCls} style={inputStyle} placeholder="your@email.com" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="q-county" className={labelCls} style={labelStyle}>County</label>
+                    <select id="q-county" name="county" value={formData.county} onChange={set("county")} className={inputCls} style={inputStyle}>
+                      <option value="">Select your county</option>
+                      {quoteCounties.map((c) => <option key={c}>{c}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="q-type" className={labelCls} style={labelStyle}>Project type</label>
+                    <select id="q-type" name="projectType" value={formData.projectType} onChange={set("projectType")} className={inputCls} style={inputStyle}>
+                      {types.map((t) => <option key={t}>{t}</option>)}
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="q-message" className={labelCls} style={labelStyle}>Tell us about your project</label>
+                  <textarea id="q-message" name="message" rows={4} value={formData.message} onChange={set("message")} className={`${inputCls} resize-none`} style={inputStyle} placeholder="What would you like done, and when are you hoping to start?" />
+                </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90 disabled:opacity-60"
+                  style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                >
+                  {loading ? "Sending..." : "Request My Free Estimate →"}
+                </button>
+                <p className="text-xs text-center" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.6 0.01 250)" }}>
+                  No spam. No obligation. We respond within 1 business day.
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function ServiceDetail() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug || "";
   const service = serviceData[slug];
   const faqs = faqData[slug] || [];
   const gallery = galleryData[slug] || [];
+  const hasQuoteForm = QUOTE_FORM_SLUGS.includes(slug);
+
+  // Jump to #quote when the page is opened with that anchor
+  useEffect(() => {
+    if (window.location.hash !== "#quote") return;
+    const t = window.setTimeout(() => document.getElementById("quote")?.scrollIntoView({ block: "start" }), 150);
+    return () => window.clearTimeout(t);
+  }, [slug]);
 
   // Inject FAQ schema + Service schema for AI search engines + set page title/meta
   useEffect(() => {
@@ -424,6 +612,21 @@ export default function ServiceDetail() {
           >
             {service.title}
           </h1>
+          {hasQuoteForm && (
+            <div className="flex flex-wrap items-center gap-4 mt-8">
+              <a href="#quote" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
+                Get Free Estimate
+              </a>
+              <a
+                href="tel:7046191480"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:opacity-80 transition-opacity"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                <Phone size={15} style={{ color: "oklch(0.77 0.065 82)" }} />
+                704-619-1480
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
@@ -501,13 +704,19 @@ export default function ServiceDetail() {
                 >
                   {service.cta}
                 </p>
-                <Link
-                  href="/contact"
-                  className="btn-gold block text-center mb-3"
-                  style={{ borderRadius: "2px" }}
-                >
-                  Get Free Estimate
-                </Link>
+                {hasQuoteForm ? (
+                  <a href="#quote" className="btn-gold block text-center mb-3" style={{ borderRadius: "2px" }}>
+                    Get Free Estimate
+                  </a>
+                ) : (
+                  <Link
+                    href="/contact"
+                    className="btn-gold block text-center mb-3"
+                    style={{ borderRadius: "2px" }}
+                  >
+                    Get Free Estimate
+                  </Link>
+                )}
                 <a
                   href="tel:7046191480"
                   className="flex items-center justify-center gap-2 text-sm font-semibold"
@@ -522,6 +731,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {hasQuoteForm && <QuoteFormSection slug={slug} serviceTitle={service.title} />}
 
       {/* Before / After Gallery — shown when gallery data exists for this service */}
       {gallery.length > 0 && (

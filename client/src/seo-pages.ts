@@ -29,9 +29,9 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: `${BASE}/services`,
   },
   "/services/kitchen-remodeling": {
-    title: "Kitchen Remodeling Tampa Bay | Hawley Construction Co.",
-    description: "Custom kitchen remodeling in Tampa Bay. Cabinets, countertops, full kitchen renovations. Licensed & insured. Get a free estimate from Hawley Construction Co.",
-    canonical: `${BASE}/services/kitchen-remodeling`,
+    title: "Kitchen Remodeling Tampa Bay | Free In-Home Consultation | Hawley Construction Co.",
+    description: "Kitchen remodeling in Tampa, St. Pete & Clearwater, from countertop and cabinet updates to full custom kitchens. Free in-home consultation and a fixed-price quote. (704) 619-1480.",
+    canonical: `${BASE}/services/kitchen-remodeling/`,
   },
   "/services/bathroom-remodeling": {
     title: "Bathroom Remodeling Tampa Bay | Hawley Construction Co.",

@@ -7,6 +7,7 @@ import { useParams, Link } from "wouter";
 import { CheckCircle2, Phone, ArrowLeft, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import KitchenServicePage from "./KitchenServicePage";
 
 const HERO_IMG = "/images/projects/kitchen/kitchen-02.webp"; // white cabinets + marble island + wood base
 const BATHROOM_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble walk-in shower + light-blue double vanity — St. Petersburg
@@ -477,7 +478,13 @@ function QuoteFormSection({ slug, serviceTitle }: { slug: string; serviceTitle: 
   );
 }
 
+// Kitchen has its own landing-page layout (ad traffic); other services use the shared template.
 export default function ServiceDetail() {
+  const params = useParams<{ slug: string }>();
+  return params.slug === "kitchen-remodeling" ? <KitchenServicePage /> : <GenericServiceDetail />;
+}
+
+function GenericServiceDetail() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug || "";
   const service = serviceData[slug];

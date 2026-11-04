@@ -357,8 +357,8 @@ const ROUTES: Record<string, RouteSEO> = {
     ],
   },
   "/bathroom-remodeling-st-petersburg": {
-    title: "Bathroom Remodeling St. Petersburg, FL | Hawley Construction Co.",
-    description: "Expert bathroom remodeling in St. Petersburg, FL. Walk-in showers, vanities, full renovations. Licensed & insured. Get a free estimate from Hawley Construction.",
+    title: "Bathroom Remodeling St. Petersburg FL | Free In-Home Consultation | Hawley Construction Co.",
+    description: "Bathroom remodeling in St. Pete, Tampa & Clearwater, from vanity and fixture updates to walk-in showers and full remodels. Free in-home consultation and a fixed-price quote. (704) 619-1480.",
     canonical: `${BASE}/bathroom-remodeling-st-petersburg/`,
     h1: "Bathroom Remodeling in Tampa Bay",
     serviceType: "Bathroom Remodeling",

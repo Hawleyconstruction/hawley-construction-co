@@ -1,132 +1,111 @@
 /**
- * Bathroom Remodeling St. Petersburg Landing Page
- * URL: /bathroom-remodeling-st-petersburg/
- * Target keyword: "bathroom remodeler St Petersburg FL"
- * Design: Modern Craftsman — mirrors kitchen landing page
+ * Bathroom Remodeling — /bathroom-remodeling-st-petersburg/
+ * ChatGPT Ads + Google "Real bathroom" landing page. Same look as the kitchen and deck pages:
+ * plain copy, options from a simple refresh to a full primary bath, free in-home consultation.
+ * Section anchors: #options, #how-it-works, #our-work, #faq, #quote (and #contact for older links).
  */
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { CheckCircle2, Phone, ChevronDown, Star, Shield, Clock, DollarSign, Award, MapPin } from "lucide-react";
+import { CheckCircle2, Phone, ChevronDown, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const HERO_IMG = "/images/projects/bathroom/bathroom-01.webp"; // blue marble shower + light-blue double vanity
-const BATHROOM_AFTER = "/images/projects/bathroom/bathroom-03.webp"; // white marble shower + freestanding tub
-const BATHROOM_BEFORE = "/images/projects/bathroom/bathroom-01.webp"; // reuse hero as before-state placeholder
-const KITCHEN_AFTER = "/images/projects/kitchen/kitchen-04.webp"; // kitchen remodel after
-const CABINETRY_AFTER = "/images/fallbacks/cabinetry-after-01.webp"; // custom cabinetry
-const REMODEL_AFTER = "/images/projects/kitchen/kitchen-02.webp"; // full home remodel kitchen
-const WINDOWS_AFTER = "/images/fallbacks/windows-after-01.webp"; // impact windows after
-const ADDITION_AFTER = "/images/projects/additions/addition-02.webp"; // home addition after
-const SUNROOM_AFTER = "/images/fallbacks/sunroom-after-01.webp"; // sunroom after
+const GOLD = "oklch(0.77 0.065 82)";
+const INK = "oklch(0.18 0.008 250)";
+const BODY = "oklch(0.35 0.01 250)";
+const MUTED = "oklch(0.45 0.01 250)";
+const CREAM = "oklch(0.97 0.005 82)";
+const NIGHT = "oklch(0.12 0.008 250)";
+const LINE = "oklch(0.88 0.02 82)";
+const sans = { fontFamily: "'DM Sans', sans-serif" };
+const serif = { fontFamily: "'Playfair Display', serif" };
 
-const galleryImages = [
-  { src: "/images/projects/bathroom/bathroom-05.webp", alt: "Airy primary bathroom remodel in St. Petersburg FL with double vanity, gold fixtures, and marble countertop by Hawley Construction", width: 1600, height: 1064 },
-  { src: "/images/projects/bathroom/bathroom-02.webp", alt: "Luxury bathroom remodel in Tampa Bay FL with dark tile, floating double vanity, Calacatta quartz countertop, and gold pendant lights by Hawley Construction", width: 1600, height: 1067 },
-  { src: "/images/projects/bathroom/bathroom-04.webp", alt: "Modern walk-in shower remodel in St. Petersburg FL with white subway tile, patterned niche, matte black fixtures, and frameless glass door by Hawley Construction", width: 1600, height: 2000 },
-  { src: "/images/projects/bathroom/bathroom-06.webp", alt: "Bathroom remodel in Tampa Bay FL with custom wood linen cabinet, hex tile floor, and glass walk-in shower with blue accent tile by Hawley Construction", width: 1600, height: 2000 },
+const PAGE_URL = "https://hawleyremodeling.com/bathroom-remodeling-st-petersburg/";
+const HERO_IMG = "/images/projects/bathroom/bathroom-01.webp";
+
+const photos = [
+  { src: "/images/projects/bathroom/bathroom-05.webp", alt: "Primary bathroom remodel with double vanity, gold fixtures and marble countertop" },
+  { src: "/images/projects/bathroom/bathroom-02.webp", alt: "Bathroom remodel with dark tile, floating double vanity and quartz countertop" },
+  { src: "/images/projects/bathroom/bathroom-04.webp", alt: "Walk-in shower with white subway tile, tiled niche, black fixtures and frameless glass" },
 ];
 
-const services = [
+const options = [
   {
-    title: "Full Bathroom Renovations",
-    desc: "Demo to finish: layout, plumbing, tile, vanity, lighting, paint. One contractor, one fixed price, one project manager.",
-    icon: "🚿",
+    title: "Bathroom refresh",
+    desc: "Keep the layout. New vanity and countertop, mirror, lighting, toilet, faucets and hardware, plus new tile floors, new tile inside the shower and fresh paint.",
+    fits: "Good when the bathroom works fine but looks dated.",
   },
   {
-    title: "Walk-In & Curbless Showers",
-    desc: "Custom tile, frameless glass, niches, benches, linear drains. Built waterproof to last using Schluter or equivalent systems.",
-    icon: "🪟",
+    title: "Tub-to-shower conversion",
+    desc: "The old tub comes out and a tiled walk-in shower goes in, with frameless glass, a niche, an optional bench and a low or no curb.",
+    fits: "Good when getting in and out of the tub is a hassle.",
   },
   {
-    title: "Aging-in-Place Upgrades",
-    desc: "Grab bars, zero-threshold showers, raised vanities, lever handles — done with style, not the institutional look.",
-    icon: "♿",
+    title: "Full bathroom remodel",
+    desc: "Down to the studs: new layout, plumbing moved where needed, tile floors and walls, a custom shower, new vanity and lighting.",
+    fits: "Good when the whole bathroom needs a new look.",
   },
   {
-    title: "Tub-to-Shower Conversions",
-    desc: "One of the most requested upgrades in St. Petersburg. We remove the old tub, reframe, and install a custom tile shower.",
-    icon: "🔄",
-  },
-  {
-    title: "Primary Suite Remodels",
-    desc: "Combining bedroom, bath, and closet into one cohesive space. We handle structural work, plumbing, electrical, and all finishes.",
-    icon: "🛁",
+    title: "Primary bathroom",
+    desc: "A bigger curbless shower with high-pressure shower jets, heated floors, a freestanding tub, double vanity, custom storage, high-end tile and finishes, and more.",
+    fits: "Good when you want the bathroom to feel like a retreat.",
   },
 ];
 
-const processSteps = [
-  {
-    num: "01",
-    title: "Free In-Home Consultation",
-    desc: "We come to you, measure the space, and listen to what you actually want from your bathroom.",
-  },
-  {
-    num: "02",
-    title: "Design & Fixed-Price Quote",
-    desc: "You receive a clear written quote with itemized materials and labor — no surprises later.",
-  },
-  {
-    num: "03",
-    title: "Build with One Dedicated Project Manager",
-    desc: "A single point of contact for your entire project. You'll always know who to call.",
-  },
-  {
-    num: "04",
-    title: "Final Walkthrough & 1-Year Warranty",
-    desc: "We don't disappear after the last tile is set. Every project comes with a one-year warranty on our work.",
-  },
+const handles = [
+  "Curbless and walk-in showers",
+  "High-pressure shower jets and body sprays",
+  "Heated tile floors",
+  "Tub-to-shower conversions",
+  "Vanities and countertops",
+  "Tile floors and walls",
+  "Frameless shower glass",
+  "Shower niches and benches",
+  "Toilets, sinks and faucets",
+  "Lighting and exhaust fans",
+  "Grab bars and other safety upgrades",
+  "Permits and inspections",
 ];
 
-const pricingTiers = [
-  {
-    label: "Cosmetic Refresh",
-    range: "$8K–$15K",
-    desc: "Paint, vanity, light fixtures, mirror, and hardware updates.",
-    featured: false,
-  },
-  {
-    label: "Mid-Range Remodel",
-    range: "$20K–$40K",
-    desc: "New tile, custom shower, vanity, layout tweaks, and upgraded fixtures.",
-    featured: true,
-  },
-  {
-    label: "Luxury Remodel",
-    range: "$40K–$80K+",
-    desc: "Full gut, custom tile, freestanding tub, premium fixtures, expanded footprint.",
-    featured: false,
-  },
+const steps = [
+  { num: "1", title: "Call or send the form", desc: "Tell us roughly what you want done. A few photos of your bathroom help." },
+  { num: "2", title: "Free in-home consultation", desc: "We come to your house, measure, and talk through what you want and what you want to spend. No charge, no pressure." },
+  { num: "3", title: "You get a written price", desc: "A fixed-price quote, with a couple of options at different price points if you'd like to compare." },
+  { num: "4", title: "We do the work", desc: "Permits pulled, inspections scheduled, and a final walk-through with you when it's done." },
 ];
 
 const faqs = [
   {
-    q: "How long does a bathroom remodel take in St. Petersburg?",
-    a: "Most bathroom remodels run 3–5 weeks. Custom tile work and shower glass can extend lead times by 1–2 weeks depending on availability.",
+    q: "Can you just replace my tub with a walk-in shower?",
+    a: "Yes. It's one of the most requested jobs we do. We take out the tub, fix any framing or plumbing, waterproof the walls and floor, then tile the shower and install the glass.",
   },
   {
-    q: "Can I still use my other bathroom during construction?",
-    a: "Yes. We work in one bathroom at a time and seal the work area off from the rest of your home so you're not disrupted.",
+    q: "How much does a bathroom remodel cost?",
+    a: "It depends on how much you change. A new vanity, lighting and fixtures costs far less than a full gut with a custom shower. At the free consultation we'll price options that fit your budget, and you'll get a fixed price in writing before any work starts.",
   },
   {
-    q: "What about waterproofing — how do I know it will last?",
-    a: "Every shower and wet area we install uses Schluter or equivalent waterproofing systems backed by manufacturer warranties. We don't cut corners on waterproofing.",
+    q: "Is the in-home consultation really free?",
+    a: "Yes. We come out, measure and go over options at no charge, and you're under no obligation to hire us.",
   },
   {
-    q: "Can you do an aging-in-place bathroom that doesn't look like a hospital?",
-    a: "Absolutely. Most ADA-friendly features can be designed beautifully — curbless showers and elegant grab bars look better than ever in modern bathrooms.",
+    q: "How long does a bathroom remodel take?",
+    a: "Smaller updates go quicker. Most full bathroom remodels take 3–5 weeks, a little longer if you're waiting on custom glass or special-order tile. You'll get a schedule with your quote.",
   },
   {
-    q: "Do you handle plumbing and electrical permits?",
-    a: "Yes. We pull all required permits through Pinellas County or the City of St. Petersburg and coordinate with licensed sub-trades for plumbing and electrical work.",
+    q: "Can I use my other bathroom while you work?",
+    a: "Yes. We work on one bathroom at a time and keep the work area closed off from the rest of the house.",
   },
   {
-    q: "What fixture and tile brands do you install?",
-    a: "Fixtures from Kohler, Toto, Delta, Moen, and Brizo. Tile from Marazzi, Daltile, and Walker Zanger. Final selections are always yours — we guide you through the options.",
+    q: "How do you keep a new shower from leaking?",
+    a: "Every shower gets a waterproofing system under the tile (Schluter or equivalent), not just cement board and grout. It's the part you never see, and it's what decides whether a shower lasts.",
   },
   {
-    q: "How much does a bathroom remodel cost in St. Petersburg?",
-    a: "Costs range from $8,000 for a cosmetic refresh to $80,000+ for a full luxury primary suite renovation. The average mid-range bathroom remodel in St. Petersburg runs $20,000–$40,000. We provide fixed-price quotes after an in-home consultation.",
+    q: "Can you make a bathroom safer without it looking like a hospital?",
+    a: "Yes. Step-free showers, grab bars that look like towel bars, comfort-height toilets and better lighting can all be done in a way that looks like a normal, nice bathroom.",
+  },
+  {
+    q: "Do you pull permits?",
+    a: "Yes. If the job needs one (plumbing, electrical or structural work usually does), we pull the permit and schedule the inspections.",
   },
 ];
 
@@ -134,46 +113,65 @@ const serviceAreas = [
   { name: "St. Petersburg", href: "/areas/st-petersburg" },
   { name: "Tampa", href: "/areas/tampa" },
   { name: "Clearwater", href: "/areas/clearwater" },
-  { name: "Brandon", href: null },
-  { name: "Wesley Chapel", href: null },
+  { name: "St. Pete Beach", href: null },
   { name: "Largo", href: null },
   { name: "Pinellas Park", href: null },
   { name: "Seminole", href: null },
-  { name: "St. Pete Beach", href: null },
+  { name: "Dunedin", href: null },
+  { name: "Brandon", href: null },
+  { name: "Wesley Chapel", href: null },
+];
+
+const projectTypes = [
+  "Not sure yet",
+  "Bathroom refresh (vanity, fixtures, lighting)",
+  "Tub-to-shower conversion",
+  "Walk-in shower",
+  "Full bathroom remodel",
+  "Primary bathroom",
+  "Safety / aging-in-place upgrades",
+  "Other",
 ];
 
 export default function BathroomRemodelingStPete() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", projectType: "Bathroom Remodeling", message: "",
+    name: "", phone: "", email: "", projectType: projectTypes[0], message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState(false);
 
+  // Jump to a section when arriving with a #hash (ad sitelinks use #quote / #contact)
   useEffect(() => {
-    document.title = "Bathroom Remodeling St. Petersburg FL | Hawley Construction Co.";
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const t = window.setTimeout(() => document.getElementById(hash)?.scrollIntoView({ block: "start" }), 150);
+    return () => window.clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    document.title = "Bathroom Remodeling St. Petersburg FL | Free In-Home Consultation | Hawley Construction Co.";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
       metaDesc.setAttribute("name", "description");
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute("content", "Custom bathroom remodels in St. Petersburg & Tampa Bay. Walk-in showers, soaking tubs, aging-in-place upgrades. Free estimate: (704) 619-1480.");
-
+    metaDesc.setAttribute("content", "Bathroom remodeling in St. Pete, Tampa & Clearwater, from vanity and fixture updates to walk-in showers and full remodels. Free in-home consultation and a fixed-price quote. (704) 619-1480.");
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement("link");
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", "https://hawleyremodeling.com/bathroom-remodeling-st-petersburg/");
+    canonical.setAttribute("href", PAGE_URL);
 
-    // Service schema
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Bathroom Remodeling St. Petersburg FL",
-      "description": "Full bathroom remodeling services in St. Petersburg, FL. Walk-in showers, tub-to-shower conversions, aging-in-place upgrades, primary suite remodels. Licensed, insured, fixed-price quotes.",
+      "name": "Bathroom Remodeling in St. Petersburg & Tampa Bay",
+      "description": "Bathroom refreshes, tub-to-shower conversions, walk-in showers and full bathroom remodels in St. Petersburg and Tampa Bay, FL. Free in-home consultation and fixed-price quotes.",
       "provider": {
         "@type": "GeneralContractor",
         "@id": "https://hawleyremodeling.com",
@@ -186,385 +184,194 @@ export default function BathroomRemodelingStPete() {
           "addressLocality": "St. Petersburg",
           "addressRegion": "FL",
           "postalCode": "33701",
-          "addressCountry": "US"
-        }
+          "addressCountry": "US",
+        },
       },
       "areaServed": serviceAreas.map(a => ({ "@type": "City", "name": a.name })),
-      "url": "https://hawleyremodeling.com/bathroom-remodeling-st-petersburg/",
-      "serviceType": "Bathroom Remodeling",
-      "offers": {
-        "@type": "Offer",
-        "priceRange": "$8,000 - $80,000+",
-        "priceCurrency": "USD"
-      }
+      "url": PAGE_URL,
+      "serviceType": "Bathroom remodeling",
     };
-    const existingSvc = document.getElementById("bathroom-service-schema");
-    if (existingSvc) existingSvc.remove();
-    const svcScript = document.createElement("script");
-    svcScript.id = "bathroom-service-schema";
-    svcScript.type = "application/ld+json";
-    svcScript.text = JSON.stringify(serviceSchema);
-    document.head.appendChild(svcScript);
-
-    // FAQ schema
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": { "@type": "Answer", "text": f.a },
-      })),
+      "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
     };
-    const existingFaq = document.getElementById("bathroom-faq-schema");
-    if (existingFaq) existingFaq.remove();
-    const faqScript = document.createElement("script");
-    faqScript.id = "bathroom-faq-schema";
-    faqScript.type = "application/ld+json";
-    faqScript.text = JSON.stringify(faqSchema);
-    document.head.appendChild(faqScript);
-
-    // LocalBusiness schema
-    const lbSchema = {
-      "@context": "https://schema.org",
-      "@type": "GeneralContractor",
-      "@id": "https://hawleyremodeling.com",
-      "name": "Hawley Construction Co.",
-      "url": "https://hawleyremodeling.com",
-      "telephone": "+17046191480",
-      "priceRange": "$$$",
-      "image": "https://hawleyremodeling.com/og-image.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "316 11th Ave NE",
-        "addressLocality": "St. Petersburg",
-        "addressRegion": "FL",
-        "postalCode": "33701",
-        "addressCountry": "US"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": 27.7676, "longitude": -82.6403 },
-      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
-      "sameAs": ["https://www.instagram.com/hawleyandsons", "https://hawleyremodeling.com"]
+    const add = (id: string, data: object) => {
+      document.getElementById(id)?.remove();
+      const s = document.createElement("script");
+      s.id = id;
+      s.type = "application/ld+json";
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
     };
-    const existingLb = document.getElementById("bathroom-lb-schema");
-    if (existingLb) existingLb.remove();
-    const lbScript = document.createElement("script");
-    lbScript.id = "bathroom-lb-schema";
-    lbScript.type = "application/ld+json";
-    lbScript.text = JSON.stringify(lbSchema);
-    document.head.appendChild(lbScript);
+    add("bath-svc-schema", serviceSchema);
+    add("bath-svc-faq-schema", faqSchema);
 
     return () => {
       document.title = "Hawley Construction Co. | Tampa Bay Remodeling";
       const c = document.querySelector('link[rel="canonical"]');
       if (c) c.setAttribute("href", "https://hawleyremodeling.com");
-      document.getElementById("bathroom-service-schema")?.remove();
-      document.getElementById("bathroom-faq-schema")?.remove();
-      document.getElementById("bathroom-lb-schema")?.remove();
+      document.getElementById("bath-svc-schema")?.remove();
+      document.getElementById("bath-svc-faq-schema")?.remove();
     };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(false);
+    setLoading(true);
     try {
       const res = await fetch("https://formspree.io/f/mrerzpzj", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...formData, page: "/bathroom-remodeling-st-petersburg/" }),
       });
       if (res.ok) {
         setSubmitted(true);
-        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-          (window as any).gtag('event', 'conversion', {
-            send_to: 'AW-18172396876/cPy9CKLmgrQcEMyKo91D',
+        // Google Ads + GA4 + ChatGPT lead tracking (index.html routes these and screens spam)
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "conversion", {
+            send_to: "AW-18172396876/cPy9CKLmgrQcEMyKo91D",
             value: 50.0,
-            currency: 'USD',
+            currency: "USD",
           });
-          (window as any).gtag('event', 'generate_lead', {
-            currency: 'USD',
-            value: 50,
-          });
+          (window as any).gtag("event", "generate_lead", { currency: "USD", value: 50 });
         }
       } else {
         setFormError(true);
       }
     } catch {
       setFormError(true);
+    } finally {
+      setLoading(false);
     }
   };
+
+  const set = (k: keyof typeof formData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      setFormData(prev => ({ ...prev, [k]: e.target.value }));
+
+  const inputClass = "w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors bg-white";
+  const labelClass = "block text-xs font-semibold uppercase tracking-wide mb-1";
+  const fieldStyle = { borderRadius: "2px", ...sans };
 
   return (
     <>
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={HERO_IMG}
-            alt="Luxury bathroom remodel in St. Petersburg, FL with blue marble walk-in shower and custom double vanity by Hawley Construction"
-            className="w-full h-full object-cover"
-            width="1600"
-            height="1066"
-            fetchPriority="high"
-            loading="eager"
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.82) 0%, rgba(20,18,14,0.45) 60%, rgba(20,18,14,0.15) 100%)" }} />
+          <img src={HERO_IMG} alt="Bathroom remodel with blue marble walk-in shower and light blue double vanity" className="w-full h-full object-cover" width="1600" height="1066" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(20,18,14,0.88) 0%, rgba(20,18,14,0.62) 55%, rgba(20,18,14,0.2) 100%)" }} />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Tampa Bay, FL · Licensed & Insured
+            <p className="text-sm mb-4 text-white/80" style={sans}>
+              Hawley Construction · St. Petersburg &amp; Tampa Bay
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Bathroom Remodeling in Tampa Bay
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={serif}>
+              Bathroom remodeling in St. Pete &amp; Tampa Bay
             </h1>
-            <p className="text-lg text-white/85 mb-8 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Walk-in showers, freestanding tubs, custom tile work. Fixed-price quotes, licensed contractors, 1-year workmanship warranty.
+            <p className="text-lg text-white/85 mb-8 leading-relaxed" style={sans}>
+              A new vanity and tile, a walk-in shower where the old tub was, or a full primary bath. We come to your house for a free consultation, go over your dream bathroom, then give you a fixed price in writing.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm tracking-wide transition-all duration-200"
-                style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                href="#quote"
+                className="inline-flex items-center justify-center px-7 py-4 font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90"
+                style={{ backgroundColor: GOLD, color: INK, ...sans, borderRadius: "2px" }}
               >
-                Get Your Free In-Home Estimate →
+                Book a free in-home consultation
               </a>
               <a
                 href="tel:7046191480"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm tracking-wide border border-white/40 text-white hover:bg-white/10 transition-all duration-200"
-                style={{ fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
+                style={{ ...sans, borderRadius: "2px" }}
               >
                 <Phone size={16} />
                 (704) 619-1480
               </a>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-              {[
-                { icon: <Shield size={14} />, text: "Licensed & Insured" },
-                { icon: <Clock size={14} />, text: "5+ Years Serving Tampa Bay" },
-                { icon: <Star size={14} />, text: "5-Star Rated on Google" },
-                { icon: <DollarSign size={14} />, text: "Fixed-Price Quotes" },
-              ].map((badge) => (
-                <div key={badge.text} className="flex items-center gap-2 text-white/90 text-xs font-medium" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  <span style={{ color: "oklch(0.77 0.065 82)" }}>{badge.icon}</span>
-                  {badge.text}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY HAWLEY ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-                Why St. Petersburg Homeowners Trust Hawley With Their Bathrooms
-              </p>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                Bathrooms Are Deceptively Complex.
-              </h2>
-              <div className="space-y-5 text-base leading-relaxed" style={{ color: "oklch(0.35 0.01 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                <p>
-                  Behind every beautiful walk-in shower is plumbing rework, waterproofing, structural framing, and tile installation that has to last decades. We've been remodeling bathrooms across Tampa Bay for 5+ years — from compact powder rooms to luxury primary suites — fully licensed and insured.
-                </p>
-                <p>
-                  Owner Landon Hawley personally walks every bathroom project from first consultation to final walkthrough. We pull our own permits, coordinate every trade, and hand you a written fixed-price quote before we start — so there are no surprise change orders halfway through your renovation.
-                </p>
-                <p>
-                  Many clients also remodel their{" "}
-                  <Link href="/kitchen-remodeling-st-petersburg/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>kitchen</Link>{" "}
-                  at the same time, or add a{" "}
-                  <Link href="/adu-in-law-suite-builder/" style={{ color: "oklch(0.55 0.05 82)", textDecoration: "underline" }}>primary suite addition</Link>{" "}
-                  — we can coordinate both projects under one contract.
-                </p>
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  "We pull all permits",
-                  "Fixed-price contracts",
-                  "One project manager",
-                  "1-year workmanship warranty",
-                  "Licensed & insured",
-                  "Free in-home estimates",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.35 0.01 250)" }}>
-                    <CheckCircle2 size={16} style={{ color: "oklch(0.77 0.065 82)", flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src={BATHROOM_AFTER}
-                alt="Completed bathroom remodel in St. Petersburg FL with white marble shower, freestanding soaking tub, and dark wood double vanity by Hawley Construction"
-                className="w-full object-cover shadow-xl"
-                style={{ borderRadius: "2px", aspectRatio: "4/3" }}
-                width="1600"
-                height="1066"
-                loading="lazy"
-              />
-              <div
-                className="absolute -bottom-5 -left-5 px-6 py-4 shadow-lg"
-                style={{ backgroundColor: "oklch(0.77 0.065 82)", borderRadius: "2px" }}
-              >
-                <p className="text-xs font-semibold tracking-wide uppercase" style={{ color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                  Snell Isle, St. Petersburg
-                </p>
-                <p className="text-sm font-medium" style={{ color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif" }}>
-                  Primary bathroom renovation · 4 weeks
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.005 82)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Our Bathroom Remodeling Services
+            <p className="text-sm text-white/75" style={sans}>
+              Free in-home consultation · Fixed-price quotes · Permits handled
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              Everything Your Bathroom Needs
-            </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((svc) => (
-              <div
-                key={svc.title}
-                className="bg-white p-7 shadow-sm hover:shadow-md transition-shadow duration-200"
-                style={{ borderRadius: "2px", borderLeft: "3px solid oklch(0.77 0.065 82)" }}
-              >
-                <div className="text-3xl mb-4">{svc.icon}</div>
-                <h3 className="text-lg font-bold mb-3" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                  {svc.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                  {svc.desc}
-                </p>
+        </div>
+      </section>
+
+      {/* ── OPTIONS ── */}
+      <section id="options" className="py-20 scroll-mt-20" style={{ backgroundColor: CREAM }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ ...serif, color: INK }}>
+            Big job or small job? We do it all.
+          </h2>
+          <p className="text-base mb-12 max-w-2xl leading-relaxed" style={{ ...sans, color: BODY }}>
+            Not every bathroom needs to be gutted. Here's how most jobs break down.
+          </p>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            {options.map((o) => (
+              <div key={o.title} className="pt-5" style={{ borderTop: `2px solid ${GOLD}` }}>
+                <h3 className="text-xl font-bold mb-3" style={{ ...serif, color: INK }}>{o.title}</h3>
+                <p className="text-sm leading-relaxed mb-3" style={{ ...sans, color: BODY }}>{o.desc}</p>
+                <p className="text-sm leading-relaxed" style={{ ...sans, color: MUTED }}>{o.fits}</p>
               </div>
             ))}
           </div>
+          <p className="text-base mt-12 leading-relaxed" style={{ ...sans, color: BODY }}>
+            Not sure which one you need? That's what the free consultation is for.{" "}
+            <a href="#quote" className="font-semibold underline" style={{ color: INK }}>Book a time</a> and we'll price a couple of options so you can choose.
+          </p>
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
+      {/* ── WHAT WE HANDLE ── */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              The Hawley Process
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              How We Build Your Bathroom
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step) => (
-              <div key={step.num} className="relative">
-                <div
-                  className="text-5xl font-bold mb-4 leading-none"
-                  style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.92 0.04 82)" }}
-                >
-                  {step.num}
-                </div>
-                <h3 className="text-base font-bold mb-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.18 0.008 250)" }}>
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                  {step.desc}
-                </p>
-              </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            What we handle
+          </h2>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4">
+            {handles.map((h) => (
+              <li key={h} className="flex items-start gap-2 pb-4" style={{ borderBottom: `1px solid ${LINE}` }}>
+                <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0" style={{ color: GOLD }} />
+                <span className="text-sm" style={{ ...sans, color: BODY }}>{h}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* ── GALLERY ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.12 0.008 250)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Recent St. Petersburg Bathroom Projects
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-              See Our Work
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {galleryImages.map((img, i) => (
-              <div key={i} className="overflow-hidden group" style={{ borderRadius: "2px", aspectRatio: "4/3" }}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  width={img.width}
-                  height={img.height}
-                  loading="lazy"
-                />
-              </div>
+      {/* ── HOW IT WORKS ── */}
+      <section id="how-it-works" className="py-20 scroll-mt-20" style={{ backgroundColor: CREAM }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            How it works
+          </h2>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((s) => (
+              <li key={s.num} className="flex flex-col gap-3">
+                <span className="w-9 h-9 flex items-center justify-center text-sm font-bold bg-white" style={{ ...sans, color: INK, borderRadius: "999px" }}>
+                  {s.num}
+                </span>
+                <h3 className="text-base font-bold" style={{ ...sans, color: INK }}>{s.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ ...sans, color: MUTED }}>{s.desc}</p>
+              </li>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/our-work"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors"
-              style={{ fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-            >
-              View Full Portfolio →
-            </Link>
-          </div>
+          </ol>
         </div>
       </section>
 
-      {/* ── PRICING ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Investment & Financing
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              Bathroom Remodel Investment Tiers
-            </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-              We provide fixed-price quotes — no estimates that creep up during the project. Ask about financing options during your consultation.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {pricingTiers.map((tier) => (
-              <div
-                key={tier.label}
-                className={`p-8 ${tier.featured ? "shadow-xl scale-105" : "shadow-sm"}`}
-                style={{
-                  borderRadius: "2px",
-                  backgroundColor: tier.featured ? "oklch(0.77 0.065 82)" : "oklch(0.97 0.005 82)",
-                  border: tier.featured ? "none" : "1px solid oklch(0.92 0.02 82)",
-                }}
-              >
-                <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-2" style={{ fontFamily: "'DM Sans', sans-serif", color: tier.featured ? "oklch(0.18 0.008 250)" : "oklch(0.55 0.02 82)" }}>
-                  {tier.label}
-                </p>
-                <p className="text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                  {tier.range}
-                </p>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: tier.featured ? "oklch(0.22 0.01 250)" : "oklch(0.45 0.01 250)" }}>
-                  {tier.desc}
-                </p>
-                {tier.featured && (
-                  <div className="mt-4 flex items-center gap-1">
-                    <Award size={14} style={{ color: "oklch(0.18 0.008 250)" }} />
-                    <span className="text-xs font-semibold" style={{ color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif" }}>Most Popular</span>
-                  </div>
-                )}
+      {/* ── OUR WORK ── */}
+      <section id="our-work" className="py-20 bg-white scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            Our work
+          </h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {photos.map((p) => (
+              <div key={p.src} className="overflow-hidden" style={{ borderRadius: "2px", aspectRatio: "4/3" }}>
+                <img src={p.src} alt={p.alt} className="w-full h-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>
@@ -572,38 +379,28 @@ export default function BathroomRemodelingStPete() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.97 0.005 82)" }}>
+      <section id="faq" className="py-20 scroll-mt-20" style={{ backgroundColor: CREAM }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-              Frequently Asked Questions
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-              Bathroom Remodeling in St. Petersburg
-            </h2>
-          </div>
-          <div className="space-y-3">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10" style={{ ...serif, color: INK }}>
+            Common questions
+          </h2>
+          <div className="divide-y" style={{ borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white shadow-sm overflow-hidden" style={{ borderRadius: "2px" }}>
+              <div key={i}>
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  className="w-full flex items-center justify-between py-5 text-left"
+                  aria-expanded={openFaq === i}
                 >
-                  <span className="text-sm font-semibold pr-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.18 0.008 250)" }}>
-                    {faq.q}
-                  </span>
+                  <span className="text-base font-semibold pr-4" style={{ ...sans, color: INK }}>{faq.q}</span>
                   <ChevronDown
                     size={18}
                     className="flex-shrink-0 transition-transform duration-200"
-                    style={{ color: "oklch(0.77 0.065 82)", transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)" }}
+                    style={{ color: GOLD, transform: openFaq === i ? "rotate(180deg)" : "rotate(0deg)" }}
                   />
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-5">
-                    <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                      {faq.a}
-                    </p>
-                  </div>
+                  <p className="pb-5 text-sm leading-relaxed" style={{ ...sans, color: MUTED }}>{faq.a}</p>
                 )}
               </div>
             ))}
@@ -612,212 +409,104 @@ export default function BathroomRemodelingStPete() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section className="py-14 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <MapPin size={18} style={{ color: "oklch(0.77 0.065 82)" }} />
-              <span className="text-sm font-semibold tracking-wide uppercase" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.18 0.008 250)" }}>
-                Service Areas
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {serviceAreas.map((area) => (
-                area.href ? (
-                  <Link
-                    key={area.name}
-                    href={area.href}
-                    className="px-3 py-1 text-xs font-medium hover:opacity-80 transition-opacity"
-                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px", textDecoration: "none" }}
-                  >
-                    {area.name}
-                  </Link>
-                ) : (
-                  <span
-                    key={area.name}
-                    className="px-3 py-1 text-xs font-medium"
-                    style={{ backgroundColor: "oklch(0.95 0.02 82)", color: "oklch(0.35 0.02 82)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-                  >
-                    {area.name}
-                  </span>
-                )
-              ))}
-            </div>
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center gap-4">
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <MapPin size={18} style={{ color: GOLD }} />
+            <span className="text-sm font-semibold" style={{ ...sans, color: INK }}>We remodel bathrooms in</span>
           </div>
+          <p className="text-sm" style={{ ...sans, color: BODY }}>
+            {serviceAreas.map((area, i) => (
+              <span key={area.name}>
+                {area.href ? (
+                  <Link href={area.href} style={{ color: BODY, textDecoration: "underline" }}>{area.name}</Link>
+                ) : area.name}
+                {i < serviceAreas.length - 1 ? " · " : ""}
+              </span>
+            ))}
+            {" "}and nearby.
+          </p>
         </div>
       </section>
 
-      {/* ── CONTACT / FINAL CTA ── */}
-      <section id="contact" className="py-24" style={{ backgroundColor: "oklch(0.12 0.008 250)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Left — copy */}
+      {/* ── CONSULTATION FORM ── */}
+      <section id="quote" className="py-24 scroll-mt-20 relative" style={{ backgroundColor: NIGHT }}>
+        <span id="contact" className="absolute top-0 left-0 scroll-mt-20" aria-hidden="true" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}>
-                Ready to Start?
-              </p>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Ready to start your bathroom project?
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white" style={serif}>
+                Book your free in-home consultation
               </h2>
-              <p className="text-base text-white/75 mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Free in-home estimates. Fixed-price quotes. No pressure.
+              <p className="text-base text-white/75 mb-8 leading-relaxed" style={sans}>
+                Send the form or give us a call. We'll set up a time to come look at your bathroom, take measurements and go over options that fit your budget. No charge, no obligation.
               </p>
-              <div className="space-y-4 mb-8">
-                <a
-                  href="tel:7046191480"
-                  className="flex items-center gap-3 text-white hover:text-gold transition-colors"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  <Phone size={18} style={{ color: "oklch(0.77 0.065 82)" }} />
-                  <span className="text-lg font-semibold">(704) 619-1480</span>
-                </a>
-                <p className="text-sm text-white/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Mon–Fri 8am–6pm · St. Petersburg, FL 33701
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-medium mt-2 hover:opacity-80 transition-opacity"
-                  style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  View full contact page →
-                </Link>
-              </div>
-              <div className="overflow-hidden shadow-lg" style={{ borderRadius: "2px", height: "220px" }}>
-                <iframe
-                  title="Hawley Construction Co. location in St. Petersburg FL"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.1!2d-82.6403!3d27.7676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s316+11th+Ave+NE%2C+St.+Petersburg%2C+FL+33701!5e0!3m2!1sen!2sus!4v1"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
+              <a href="tel:7046191480" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity mb-2" style={sans}>
+                <Phone size={18} style={{ color: GOLD }} />
+                <span className="text-lg font-semibold">(704) 619-1480</span>
+              </a>
+              <p className="text-sm text-white/60" style={sans}>
+                Mon–Fri 8am–6pm · 316 11th Ave NE, St. Petersburg, FL 33701
+              </p>
             </div>
 
-            {/* Right — form */}
-            <div className="bg-white p-8 shadow-xl" style={{ borderRadius: "2px" }}>
+            <div className="bg-white p-6 sm:p-8" style={{ borderRadius: "2px" }}>
               {submitted ? (
-                <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-                  <CheckCircle2 size={48} className="mb-4" style={{ color: "oklch(0.77 0.065 82)" }} />
-                  <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                    Thank you!
-                  </h3>
-                  <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                    We'll be in touch within one business day to schedule your free in-home estimate.
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <CheckCircle2 size={48} className="mb-4" style={{ color: GOLD }} />
+                  <h3 className="text-xl font-bold mb-2" style={{ ...serif, color: INK }}>Thank you!</h3>
+                  <p className="text-sm" style={{ ...sans, color: MUTED }}>
+                    We'll be in touch within one business day to set up your free in-home consultation.
                   </p>
                 </div>
               ) : formError ? (
-                <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-                  <div className="mb-4 text-4xl">⚠️</div>
-                  <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                    Something went wrong
-                  </h3>
-                  <p className="text-sm mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                    We couldn't send your request. Please call us directly at (704) 619-1480 or try again.
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <h3 className="text-xl font-bold mb-2" style={{ ...serif, color: INK }}>Something went wrong</h3>
+                  <p className="text-sm mb-4" style={{ ...sans, color: MUTED }}>
+                    We couldn't send your request. Please call us at (704) 619-1480 or try again.
                   </p>
-                  <button
-                    onClick={() => setFormError(false)}
-                    className="text-sm underline"
-                    style={{ color: "oklch(0.45 0.01 250)" }}
-                  >
+                  <button type="button" onClick={() => setFormError(false)} className="text-sm underline" style={{ color: MUTED }}>
                     Try again
                   </button>
                 </div>
               ) : (
-                <>
-                  <h3 className="text-xl font-bold mb-6" style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.18 0.008 250)" }}>
-                    Get Your Free In-Home Estimate
-                  </h3>
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="q-name" className={labelClass} style={{ ...sans, color: MUTED }}>Name *</label>
+                    <input id="q-name" name="name" type="text" required autoComplete="name" value={formData.name} onChange={set("name")} className={inputClass} style={fieldStyle} placeholder="Your full name" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={e => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors"
-                        style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={e => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors"
-                          style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                          Phone
-                        </label>
-                        <input
-                          type="tel"
-                          value={formData.phone}
-                          onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors"
-                          style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                          placeholder="(xxx) xxx-xxxx"
-                        />
-                      </div>
+                      <label htmlFor="q-phone" className={labelClass} style={{ ...sans, color: MUTED }}>Phone *</label>
+                      <input id="q-phone" name="phone" type="tel" required autoComplete="tel" value={formData.phone} onChange={set("phone")} className={inputClass} style={fieldStyle} placeholder="(xxx) xxx-xxxx" />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                        Project Type
-                      </label>
-                      <select
-                        value={formData.projectType}
-                        onChange={e => setFormData({ ...formData, projectType: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors bg-white"
-                        style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                      >
-                        <option>Bathroom Remodeling</option>
-                        <option>Walk-In Shower</option>
-                        <option>Tub-to-Shower Conversion</option>
-                        <option>Aging-in-Place Upgrade</option>
-                        <option>Primary Suite Remodel</option>
-                        <option>Full Home Remodel</option>
-                        <option>Other</option>
-                      </select>
+                      <label htmlFor="q-email" className={labelClass} style={{ ...sans, color: MUTED }}>Email *</label>
+                      <input id="q-email" name="email" type="email" required autoComplete="email" value={formData.email} onChange={set("email")} className={inputClass} style={fieldStyle} placeholder="your@email.com" />
                     </div>
-                    <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wide mb-1" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.45 0.01 250)" }}>
-                        Tell Us About Your Project
-                      </label>
-                      <textarea
-                        rows={4}
-                        value={formData.message}
-                        onChange={e => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-gold transition-colors resize-none"
-                        style={{ borderRadius: "2px", fontFamily: "'DM Sans', sans-serif" }}
-                        placeholder="Describe your bathroom project, timeline, and any specific goals..."
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full py-4 font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90"
-                      style={{ backgroundColor: "oklch(0.77 0.065 82)", color: "oklch(0.18 0.008 250)", fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
-                    >
-                      Request My Free Estimate →
-                    </button>
-                    <p className="text-xs text-center" style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.6 0.01 250)" }}>
-                      No spam. No obligation. We respond within 1 business day.
-                    </p>
-                  </form>
-                </>
+                  </div>
+                  <div>
+                    <label htmlFor="q-type" className={labelClass} style={{ ...sans, color: MUTED }}>What do you want done?</label>
+                    <select id="q-type" name="projectType" value={formData.projectType} onChange={set("projectType")} className={inputClass} style={fieldStyle}>
+                      {projectTypes.map(t => <option key={t}>{t}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="q-message" className={labelClass} style={{ ...sans, color: MUTED }}>Anything else?</label>
+                    <textarea id="q-message" name="message" rows={4} value={formData.message} onChange={set("message")} className={`${inputClass} resize-none`} style={fieldStyle} placeholder="Your city, what you'd like changed, and when you're hoping to start." />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-4 font-semibold text-sm tracking-wide transition-all duration-200 hover:opacity-90 disabled:opacity-60"
+                    style={{ backgroundColor: GOLD, color: INK, ...sans, borderRadius: "2px" }}
+                  >
+                    {loading ? "Sending..." : "Book my free consultation"}
+                  </button>
+                  <p className="text-xs text-center" style={{ ...sans, color: "oklch(0.6 0.01 250)" }}>
+                    We'll reply within one business day.
+                  </p>
+                </form>
               )}
             </div>
           </div>

@@ -110,9 +110,9 @@ const faqs = [
 ];
 
 const serviceAreas = [
-  { name: "St. Petersburg", href: "/areas/st-petersburg" },
-  { name: "Tampa", href: "/areas/tampa" },
-  { name: "Clearwater", href: "/areas/clearwater" },
+  { name: "St. Petersburg", href: "/areas/st-petersburg/" },
+  { name: "Tampa", href: "/areas/tampa/" },
+  { name: "Clearwater", href: "/areas/clearwater/" },
   { name: "St. Pete Beach", href: null },
   { name: "Largo", href: null },
   { name: "Pinellas Park", href: null },

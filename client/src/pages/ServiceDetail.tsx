@@ -522,7 +522,7 @@ function GenericServiceDetail() {
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', `https://hawleyremodeling.com/services/${slug}`);
+      canonical.setAttribute('href', `https://hawleyremodeling.com/services/${slug}/`);
       // Inject Service schema
       const serviceSchema = {
         "@context": "https://schema.org",
@@ -536,7 +536,7 @@ function GenericServiceDetail() {
           "url": "https://hawleyremodeling.com"
         },
         "areaServed": ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Wesley Chapel", "Bradenton", "Sarasota"],
-        "url": `https://hawleyremodeling.com/services/${slug}`
+        "url": `https://hawleyremodeling.com/services/${slug}/`
       };
       const existingService = document.getElementById('service-schema');
       if (existingService) existingService.remove();

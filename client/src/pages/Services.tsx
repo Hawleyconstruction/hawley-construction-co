@@ -114,7 +114,7 @@ export default function Services() {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://hawleyremodeling.com/services');
+    canonical.setAttribute('href', 'https://hawleyremodeling.com/services/');
     return () => {
       document.title = 'Hawley Construction Co. | Tampa Bay Remodeling';
       if (canonical) canonical.setAttribute('href', 'https://hawleyremodeling.com');

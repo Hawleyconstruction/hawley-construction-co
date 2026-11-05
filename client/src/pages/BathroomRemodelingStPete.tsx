@@ -271,7 +271,7 @@ export default function BathroomRemodelingStPete() {
               Hawley Construction · St. Petersburg &amp; Tampa Bay
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white" style={serif}>
-              Bathroom remodeling in St. Pete &amp; Tampa Bay
+              Bathroom remodeling in Tampa Bay
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed" style={sans}>
               A new vanity and tile, a walk-in shower where the old tub was, or a full primary bath. We come to your house for a free consultation, go over your dream bathroom, then give you a fixed price in writing.

@@ -36,7 +36,14 @@
           }
           for (var j = 0; j < hits.length; j++) hits[j].nodeValue = hits[j].nodeValue.replace(NUMBER_RE, swap.display);
         }
-        function schedule() { if (!scheduled) { scheduled = true; setTimeout(apply, 50); } }
+        // Wait for the page to finish loading before swapping numbers, so React can first take over
+        // the pre-filled page without a redraw.
+        function schedule() {
+          if (scheduled) return;
+          scheduled = true;
+          if (document.readyState === 'complete') setTimeout(apply, 50);
+          else window.addEventListener('load', function() { setTimeout(apply, 300); });
+        }
         window.hcPhoneSwap = function(formattedNumber, mobileNumber) {
           if (!formattedNumber) return;
           var digits = String(mobileNumber || formattedNumber).replace(/[^\d+]/g, '');
@@ -76,8 +83,19 @@
           form.appendChild(wrap);
         }
         function addTraps() { var f = document.forms; for (var i = 0; i < f.length; i++) addTrap(f[i]); }
-        new MutationObserver(addTraps).observe(document.documentElement, { childList: true, subtree: true });
-        document.addEventListener('DOMContentLoaded', addTraps);
+        // Pages arrive with their content already in place and React then "takes over" that HTML.
+        // Adding the hidden field before React has finished would make React redraw the page,
+        // so wait until the page has fully loaded (or the visitor starts filling in a form).
+        var trapsOn = false;
+        function startTraps() {
+          if (trapsOn) return;
+          trapsOn = true;
+          addTraps();
+          new MutationObserver(addTraps).observe(document.documentElement, { childList: true, subtree: true });
+        }
+        if (document.readyState === 'complete') setTimeout(startTraps, 1500);
+        else window.addEventListener('load', function() { setTimeout(startTraps, 1500); });
+        document.addEventListener('focusin', function(e) { if (e.target && e.target.form) startTraps(); }, true);
 
         function markStart(e) {
           var form = e.target && e.target.form;

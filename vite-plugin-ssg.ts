@@ -688,10 +688,16 @@ function injectSEO(html: string, route: string, seo: RouteSEO): string {
 // Plugin
 // ---------------------------------------------------------------------------
 export function viteSsgPlugin(): Plugin {
+  let isSsrBuild = false;
   return {
     name: "vite-ssg-per-route",
     apply: "build",
+    configResolved(config) {
+      isSsrBuild = !!config.build.ssr;
+    },
     closeBundle() {
+      // The server-render build (used by scripts/prerender.mjs) must not rewrite the page HTML.
+      if (isSsrBuild) return;
       const outDir = path.resolve(process.cwd(), "dist/public");
       const baseHtml = fs.readFileSync(path.join(outDir, "index.html"), "utf-8");
 

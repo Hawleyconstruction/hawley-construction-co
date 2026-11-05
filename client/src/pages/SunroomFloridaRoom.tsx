@@ -112,9 +112,9 @@ const faqs = [
 ];
 
 const serviceAreas = [
-  { name: "St. Petersburg", href: "/areas/st-petersburg" },
-  { name: "Tampa", href: "/areas/tampa" },
-  { name: "Clearwater", href: "/areas/clearwater" },
+  { name: "St. Petersburg", href: "/areas/st-petersburg/" },
+  { name: "Tampa", href: "/areas/tampa/" },
+  { name: "Clearwater", href: "/areas/clearwater/" },
   { name: "Brandon", href: null },
   { name: "Wesley Chapel", href: null },
   { name: "Largo", href: null },
@@ -559,7 +559,7 @@ export default function SunroomFloridaRoom() {
           </div>
           <div className="text-center mt-10">
             <Link
-              href="/our-work"
+              href="/our-work/"
               className="inline-flex items-center gap-2 px-7 py-3 border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors"
               style={{ fontFamily: "'DM Sans', sans-serif", borderRadius: "2px" }}
             >
@@ -672,7 +672,7 @@ export default function SunroomFloridaRoom() {
                   Mon–Fri 8am–6pm · St. Petersburg, FL 33701
                 </p>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="inline-flex items-center gap-2 text-sm font-medium mt-2 hover:opacity-80 transition-opacity"
                   style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
                 >

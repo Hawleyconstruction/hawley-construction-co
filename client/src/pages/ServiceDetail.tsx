@@ -584,7 +584,7 @@ function GenericServiceDetail() {
           <h1 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             Service Not Found
           </h1>
-          <Link href="/services" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
+          <Link href="/services/" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
             View All Services
           </Link>
         </div>
@@ -605,7 +605,7 @@ function GenericServiceDetail() {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href="/services"
+            href="/services/"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide mb-6"
             style={{ color: "oklch(0.77 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
           >
@@ -721,7 +721,7 @@ function GenericServiceDetail() {
                   </a>
                 ) : (
                   <Link
-                    href="/contact"
+                    href="/contact/"
                     className="btn-gold block text-center mb-3"
                     style={{ borderRadius: "2px" }}
                   >

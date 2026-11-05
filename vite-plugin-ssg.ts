@@ -69,7 +69,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services": {
     title: "Remodeling & Construction Services in Tampa Bay | Hawley Construction Co.",
     description: "Explore our full range of home remodeling services in Tampa Bay — kitchens, bathrooms, additions, sunrooms, decks, outdoor living & more. Free estimates.",
-    canonical: `${BASE}/services`,
+    canonical: `${BASE}/services/`,
     h1: "Our Services",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -103,7 +103,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/home-additions": {
     title: "Home Additions Tampa Bay | Hawley Construction Co.",
     description: "Expand your home with a custom addition in Tampa Bay. Room additions, second stories, garage conversions. Licensed general contractor. Free estimates.",
-    canonical: `${BASE}/services/home-additions`,
+    canonical: `${BASE}/services/home-additions/`,
     h1: "Home Additions in Tampa Bay",
     serviceType: "Home Additions",
     breadcrumbs: [
@@ -115,7 +115,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/full-home-remodels": {
     title: "Full Home Remodels Tampa Bay | Hawley Construction Co.",
     description: "Complete whole-home remodeling in Tampa Bay. From concept to completion, Hawley Construction delivers quality craftsmanship. Licensed & insured. Free estimates.",
-    canonical: `${BASE}/services/full-home-remodels`,
+    canonical: `${BASE}/services/full-home-remodels/`,
     h1: "Full Home Remodels in Tampa Bay",
     serviceType: "Full Home Remodeling",
     breadcrumbs: [
@@ -127,7 +127,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/sunrooms": {
     title: "Sunroom Construction Tampa Bay | Hawley Construction Co.",
     description: "Custom sunrooms and Florida rooms built for Tampa Bay's climate. Enjoy year-round indoor-outdoor living. Licensed contractor. Call for a free estimate.",
-    canonical: `${BASE}/services/sunrooms`,
+    canonical: `${BASE}/services/sunrooms/`,
     h1: "Sunrooms in Tampa Bay",
     serviceType: "Sunroom Construction",
     breadcrumbs: [
@@ -139,7 +139,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/outdoor-living": {
     title: "Outdoor Living Spaces Tampa Bay | Hawley Construction Co.",
     description: "Custom outdoor living spaces in Tampa Bay — pergolas, outdoor kitchens, covered patios & more. Licensed & insured. Get a free estimate from Hawley Construction.",
-    canonical: `${BASE}/services/outdoor-living`,
+    canonical: `${BASE}/services/outdoor-living/`,
     h1: "Outdoor Living Spaces in Tampa Bay",
     serviceType: "Outdoor Living Construction",
     breadcrumbs: [
@@ -151,7 +151,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/patios": {
     title: "Custom Patios Tampa Bay | Hawley Construction Co.",
     description: "Beautiful custom patios designed and built for Tampa Bay homes. Pavers, concrete, covered patios. Licensed contractor. Free estimates — call (704) 619-1480.",
-    canonical: `${BASE}/services/patios`,
+    canonical: `${BASE}/services/patios/`,
     h1: "Patio Installation in Tampa Bay",
     serviceType: "Patio Installation",
     breadcrumbs: [
@@ -163,7 +163,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/windows-doors": {
     title: "Window & Door Installation Tampa Bay | Hawley Construction Co.",
     description: "Professional window and door installation in Tampa Bay. Impact-resistant options available. Licensed & insured. Get a free estimate from Hawley Construction Co.",
-    canonical: `${BASE}/services/windows-doors`,
+    canonical: `${BASE}/services/windows-doors/`,
     h1: "Windows & Doors in Tampa Bay",
     serviceType: "Window and Door Installation",
     breadcrumbs: [
@@ -175,7 +175,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/services/custom-cabinetry": {
     title: "Custom Cabinetry Tampa Bay | Hawley Construction Co.",
     description: "Custom cabinetry for kitchens, bathrooms, and living spaces in Tampa Bay. Built to your specs by Hawley Construction Co. Licensed & insured. Free estimates.",
-    canonical: `${BASE}/services/custom-cabinetry`,
+    canonical: `${BASE}/services/custom-cabinetry/`,
     h1: "Custom Cabinetry in Tampa Bay",
     serviceType: "Custom Cabinetry",
     breadcrumbs: [
@@ -187,7 +187,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/our-work": {
     title: "Our Recent Remodeling Projects | Hawley Construction Co.",
     description: "Browse Hawley Construction Co.'s portfolio of completed kitchen, bathroom, deck, and home addition projects across Tampa Bay. See the quality for yourself.",
-    canonical: `${BASE}/our-work`,
+    canonical: `${BASE}/our-work/`,
     h1: "Our Recent Projects",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -197,7 +197,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/areas/tampa": {
     title: "Remodeling Contractor Tampa, FL | Hawley Construction Co.",
     description: "Hawley Construction Co. serves Tampa, FL with expert kitchen, bathroom, deck, and home addition remodeling. Licensed & insured. Call for a free estimate.",
-    canonical: `${BASE}/areas/tampa`,
+    canonical: `${BASE}/areas/tampa/`,
     h1: "Tampa's Trusted Home Remodeling Contractor",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -208,7 +208,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/areas/st-petersburg": {
     title: "Remodeling Contractor St. Petersburg, FL | Hawley Construction Co.",
     description: "Hawley Construction Co. serves St. Petersburg, FL with custom kitchen, bathroom, deck, and addition remodeling. Licensed & insured. Free estimates available.",
-    canonical: `${BASE}/areas/st-petersburg`,
+    canonical: `${BASE}/areas/st-petersburg/`,
     h1: "St. Petersburg's Premier Remodeling Contractor",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -219,7 +219,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/areas/clearwater": {
     title: "Remodeling Contractor Clearwater, FL | Hawley Construction Co.",
     description: "Hawley Construction Co. serves Clearwater, FL with quality kitchen, bathroom, deck, and home addition remodeling. Licensed & insured. Call for a free estimate.",
-    canonical: `${BASE}/areas/clearwater`,
+    canonical: `${BASE}/areas/clearwater/`,
     h1: "Clearwater's Trusted Home Remodeling Experts",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -230,7 +230,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/faq": {
     title: "Frequently Asked Questions | Hawley Construction Co.",
     description: "Answers to common questions about home remodeling in Tampa Bay — timelines, costs, permits, and more. Hawley Construction Co. is here to help.",
-    canonical: `${BASE}/faq`,
+    canonical: `${BASE}/faq/`,
     h1: "Frequently Asked Questions",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -240,7 +240,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/blog": {
     title: "Remodeling Tips & Trends | Hawley Construction Co. Blog",
     description: "Home remodeling tips, trends, and guides for Tampa Bay homeowners. Expert advice from Hawley Construction Co. on kitchens, bathrooms, decks & more.",
-    canonical: `${BASE}/blog`,
+    canonical: `${BASE}/blog/`,
     h1: "The Hawley Blog",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -250,7 +250,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/blog/top-kitchen-remodeling-trends-tampa": {
     title: "Top Kitchen Remodeling Trends in Tampa | Hawley Construction Co.",
     description: "Discover the top kitchen remodeling trends in Tampa for 2025. From quartz countertops to open layouts, Hawley Construction Co. shares what's popular right now.",
-    canonical: `${BASE}/blog/top-kitchen-remodeling-trends-tampa`,
+    canonical: `${BASE}/blog/top-kitchen-remodeling-trends-tampa/`,
     h1: "Top Kitchen Remodeling Trends in Tampa",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -261,7 +261,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/blog/bathroom-remodel-cost-tampa": {
     title: "Bathroom Remodel Cost in Tampa | Hawley Construction Co.",
     description: "How much does a bathroom remodel cost in Tampa, FL? Hawley Construction Co. breaks down average costs, what affects pricing, and how to budget your project.",
-    canonical: `${BASE}/blog/bathroom-remodel-cost-tampa`,
+    canonical: `${BASE}/blog/bathroom-remodel-cost-tampa/`,
     h1: "Bathroom Remodel Cost in Tampa",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -272,7 +272,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/blog/benefits-sunroom-florida": {
     title: "Benefits of a Sunroom in Florida | Hawley Construction Co.",
     description: "Why add a sunroom to your Florida home? Hawley Construction Co. explains the benefits of sunrooms and Florida rooms for Tampa Bay homeowners.",
-    canonical: `${BASE}/blog/benefits-sunroom-florida`,
+    canonical: `${BASE}/blog/benefits-sunroom-florida/`,
     h1: "Benefits of a Sunroom in Florida",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -283,7 +283,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/blog/trex-deck-vs-wood-deck": {
     title: "Trex Deck vs Wood Deck Comparison | Hawley Construction Co.",
     description: "Trex composite deck vs. wood deck — which is better for Tampa Bay? Hawley Construction Co. compares cost, durability, maintenance, and appearance.",
-    canonical: `${BASE}/blog/trex-deck-vs-wood-deck`,
+    canonical: `${BASE}/blog/trex-deck-vs-wood-deck/`,
     h1: "Trex Deck vs Wood Deck",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -294,7 +294,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/blog/plan-home-addition-tampa-bay": {
     title: "How to Plan a Home Addition in Tampa Bay | Hawley Construction Co.",
     description: "Planning a home addition in Tampa Bay? Hawley Construction Co. walks you through permits, design, budgeting, and what to expect during construction.",
-    canonical: `${BASE}/blog/plan-home-addition-tampa-bay`,
+    canonical: `${BASE}/blog/plan-home-addition-tampa-bay/`,
     h1: "How to Plan a Home Addition in Tampa Bay",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },
@@ -305,7 +305,7 @@ const ROUTES: Record<string, RouteSEO> = {
   "/contact": {
     title: "Contact Hawley Construction Co. | Free Estimate Tampa Bay",
     description: "Contact Hawley Construction Co. for a free estimate on your Tampa Bay remodeling project. Kitchen, bathroom, deck, additions & more. Call (704) 619-1480.",
-    canonical: `${BASE}/contact`,
+    canonical: `${BASE}/contact/`,
     h1: "Get Your Free Estimate",
     breadcrumbs: [
       { name: "Home", item: `${BASE}/` },

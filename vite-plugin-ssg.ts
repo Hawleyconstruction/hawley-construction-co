@@ -20,6 +20,7 @@
 import type { Plugin } from "vite";
 import fs from "fs";
 import path from "path";
+import { execFileSync } from "child_process";
 
 // ---------------------------------------------------------------------------
 // Base URL — override via VITE_SITE_URL env var at build time
@@ -695,7 +696,7 @@ export function viteSsgPlugin(): Plugin {
     configResolved(config) {
       isSsrBuild = !!config.build.ssr;
     },
-    closeBundle() {
+    async closeBundle() {
       // The server-render build (used by scripts/prerender.mjs) must not rewrite the page HTML.
       if (isSsrBuild) return;
       const outDir = path.resolve(process.cwd(), "dist/public");
@@ -733,6 +734,21 @@ export function viteSsgPlugin(): Plugin {
 
       console.log(`\n✅ vite-plugin-ssg: generated ${generated} pre-rendered HTML files (including 404.html)\n`);
       console.log(`   VITE_SITE_URL used: ${BASE}\n`);
+
+      // ---- Fill every page with its full content (so Google sees the text without running JS) ----
+      // Runs here so it happens no matter which build command the host uses. If anything fails,
+      // the pages simply keep the plain shell above and the site deploys as before.
+      try {
+        const { build } = await import("vite");
+        await build({
+          configFile: path.resolve(process.cwd(), "vite.config.ts"),
+          logLevel: "warn",
+          build: { ssr: "src/entry-server.tsx", outDir: path.resolve(process.cwd(), "dist/server"), emptyOutDir: true },
+        });
+        execFileSync(process.execPath, [path.resolve(process.cwd(), "scripts/prerender.mjs")], { stdio: "inherit" });
+      } catch (e) {
+        console.warn(`prerender skipped - pages keep the plain shell (${(e as Error).message})`);
+      }
     },
   };
 }

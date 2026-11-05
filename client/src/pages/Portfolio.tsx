@@ -257,7 +257,7 @@ export default function Portfolio() {
                     {project.description}
                   </p>
                   <Link
-                    href={project.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${project.slug}`}
+                    href={project.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${project.slug}/`}
                     className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide"
                     style={{ color: "oklch(0.55 0.065 82)", fontFamily: "'DM Sans', sans-serif" }}
                   >
@@ -285,7 +285,7 @@ export default function Portfolio() {
           >
             Every project starts with a free consultation. Let's discuss your vision and bring it to life.
           </p>
-          <Link href="/contact" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
+          <Link href="/contact/" className="btn-gold inline-block" style={{ borderRadius: "2px" }}>
             Get a Free Estimate
           </Link>
         </div>

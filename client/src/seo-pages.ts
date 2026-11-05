@@ -34,9 +34,9 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: `${BASE}/services/kitchen-remodeling/`,
   },
   "/services/bathroom-remodeling": {
-    title: "Bathroom Remodeling Tampa Bay | Hawley Construction Co.",
-    description: "Expert bathroom remodeling in Tampa Bay. Walk-in showers, vanities, full bath renovations. Licensed & insured contractor. Get a free estimate today.",
-    canonical: `${BASE}/services/bathroom-remodeling`,
+    title: "Bathroom Remodeling St. Petersburg FL | Free In-Home Consultation | Hawley Construction Co.",
+    description: "Bathroom remodeling in St. Pete, Tampa & Clearwater, from vanity and fixture updates to walk-in showers and full remodels. Free in-home consultation and a fixed-price quote. (704) 619-1480.",
+    canonical: `${BASE}/bathroom-remodeling-st-petersburg/`, // same content as the St. Pete page
   },
   "/services/home-additions": {
     title: "Home Additions Tampa Bay | Hawley Construction Co.",

@@ -117,7 +117,7 @@ export default function BlogPost() {
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', `https://hawleyremodeling.com/blog/${slug}`);
+      canonical.setAttribute('href', `https://hawleyremodeling.com/blog/${slug}/`);
       // Inject Article schema
       const schema = {
         "@context": "https://schema.org",
@@ -132,7 +132,7 @@ export default function BlogPost() {
           "name": "Hawley Construction Co.",
           "url": "https://hawleyremodeling.com"
         },
-        "mainEntityOfPage": `https://hawleyremodeling.com/blog/${slug}`
+        "mainEntityOfPage": `https://hawleyremodeling.com/blog/${slug}/`
       };
       const existing = document.getElementById('article-schema');
       if (existing) existing.remove();

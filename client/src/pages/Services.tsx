@@ -221,14 +221,14 @@ export default function Services() {
                   </ul>
                   <div className="flex gap-3">
                     <Link
-                      href="/contact"
+                      href="/contact/"
                       className="btn-gold text-xs"
                       style={{ borderRadius: "2px" }}
                     >
                       Get Free Estimate
                     </Link>
                     <Link
-                      href={service.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${service.slug}`}
+                      href={service.slug === "trex-decks" ? "/trex-deck-builder-tampa-bay/" : `/services/${service.slug}/`}
                       className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide"
                       style={{ color: "oklch(0.64 0.055 230)", fontFamily: "'DM Sans', sans-serif" }}
                     >
@@ -261,7 +261,7 @@ export default function Services() {
             Contact us today for a free, no-obligation estimate. Serving Tampa, St. Petersburg, Clearwater, Bradenton, Sarasota &amp; surrounding areas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
+            <Link href="/contact/" className="btn-gold text-center" style={{ borderRadius: "2px" }}>
               Request Free Estimate
             </Link>
             <a href="tel:7046191480" className="btn-outline-light text-center" style={{ borderRadius: "2px" }}>

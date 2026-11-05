@@ -12,10 +12,10 @@ const services = [
   { label: "Sunrooms & Florida Rooms", href: "/sunroom-florida-room-contractor/" },
   { label: "ADU & In-Law Suites", href: "/adu-in-law-suite-builder/" },
   { label: "General Contractor", href: "/general-contractor-st-petersburg/" },
-  { label: "Home Additions", href: "/services/home-additions" },
-  { label: "Full Home Remodels", href: "/services/full-home-remodels" },
-  { label: "Custom Cabinetry", href: "/services/custom-cabinetry" },
-  { label: "Outdoor Living", href: "/services/outdoor-living" },
+  { label: "Home Additions", href: "/services/home-additions/" },
+  { label: "Full Home Remodels", href: "/services/full-home-remodels/" },
+  { label: "Custom Cabinetry", href: "/services/custom-cabinetry/" },
+  { label: "Outdoor Living", href: "/services/outdoor-living/" },
 ];
 
 const serviceAreas = [
@@ -134,11 +134,11 @@ export default function Footer() {
               <ul className="flex flex-col gap-2">
                 {[
                   { label: "Home", href: "/" },
-                  { label: "Services", href: "/services" },
-                  { label: "Our Work", href: "/our-work" },
-                  { label: "FAQ", href: "/faq" },
-                  { label: "Blog", href: "/blog" },
-                  { label: "Contact Us", href: "/contact" },
+                  { label: "Services", href: "/services/" },
+                  { label: "Our Work", href: "/our-work/" },
+                  { label: "FAQ", href: "/faq/" },
+                  { label: "Blog", href: "/blog/" },
+                  { label: "Contact Us", href: "/contact/" },
                 ].map((link) => (
                   <li key={link.href}>
                     <a
@@ -169,7 +169,7 @@ export default function Footer() {
               Ready to transform your home? Get a free, no-pressure estimate from our team.
             </p>
             <a
-              href="/contact"
+              href="/contact/"
               className="btn-gold inline-block text-center"
               style={{ borderRadius: "2px" }}
             >
